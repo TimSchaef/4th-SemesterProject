@@ -101,28 +101,32 @@ public class EnemySpawner : MonoBehaviour
     {
         if (spawnPoints.Length == 0)
             return;
+        
+        Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
 
 
-        Transform spawnPoint =
-            spawnPoints[Random.Range(0, spawnPoints.Length)];
+        GameObject enemy = EnemyPoolManager.Instance.GetEnemy(enemyData);
+        if (enemy == null)
+            return;
 
 
-        GameObject enemy =
-            Instantiate(
-                enemyData.enemyPrefab,
-                spawnPoint.position,
-                Quaternion.identity
-            );
+        // Put enemy at spawn position while inactive
+        enemy.transform.position =
+            spawnPoint.position;
+
+        enemy.transform.rotation =
+            Quaternion.identity;
 
 
+        // Now wake it up
+        enemy.SetActive(true);
         aliveEnemyCount++;
-
 
         EnemyBase enemyBase =
             enemy.GetComponent<EnemyBase>();
 
 
-        if(enemyBase != null)
+        if (enemyBase != null)
         {
             enemyBase.Initialize(this);
         }

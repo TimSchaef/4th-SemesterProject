@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8641790810189208080
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7385833331596385200}
+  - component: {fileID: 2092273506457872000}
+  m_Layer: 0
+  m_Name: UpgradeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7385833331596385200
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8641790810189208080}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -132.51236, y: -518.15704, z: 19.5837}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2092273506457872000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8641790810189208080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27312000153f2b746bb4d6a5764ced02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UpgradeManager
+  playerWeapon: {fileID: 0}
+  upgradePanel: {fileID: 0}
+  playerXP: {fileID: 0}
+  upgradeButtons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  allUpgrades:
+  - {fileID: 11400000, guid: f381a7c75e7883244a0a4ff8eeaefd8f, type: 2}
+  - {fileID: 11400000, guid: 8798ed0c8f3d7ac488227ff2b00019d5, type: 2}
+  - {fileID: 11400000, guid: 0837d93ded48ef647ae18e2d6168de00, type: 2}
+  - {fileID: 11400000, guid: 56aba3321ffb9274b9279602a93d82c2, type: 2}
+  - {fileID: 11400000, guid: b45f8fb08f203af4e8e87346902a3de4, type: 2}
+  - {fileID: 11400000, guid: a7131fed0ae6bf146a11d30c1c1bc84a, type: 2}
+  - {fileID: 11400000, guid: ec1d239518e52d143bff920ead5b8cdc, type: 2}
+  - {fileID: 11400000, guid: dbbfac3c1d972774dbb71fc902de87f1, type: 2}
+  - {fileID: 11400000, guid: d078caddc42b84f4a8b0175babc0ed70, type: 2}
+  upgradeName:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  upgradeIcons: []
+  screenOpen: 0

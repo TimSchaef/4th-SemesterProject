@@ -16,7 +16,7 @@ public class EnemyPoolManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
+        if (Instance == null) 
             Instance = this;
 
         CreatePools();
@@ -78,18 +78,12 @@ public class EnemyPoolManager : MonoBehaviour
             // fallback if you underestimated pool size
             enemy = Instantiate(data.enemyPrefab);
         }
-
-
-        enemy.SetActive(true);
-
         return enemy;
     }
 
 
 
-    public void ReturnEnemy(
-        SO_EnemyData data,
-        GameObject enemy)
+    public void ReturnEnemy(SO_EnemyData data, GameObject enemy)
     {
         enemy.SetActive(false);
 

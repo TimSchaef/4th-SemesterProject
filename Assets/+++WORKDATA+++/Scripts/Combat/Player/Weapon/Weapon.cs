@@ -102,15 +102,15 @@ public class Weapon : MonoBehaviour
 
     void FireMultipleShots(WeaponShot shot)
     {
-        int totalShots = 1 + shot.extraProjectiles;
-
-        for (int i = 0; i < totalShots + 1; i++)
+        ExecuteShot(shot);
+        
+        for (int i = 0; i < shot.extraProjectiles; i++)
         {
             Vector3 spreadDir = ApplySpread(
                 shot.direction,
                 shot.spreadAngles,
                 i,
-                totalShots
+                shot.extraProjectiles
             );
 
             WeaponShot individual = shot;
@@ -118,14 +118,14 @@ public class Weapon : MonoBehaviour
 
             ExecuteShot(individual);
         }
-        
     }
 
     Vector3 ApplySpread(Vector3 forward, float angle, int index, int total)
     {
-        if (total == 1) return forward;
-
-        float step = angle / (total - 1);
+        if (total <= 0)
+            return forward;
+        
+        float step = angle / total;
         float current = -angle / 2f + step * index;
 
         Quaternion rot = Quaternion.AngleAxis(current, Vector3.up);
