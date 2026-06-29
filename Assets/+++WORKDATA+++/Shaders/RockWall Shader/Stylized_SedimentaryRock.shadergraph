@@ -2284,8 +2284,8 @@
     "m_ObjectId": "22850dbb709a4feb8d4137e3c1c58ce4",
     "m_Title": "Canyon Texture Layers",
     "m_Position": {
-        "x": -1961.9998779296875,
-        "y": -453.99993896484377
+        "x": -1962.0,
+        "y": -454.0
     }
 }
 
@@ -5934,7 +5934,7 @@
     "useTilingAndOffset": false,
     "useTexelSize": true,
     "m_Modifiable": true,
-    "m_DefaultType": 3
+    "m_DefaultType": 0
 }
 
 {
@@ -7052,7 +7052,7 @@
     "m_Title": "Sand Top Layer",
     "m_Position": {
         "x": -1289.0,
-        "y": 935.0000610351563
+        "y": 935.0
     }
 }
 
