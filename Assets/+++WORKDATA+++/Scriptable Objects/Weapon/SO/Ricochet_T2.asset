@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f738cac66a387d34282dded5b6554d8d, type: 3}
+  m_Name: Ricochet_T2
+  m_EditorClassIdentifier: Assembly-CSharp::RicochetUpgradeSO
+  upgradeName: Ricochet
+  upgradeDescription: 
+  upgradeID: Ricochet
+  tier: 2
+  nextTier: {fileID: 11400000, guid: fb9e90744b2bcbe44a50ee18954d9b71, type: 2}
+  ricochetCount: 2
