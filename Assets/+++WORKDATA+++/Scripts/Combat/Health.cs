@@ -35,6 +35,16 @@ public class Health : MonoBehaviour
         hitMaterial = renderer.material;
         originalColor = hitMaterial.color;
     }
+    
+    
+    public void ResetHealth()
+    {
+        currentHealth = maxHealth;
+        regenTimer = 0;
+
+        hitMaterial.DOKill();
+        hitMaterial.color = originalColor;
+    }
 
     private void Start()
     {

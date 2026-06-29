@@ -85,8 +85,16 @@ public class EnemyPoolManager : MonoBehaviour
 
     public void ReturnEnemy(SO_EnemyData data, GameObject enemy)
     {
-        enemy.SetActive(false);
+        EnemyBase enemyBase = enemy.GetComponent<EnemyBase>();
+        Health health = enemy.GetComponent<Health>();
 
+        if(enemyBase != null)
+        {
+            health.ResetHealth();
+            enemyBase.ResetEnemy();
+        }
+        
+        enemy.SetActive(false);
         pools[data].Enqueue(enemy);
     }
 }
