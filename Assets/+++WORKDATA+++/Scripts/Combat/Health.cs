@@ -6,7 +6,7 @@ using UnityEngine.PlayerLoop;
 public class Health : MonoBehaviour
 {
     [SerializeField] private float maxHealth = 10f;
-    [SerializeField] private TextMeshProUGUI playerHP;
+    //[SerializeField] private TextMeshProUGUI playerHP;
     [SerializeField] public int xpReward = 3;
     [SerializeField] private float regenRate = 0f;
     [SerializeField] private float regenInterval = 1f;
@@ -74,10 +74,10 @@ public class Health : MonoBehaviour
 
     private void UpdateHP()
     {
-        if (playerHP != null)
-        {
-            playerHP.text = "HP: " + currentHealth.ToString();
-        }
+        // if (playerHP != null)
+        // {
+        //     playerHP.text = "HP: " + currentHealth.ToString();
+        // }
     }
     public void IncreaseMaxHP(float amount)
     {
