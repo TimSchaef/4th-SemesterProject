@@ -1,3 +1,4 @@
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,6 +10,7 @@ public class Weapon_UI : MonoBehaviour
     
     [SerializeField] private TextMeshProUGUI ammoText;
     [SerializeField] public Image reloadImage;
+    [SerializeField] public Image healthImage;
 
     void Awake()
     {
@@ -22,14 +24,10 @@ public class Weapon_UI : MonoBehaviour
     {
         reloadImage.gameObject.SetActive(false);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
     public void UpdateAmmo()
     {
         ammoText.text = weaponRef.ammo.ToString();
     }
+
 }

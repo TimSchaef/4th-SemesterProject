@@ -225,19 +225,17 @@ public class Weapon : MonoBehaviour
     IEnumerator Reload()
     {
         reloading = true;
-        Weapon_UI.instance.reloadImage.gameObject.SetActive(true);
+        gunAnimator.SetTrigger("isReloading");
 
         float t = 0f;
         while (t < reloadTime)
         {
             t += Time.deltaTime;
             yield return null;
-            Weapon_UI.instance.reloadImage.fillAmount = t / reloadTime;
         }
 
         ammo = maxAmmo;
         reloading = false;
-        Weapon_UI.instance.reloadImage.gameObject.SetActive(false);
     }
 
     public void AddUpgrade(WeaponUpgradeSO upgrade)

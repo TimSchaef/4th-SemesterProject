@@ -1,13 +1,16 @@
+using System.Net.Mime;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
     [Header("Health Stats")]
-    [SerializeField] private float maxHealth = 10f;
-    //[SerializeField] private TextMeshProUGUI playerHP;
+    [SerializeField] public float maxHealth = 10f;
+    [SerializeField] public float currentHealth;
+    [SerializeField] private Image playerHP;
     [SerializeField] private float regenRate = 0f;
     [SerializeField] private float regenInterval = 1f;
     
@@ -20,10 +23,6 @@ public class Health : MonoBehaviour
     [SerializeField] private Renderer renderer;
     [SerializeField] private float flashDuration = 0.5f;
     [SerializeField] private Transform popupPosition;
-
-    
-
-    [SerializeField] private float currentHealth;
     
     private Color originalColor;
     private Material hitMaterial;
@@ -40,6 +39,15 @@ public class Health : MonoBehaviour
         originalColor = hitMaterial.color;
     }
     
+    private void Start()
+    {
+        
+    }
+    
+    void Update()
+    {
+        HandleRegen();
+    }
     
     public void ResetHealth()
     {
@@ -50,15 +58,6 @@ public class Health : MonoBehaviour
         hitMaterial.color = originalColor;
     }
 
-    private void Start()
-    {
-        UpdateHP();
-    }
-
-    void Update()
-    {
-        HandleRegen();
-    }
     public void TakeDamage(float damage)
     {
         if (IsDead)
@@ -87,11 +86,13 @@ public class Health : MonoBehaviour
     }
 
     private void UpdateHP()
-    {
-        // if (playerHP != null)
-        // {
-        //     playerHP.text = "HP: " + currentHealth.ToString();
-        // }
+    { 
+        if (playerHP != null)
+        {
+            playerHP.DOFillAmount(currentHealth / maxHealth, flashDuration);
+            DOTween.Kill("Health");
+            playerHP.DOColor(Color.red, flashDuration).SetId("Health").SetLoops(2, LoopType.Yoyo);
+        }
     }
     public void IncreaseMaxHP(float amount)
     {
@@ -117,7 +118,7 @@ public class Health : MonoBehaviour
                 maxHealth
             );
 
-            UpdateHP();
+            //UpdateHP();
         }
     }
     

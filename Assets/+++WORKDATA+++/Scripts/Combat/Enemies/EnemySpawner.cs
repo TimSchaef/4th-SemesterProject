@@ -19,7 +19,7 @@ public class EnemySpawner : MonoBehaviour
     [Header("Timing")]
     [SerializeField] private float startSpawnDelay = 5f;
 
-
+    public bool canSpawn = true;
     private int aliveEnemyCount;
     private float gameTime;
     private float spawnBudget;
