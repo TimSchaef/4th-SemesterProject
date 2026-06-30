@@ -2294,7 +2294,7 @@
     "m_ObjectId": "22850dbb709a4feb8d4137e3c1c58ce4",
     "m_Title": "Canyon Texture Layers",
     "m_Position": {
-        "x": -1962.0,
+        "x": -1962.0001220703125,
         "y": -454.00006103515627
     }
 }
@@ -4133,10 +4133,10 @@
     "promotedFromAssetID": "",
     "promotedFromCategoryName": "",
     "promotedOrdering": -1,
-    "m_Name": "Layers Scale",
+    "m_Name": "Layers Density",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "Layers Scale",
-    "m_DefaultReferenceName": "_Layers_Scale",
+    "m_RefNameGeneratedByDisplayName": "Layers Density",
+    "m_DefaultReferenceName": "_Layers_Density",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
@@ -4805,7 +4805,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "74732ea015174171825147dcd8269767",
     "m_Id": 0,
-    "m_DisplayName": "Layers Scale",
+    "m_DisplayName": "Layers Density",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -5536,9 +5536,9 @@
     "m_Value": {
         "serializedVersion": "2",
         "key0": {
-            "r": 0.8879231810569763,
-            "g": 0.24228119850158692,
-            "b": 0.10461649298667908,
+            "r": 0.34191444516181948,
+            "g": 0.038204375654459,
+            "b": 0.023153364658355714,
             "a": 1.0
         },
         "key1": {
@@ -5551,36 +5551,36 @@
             "r": 0.46226418018341067,
             "g": 0.055702608078718188,
             "b": 0.019624413922429086,
-            "a": 0.0
+            "a": 1.0
         },
         "key3": {
-            "r": 0.8879231810569763,
-            "g": 0.24228119850158692,
-            "b": 0.10461649298667908,
+            "r": 0.42326775193214419,
+            "g": 0.18116429448127747,
+            "b": 0.07227186113595963,
             "a": 0.0
         },
         "key4": {
-            "r": 0.8879231810569763,
-            "g": 0.24228119850158692,
-            "b": 0.10461649298667908,
+            "r": 0.42326775193214419,
+            "g": 0.18116429448127747,
+            "b": 0.07227186113595963,
             "a": 0.0
         },
         "key5": {
-            "r": 0.4620770514011383,
-            "g": 0.05612849444150925,
-            "b": 0.019382361322641374,
+            "r": 0.34191444516181948,
+            "g": 0.038204375654459,
+            "b": 0.023153364658355714,
             "a": 0.0
         },
         "key6": {
-            "r": 0.4620770514011383,
-            "g": 0.05612849444150925,
-            "b": 0.019382361322641374,
+            "r": 0.34191444516181948,
+            "g": 0.038204375654459,
+            "b": 0.023153364658355714,
             "a": 0.0
         },
         "key7": {
-            "r": 0.8879231810569763,
-            "g": 0.24228119850158692,
-            "b": 0.10461649298667908,
+            "r": 0.4286905527114868,
+            "g": 0.18782080709934236,
+            "b": 0.07618539035320282,
             "a": 0.0
         },
         "ctime0": 2313,
@@ -5593,7 +5593,7 @@
         "ctime7": 61487,
         "atime0": 0,
         "atime1": 65535,
-        "atime2": 0,
+        "atime2": 65535,
         "atime3": 0,
         "atime4": 0,
         "atime5": 0,
@@ -5935,10 +5935,10 @@
     "promotedFromAssetID": "",
     "promotedFromCategoryName": "",
     "promotedOrdering": -1,
-    "m_Name": "Layer Break Scale",
+    "m_Name": "Layer Edge Noise",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "Layer Break Scale",
-    "m_DefaultReferenceName": "_Layer_Break_Scale",
+    "m_RefNameGeneratedByDisplayName": "Layer Edge Noise",
+    "m_DefaultReferenceName": "_Layer_Edge_Noise",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
@@ -5950,12 +5950,12 @@
     "m_Hidden": false,
     "m_PerRendererData": false,
     "m_customAttributes": [],
-    "m_Value": 20.0,
+    "m_Value": 1.0,
     "m_FloatType": 1,
     "m_LiteralFloatMode": false,
     "m_RangeValues": {
-        "x": 1.0,
-        "y": 200.0
+        "x": 0.0,
+        "y": 3.0
     },
     "m_SliderType": 0,
     "m_SliderPower": 3.0,
@@ -6750,7 +6750,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "b492b6a1abd64170a5bc678ed7f2eb98",
     "m_Id": 0,
-    "m_DisplayName": "Layer Break Scale",
+    "m_DisplayName": "Layer Edge Noise",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -7213,8 +7213,8 @@
     "m_ObjectId": "be552498211b4e00bb600b3f51624e3d",
     "m_Title": "Sand Top Layer",
     "m_Position": {
-        "x": -1289.0,
-        "y": 935.0000610351563
+        "x": -1289.0001220703125,
+        "y": 935.0
     }
 }
 
@@ -7530,8 +7530,8 @@
     "m_ObjectId": "d07bf63ab83e4f6e884b38057d2a9f8d",
     "m_Title": "Canyon Texture Detail",
     "m_Position": {
-        "x": -892.0000610351563,
-        "y": 201.00003051757813
+        "x": -892.0,
+        "y": 200.99990844726563
     }
 }
 
