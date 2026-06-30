@@ -5,11 +5,16 @@ using UnityEngine.PlayerLoop;
 
 public class Health : MonoBehaviour
 {
+    [Header("Health Stats")]
     [SerializeField] private float maxHealth = 10f;
     //[SerializeField] private TextMeshProUGUI playerHP;
-    [SerializeField] public int xpReward = 3;
     [SerializeField] private float regenRate = 0f;
     [SerializeField] private float regenInterval = 1f;
+    
+    [Header("XP Refs")]
+    [SerializeField] private SO_ExperiencePoints experiencePoints;
+    [SerializeField] private GameObject xpPickupPrefab;
+    [SerializeField] private Transform dropPosition;
     
     [Header("Damage Feedback")]
     [SerializeField] private Renderer renderer;
@@ -125,18 +130,26 @@ public class Health : MonoBehaviour
     {
         currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
     }
-    
+
+    private void DropXP()
+    {
+        if (experiencePoints == null)
+            return;
+        
+        GameObject xp = Instantiate(xpPickupPrefab, dropPosition.position, Quaternion.identity);
+        xp.GetComponent<XPPickup>().Initialize(experiencePoints);
+    }
     
     void Die()
     {
-        PlayerXP.Instance.AddXP(xpReward);
         if (enemy != null)
         {
+            DropXP();
             enemy.Die();
         }
         else
         {
-            Destroy(gameObject); //TODO: Add Death condition
+            Destroy(gameObject); //TODO: Ad Death condition
         }
     }
 }

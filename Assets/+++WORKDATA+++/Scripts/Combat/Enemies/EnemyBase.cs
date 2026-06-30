@@ -16,9 +16,6 @@ public abstract class EnemyBase : MonoBehaviour
     [SerializeField] private float stopDistance = 1.8f;
     [SerializeField] private float pathUpdateInterval = 0.1f;
 
-    [Header("Experience")]
-    [SerializeField] protected SO_ExperiencePoints experiencePoints;
-
 
     protected Transform target;
     protected Health playerHealth;
