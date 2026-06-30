@@ -30,7 +30,6 @@ public class Health : MonoBehaviour
     private void Awake()
     {
         enemy = GetComponent<EnemyBase>();
-        renderer = GetComponentInChildren<Renderer>();
         currentHealth = maxHealth;
         hitMaterial = renderer.material;
         originalColor = hitMaterial.color;
