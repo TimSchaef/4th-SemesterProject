@@ -75,8 +75,7 @@ public class EnemyPoolManager : MonoBehaviour
         }
         else
         {
-            // fallback if you underestimated pool size
-            enemy = Instantiate(data.enemyPrefab);
+            return null;
         }
         return enemy;
     }
