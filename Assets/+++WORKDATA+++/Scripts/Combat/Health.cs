@@ -1,24 +1,28 @@
+using System.Net.Mime;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private float maxHealth = 10f;
-    //[SerializeField] private TextMeshProUGUI playerHP;
-    [SerializeField] public int xpReward = 3;
+    [Header("Health Stats")]
+    [SerializeField] public float maxHealth = 10f;
+    [SerializeField] public float currentHealth;
+    [SerializeField] private Image playerHP;
     [SerializeField] private float regenRate = 0f;
     [SerializeField] private float regenInterval = 1f;
+    
+    [Header("XP Refs")]
+    [SerializeField] private SO_ExperiencePoints experiencePoints;
+    [SerializeField] private GameObject xpPickupPrefab;
+    [SerializeField] private Transform dropPosition;
     
     [Header("Damage Feedback")]
     [SerializeField] private Renderer renderer;
     [SerializeField] private float flashDuration = 0.5f;
     [SerializeField] private Transform popupPosition;
-
-    
-
-    [SerializeField] private float currentHealth;
     
     private Color originalColor;
     private Material hitMaterial;
@@ -30,21 +34,30 @@ public class Health : MonoBehaviour
     private void Awake()
     {
         enemy = GetComponent<EnemyBase>();
-        renderer = GetComponentInChildren<Renderer>();
         currentHealth = maxHealth;
         hitMaterial = renderer.material;
         originalColor = hitMaterial.color;
     }
-
+    
     private void Start()
     {
-        UpdateHP();
+        
     }
-
+    
     void Update()
     {
         HandleRegen();
     }
+    
+    public void ResetHealth()
+    {
+        currentHealth = maxHealth;
+        regenTimer = 0;
+
+        hitMaterial.DOKill();
+        hitMaterial.color = originalColor;
+    }
+
     public void TakeDamage(float damage)
     {
         if (IsDead)
@@ -54,7 +67,7 @@ public class Health : MonoBehaviour
 
         if (gameObject.CompareTag("Player"))
         {
-            UpdateHP();
+            LoseHealth();
         }
 
         if (gameObject.CompareTag("Enemy"))
@@ -72,12 +85,19 @@ public class Health : MonoBehaviour
         }
     }
 
-    private void UpdateHP()
+    private void LoseHealth()
+    { 
+        if (playerHP != null)
+        {
+            playerHP.DOFillAmount(currentHealth / maxHealth, flashDuration);
+            DOTween.Kill("Health");
+            playerHP.DOColor(Color.red, flashDuration).SetId("Health").SetLoops(2, LoopType.Yoyo);
+        }
+    }
+
+    private void GainHealth()
     {
-        // if (playerHP != null)
-        // {
-        //     playerHP.text = "HP: " + currentHealth.ToString();
-        // }
+        playerHP.DOFillAmount(currentHealth + regenInterval, flashDuration);
     }
     public void IncreaseMaxHP(float amount)
     {
@@ -103,7 +123,7 @@ public class Health : MonoBehaviour
                 maxHealth
             );
 
-            UpdateHP();
+            GainHealth();
         }
     }
     
@@ -116,18 +136,26 @@ public class Health : MonoBehaviour
     {
         currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
     }
-    
+
+    private void DropXP()
+    {
+        if (experiencePoints == null)
+            return;
+        
+        GameObject xp = Instantiate(xpPickupPrefab, dropPosition.position, Quaternion.identity);
+        xp.GetComponent<XPPickup>().Initialize(experiencePoints);
+    }
     
     void Die()
     {
-        PlayerXP.Instance.AddXP(xpReward);
         if (enemy != null)
         {
+            DropXP();
             enemy.Die();
         }
         else
         {
-            Destroy(gameObject); //TODO: Add Death condition
+            Destroy(gameObject); //TODO: Ad Death condition
         }
     }
 }

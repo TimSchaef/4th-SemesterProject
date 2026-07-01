@@ -75,8 +75,7 @@ public class EnemyPoolManager : MonoBehaviour
         }
         else
         {
-            // fallback if you underestimated pool size
-            enemy = Instantiate(data.enemyPrefab);
+            return null;
         }
         return enemy;
     }
@@ -85,8 +84,16 @@ public class EnemyPoolManager : MonoBehaviour
 
     public void ReturnEnemy(SO_EnemyData data, GameObject enemy)
     {
-        enemy.SetActive(false);
+        EnemyBase enemyBase = enemy.GetComponent<EnemyBase>();
+        Health health = enemy.GetComponent<Health>();
 
+        if(enemyBase != null)
+        {
+            health.ResetHealth();
+            enemyBase.ResetEnemy();
+        }
+        
+        enemy.SetActive(false);
         pools[data].Enqueue(enemy);
     }
 }

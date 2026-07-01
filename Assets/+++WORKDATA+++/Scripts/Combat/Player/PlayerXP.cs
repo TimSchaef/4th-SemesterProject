@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -30,7 +31,7 @@ public class PlayerXP : MonoBehaviour
     public void AddXP(int amount)
     {
         currentXP += (amount * xpMultiplier);
-        currentXPImage.fillAmount = currentXP / xpToNextLevel;
+        currentXPImage.DOFillAmount(currentXP / xpToNextLevel, 0.2f);
 
         while (currentXP >= xpToNextLevel)
         {
