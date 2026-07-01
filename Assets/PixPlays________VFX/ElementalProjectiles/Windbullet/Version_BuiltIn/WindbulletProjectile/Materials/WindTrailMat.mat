@@ -176,6 +176,7 @@ Material:
     - _Distort_Rotate: 0
     - _Distort_Strength: 0.1
     - _DstBlend: 10
+    - _DstBlendAlpha: 10
     - _EnvironmentReflections: 1
     - _Fresnel_AddOrMultiply: 1
     - _GlossMapScale: 0
@@ -186,14 +187,14 @@ Material:
     - _Mask1_PositionUVs: 0
     - _Mask2_Distortion: 0
     - _Mask2_PositionUVs: 0
-    - _Mask_1_Rotate: 0
+    - _Mask_1_Rotate: -90
     - _Mask_2_Rotate: 0
     - _Mask_AddOrMultiply: 0
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Offset_Offset_With_UV_g: 0
     - _Offset_Rotate: 0
-    - _Offset_Strength: 0
+    - _Offset_Strength: 0.08
     - _Parallax: 0.005
     - _Power: 5
     - _QueueControl: 0
@@ -203,6 +204,7 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 5
+    - _SrcBlendAlpha: 1
     - _Surface: 1
     - _SwitchColors: 0
     - _UseFresnel: 0
