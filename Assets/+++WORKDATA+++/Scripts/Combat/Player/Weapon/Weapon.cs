@@ -32,6 +32,7 @@ public class Weapon : MonoBehaviour
     float nextFireTime;
     bool reloading;
 
+    private float baseFirerate;
     private PlayerXP _playerXP;
     private Health _playerHealth;
     PlayerInputs inputs;
@@ -48,6 +49,8 @@ public class Weapon : MonoBehaviour
 
     void Start()
     {
+        baseFirerate = fireRate;
+        gunAnimator.SetFloat("FireSpeed", fireRate / baseFirerate);
         ammo = maxAmmo;
         Weapon_UI.instance.UpdateAmmo();
         ownedUpgrades = new Dictionary<string, WeaponUpgradeSO>();
@@ -68,12 +71,12 @@ public class Weapon : MonoBehaviour
 
     void Shoot()
     {
+        gunAnimator.SetTrigger("isShooting");
         nextFireTime = Time.time + 1f / fireRate;
         ammo--;
         Weapon_UI.instance.UpdateAmmo();
         PlayerJuice.Instance.CameraKick();
         muzzleParticle.Play();
-        gunAnimator.SetTrigger("isShooting");
 
         WeaponShot baseShot = new WeaponShot
         {
@@ -102,34 +105,20 @@ public class Weapon : MonoBehaviour
 
     void FireMultipleShots(WeaponShot shot)
     {
-        ExecuteShot(shot);
-        
-        for (int i = 0; i < shot.extraProjectiles; i++)
-        {
-            Vector3 spreadDir = ApplySpread(
-                shot.direction,
-                shot.spreadAngles,
-                i,
-                shot.extraProjectiles
-            );
+        int totalShots = shot.extraProjectiles + 1;
 
+        for (int i = 0; i < totalShots; i++)
+        {
             WeaponShot individual = shot;
-            individual.direction = spreadDir;
+
+            float offset = i - (totalShots - 1) * 0.5f;
+            float angle = offset * shot.spreadAngles;
+
+            individual.direction =
+                Quaternion.AngleAxis(angle, Vector3.up) * shot.direction;
 
             ExecuteShot(individual);
         }
-    }
-
-    Vector3 ApplySpread(Vector3 forward, float angle, int index, int total)
-    {
-        if (total <= 0)
-            return forward;
-        
-        float step = angle / total;
-        float current = -angle / 2f + step * index;
-
-        Quaternion rot = Quaternion.AngleAxis(current, Vector3.up);
-        return rot * forward;
     }
 
     void ExecuteShot(WeaponShot shot)
@@ -252,7 +241,11 @@ public class Weapon : MonoBehaviour
 
     public WeaponUpgradeSO GetUpgrade(string id) => ownedUpgrades[id];
 
-    public void IncreaseFireRate(float amount) => fireRate += amount;
+    public void IncreaseFireRate(float amount)
+    {
+        fireRate += amount;
+        gunAnimator.SetFloat("FireSpeed", fireRate / baseFirerate);
+    } 
 
     public void IncreaseMaxAmmo(int amount)
     {

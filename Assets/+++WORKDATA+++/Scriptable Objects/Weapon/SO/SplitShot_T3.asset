@@ -18,4 +18,4 @@ MonoBehaviour:
   tier: 3
   nextTier: {fileID: 0}
   extraProjectiles: 4
-  spreadAngles: 15
+  spreadAngles: 5

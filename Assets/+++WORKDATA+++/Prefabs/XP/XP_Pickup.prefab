@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4057545732650894351}
   - component: {fileID: 1767681083590658996}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: XP_Pickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 4744917886796128104}
   - component: {fileID: 4774827429304437409}
   - component: {fileID: 4072614565307668281}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}

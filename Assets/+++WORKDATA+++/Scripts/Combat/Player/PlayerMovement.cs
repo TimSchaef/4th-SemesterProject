@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Jump")]
     [SerializeField] private float jumpHeight = 1.5f;
     [SerializeField] private float coyoteTime = 0.2f;
+    [SerializeField] private LayerMask groundLayer;
 
     private CharacterController controller;
     private PlayerInputs inputs;
@@ -118,6 +119,6 @@ public class PlayerMovement : MonoBehaviour
         Ray ray = new Ray(transform.position, Vector3.down);
 
         isGrounded =
-            Physics.SphereCast(ray, 0.5f, out groundHit, 0.6f);
+            Physics.SphereCast(ray, 0.5f, out groundHit, 0.6f, groundLayer);
     }
 }

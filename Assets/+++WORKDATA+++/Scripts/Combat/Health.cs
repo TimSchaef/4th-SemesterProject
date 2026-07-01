@@ -67,7 +67,7 @@ public class Health : MonoBehaviour
 
         if (gameObject.CompareTag("Player"))
         {
-            UpdateHP();
+            LoseHealth();
         }
 
         if (gameObject.CompareTag("Enemy"))
@@ -85,7 +85,7 @@ public class Health : MonoBehaviour
         }
     }
 
-    private void UpdateHP()
+    private void LoseHealth()
     { 
         if (playerHP != null)
         {
@@ -93,6 +93,11 @@ public class Health : MonoBehaviour
             DOTween.Kill("Health");
             playerHP.DOColor(Color.red, flashDuration).SetId("Health").SetLoops(2, LoopType.Yoyo);
         }
+    }
+
+    private void GainHealth()
+    {
+        playerHP.DOFillAmount(currentHealth + regenInterval, flashDuration);
     }
     public void IncreaseMaxHP(float amount)
     {
@@ -118,7 +123,7 @@ public class Health : MonoBehaviour
                 maxHealth
             );
 
-            //UpdateHP();
+            GainHealth();
         }
     }
     
