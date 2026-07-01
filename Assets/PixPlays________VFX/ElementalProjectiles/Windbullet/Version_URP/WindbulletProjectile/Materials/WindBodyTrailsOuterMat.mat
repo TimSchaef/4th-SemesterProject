@@ -205,7 +205,7 @@ Material:
     - _Mask1_Scroll: {r: 2, g: 0, b: 0, a: 0}
     - _Mask2_Remap: {r: -0.24, g: 1, b: 0, a: 0}
     - _Mask2_Scroll: {r: 0, g: 0, b: 0, a: 0}
-    - _Offset_Mask_Smoothstep: {r: 0, g: 0, b: 0, a: 0}
+    - _Offset_Mask_Smoothstep: {r: 1.2, g: 1.3, b: 0, a: 0}
     - _Offset_Scroll: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
