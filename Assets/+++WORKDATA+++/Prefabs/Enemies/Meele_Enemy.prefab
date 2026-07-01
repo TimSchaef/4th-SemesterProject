@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6062981041828530967}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DEF_Tooth.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1720273440918404087}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DEF_Tooth.003_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 5406245264013029471}
   - component: {fileID: 4993947684865538838}
   - component: {fileID: 1343157228023883084}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Meele_Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -183,6 +183,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
   maxHealth: 10
+  currentHealth: 0
+  playerHP: {fileID: 0}
   regenRate: 0
   regenInterval: 1
   experiencePoints: {fileID: 11400000, guid: 10d51e990aa7fb0408a3c005674d7b8c, type: 2}
@@ -191,7 +193,6 @@ MonoBehaviour:
   renderer: {fileID: 6545907082476147286}
   flashDuration: 0.5
   popupPosition: {fileID: 2222001511289416093}
-  currentHealth: 0
 --- !u!195 &4993947684865538838
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -244,7 +245,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3471777593840412206}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -276,7 +277,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5404584994404019040}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CTRL_TeethMaster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -316,7 +317,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9088244608323063758}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DEF_Tooth.008_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -347,7 +348,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4743813153737857400}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DEF_Tooth.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -379,7 +380,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5449479381023725603}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DEF_Tooth.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -411,7 +412,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2222001511289416093}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: popupPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -442,7 +443,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2530588766891729121}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DEF_Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -474,7 +475,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2020081932738422286}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DEF_Tooth.004_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -505,7 +506,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 620318351452695926}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DEF_Tooth.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -538,7 +539,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5532751615211881072}
   - component: {fileID: 6545907082476147286}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Meele_Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -643,7 +644,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2447373487885386267}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DEF_Tooth.002_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -674,7 +675,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9109362804785733861}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DEF_Tooth.001_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -705,7 +706,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 101224806441330686}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DEF_Tooth.006_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -736,7 +737,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5569722484345653228}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DEF_Tooth.005_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -767,7 +768,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3027543686019340588}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DEF_Tooth.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -799,7 +800,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 386001082299909709}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DEF_Tooth.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -831,7 +832,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6607781847303606921}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DEF_Tooth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -863,7 +864,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3049975316035208901}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DEF_Tooth.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -895,7 +896,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 635071014683032474}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DEF_Tooth.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -927,7 +928,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 619629624502589570}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Meele_Rig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -959,7 +960,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 877269729297744660}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DEF_Tooth_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -990,7 +991,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2511333008076916914}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: xpDropPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1021,7 +1022,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3238494798972482383}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DEF_Tooth.007_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}

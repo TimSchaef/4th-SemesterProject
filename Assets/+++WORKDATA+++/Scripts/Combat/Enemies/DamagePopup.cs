@@ -10,13 +10,18 @@ public class DamagePopup : MonoBehaviour
     [SerializeField] private float moveDuration = 0.7f;
     [SerializeField] private float fadeDuration = 0.7f;
 
+    [Header("Damage Colors")] 
+    [SerializeField] private Gradient damageGradient;
+    [SerializeField] private float maxDamageValue = 100f;
+        
+
     public void Show(float damage)
     {
         text.text = damage.ToString();
         transform.LookAt(Camera.main.transform);
         
         text.alpha = 1;
-        text.color = Color.white;
+        text.color = GetDamageColor(damage);
 
         transform.localScale = Vector3.zero;
 
@@ -28,5 +33,12 @@ public class DamagePopup : MonoBehaviour
             {
                 DamageManager.Instance.Return(this);
             });
+    }
+
+    private Color GetDamageColor(float damage)
+    {
+        float value = Mathf.Clamp01(damage / maxDamageValue);
+        
+        return damageGradient.Evaluate(value);
     }
 }
