@@ -131,6 +131,7 @@ Material:
     - _WorkflowMode: 1
     - _XRMotionVectorsPass: 1
     - _ZWrite: 1
+    - _smoothness: 0.09
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Bottom_Color: {r: 0.6037736, g: 0.49735028, b: 0.26486292, a: 1}
@@ -143,6 +144,7 @@ Material:
     - _Wind_Color: {r: 0.5839958, g: 0.754717, b: 0.33107865, a: 1}
     - _Wind_Direction: {r: 1, g: 0, b: 1, a: 0}
     - _Wind_Speed: {r: 1, g: 1, b: 0, a: 0}
+    - _color: {r: 0.12018954, g: 0.509434, b: 0.0744927, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &1150528583344798497
