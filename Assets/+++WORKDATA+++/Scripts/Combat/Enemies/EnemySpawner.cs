@@ -23,6 +23,9 @@ public class EnemySpawner : MonoBehaviour
     private int aliveEnemyCount;
     private float gameTime;
     private float spawnBudget;
+    private bool objectiveActive;
+    private SO_ObjectiveWave currentObjective;
+    private int objectiveRemaining;
 
 
 
@@ -48,6 +51,8 @@ public class EnemySpawner : MonoBehaviour
     }
     private void SpawnEnemies()
     {
+        if (!canSpawn) return;
+        
         if(aliveEnemyCount >= maxEnemies)
             return;
         
@@ -55,16 +60,13 @@ public class EnemySpawner : MonoBehaviour
         
         if(currentStage == null)
             return;
-
-        // Add spawn power over time
+        
         spawnBudget += currentStage.budgetPerSecond;
 
         while(spawnBudget >= 1)
         {
-            SO_EnemyData enemy =
-                PickEnemy(currentStage);
-
-
+            SO_EnemyData enemy = PickEnemy(currentStage);
+            
             if(enemy == null)
                 return;
             
@@ -72,7 +74,7 @@ public class EnemySpawner : MonoBehaviour
             
             spawnBudget -= enemy.spawnCost;
         }
-        Debug.Log("Alive: " + aliveEnemyCount + " Budget: " + spawnBudget);
+
     }
 
     private WaveStage GetCurrentStage()
@@ -108,17 +110,13 @@ public class EnemySpawner : MonoBehaviour
         GameObject enemy = EnemyPoolManager.Instance.GetEnemy(enemyData);
         if (enemy == null)
             return;
-
-
-        // Put enemy at spawn position while inactive
+        
         enemy.transform.position =
             spawnPoint.position;
 
         enemy.transform.rotation =
             Quaternion.identity;
-
-
-        // Now wake it up
+        
         enemy.SetActive(true);
         aliveEnemyCount++;
 
@@ -131,9 +129,70 @@ public class EnemySpawner : MonoBehaviour
             enemyBase.Initialize(this);
         }
     }
+
+    public void StartObjectiveWave(SO_ObjectiveWave wave)
+    {
+        if (objectiveActive)
+            return;
+
+        objectiveActive = true;
+        currentObjective = wave;
+        canSpawn = false;
+
+        objectiveRemaining = wave.enemyCount;
+        CloseDoors(wave);
+        StartCoroutine(ActivateObjectiveEnemies());
+    }
+
+    private IENumerator ActivateObjectiveEnemies()
+    {
+        for (int i = 0; i < currentObjective.enemyCount; i++)
+        {
+            SO_EnemyData enemy = currentObjective.enemies[Random.Range(0, currentObjective.enemies.Length)];
+
+            SpawnEnemy(enemy);
+
+            yield return null;
+        }
+    }
     
     public void OnEnemyKilled()
     {
         aliveEnemyCount--;
+
+        if (objectiveActive)
+        {
+            objectiveRemaining--;
+            if (objectiveRemaining <= 0)
+            {
+                FinishObjective();
+            }
+        }
+    }
+
+    private void OpenDoors(SO_ObjectiveWave wave)
+    {
+        foreach (doorToClose door in wave)
+        {
+            gameObject.SetActive(true);
+        }
+    }
+    
+    private void CloseDoors(SO_ObjectiveWave wave)
+    {
+        foreach (doorToClose door in wave)
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
+    private void FinishObjective()
+    {
+        OpenDoors(currentObjective);
+
+        objectiveActive = false;
+        currentObjective = null;
+
+        canSpawn = true;
     }
 }
