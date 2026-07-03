@@ -63,6 +63,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3b0e617fd7bfdd347a0486070240b871, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7775766036456546008}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3b0e617fd7bfdd347a0486070240b871, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3564329752448358501}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3b0e617fd7bfdd347a0486070240b871, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1703487488708948289}
     - targetCorrespondingSourceObject: {fileID: -3719356863686007817, guid: 3b0e617fd7bfdd347a0486070240b871, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1289323490925249388}
@@ -130,6 +136,45 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3564329752448358501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2829629498500652439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ac0e48fd267fa44e8acd8bc8d5f3baf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MultiInteractable
+  OnInteracted:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHovered:
+    m_PersistentCalls:
+      m_Calls: []
+  OnUnhovered:
+    m_PersistentCalls:
+      m_Calls: []
+  canInteract: 1
+  timeForNextInteraction: 2
+--- !u!114 &1703487488708948289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2829629498500652439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d18ff3f317e9e5e4f87df4968536791e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionObjective
+  objectiveWave: {fileID: 0}
+  doors: []
+  objectiveSpawnPoints: []
+  cooldownTime: 60
 --- !u!1 &5413722126734540372 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6963923263310995090, guid: 3b0e617fd7bfdd347a0486070240b871, type: 3}
