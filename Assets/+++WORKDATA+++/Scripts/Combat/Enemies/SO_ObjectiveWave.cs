@@ -5,6 +5,5 @@ public class SO_ObjectiveWave : ScriptableObject
 {
     public SO_EnemyData[] enemies;
     public int enemyCount;
-    public int rewardUpgradesCount;
-    public GameObject[] doorsToClose;
+    public int rewards;
 }
