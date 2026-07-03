@@ -135,6 +135,7 @@ public class EnemySpawner : MonoBehaviour
 
     public void StartObjectiveWave(InteractionObjective objective)
     {
+        print("started Wave");
         if (objectiveActive)
             return;
 

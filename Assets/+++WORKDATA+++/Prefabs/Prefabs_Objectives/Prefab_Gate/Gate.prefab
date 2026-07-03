@@ -476,6 +476,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b413d96ebec7db04590c7fe6fb936126, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5314825174291039082}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b413d96ebec7db04590c7fe6fb936126, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 255024354538384379}
     - targetCorrespondingSourceObject: {fileID: -228142887007937245, guid: b413d96ebec7db04590c7fe6fb936126, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2467094283911981021}
@@ -584,6 +587,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 6.600998, z: 7.297077}
   m_Center: {x: -0.00000011589921, y: 9.555452, z: -0.40733287}
+--- !u!114 &255024354538384379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4361030986849156398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea2f744ffe690444c817daf5e277fa5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorAnimation
+  animator: {fileID: 3403873855798741870}
 --- !u!1 &5517311975661264220 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -228142887007937245, guid: b413d96ebec7db04590c7fe6fb936126, type: 3}

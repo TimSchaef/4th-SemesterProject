@@ -2,15 +2,17 @@ using UnityEngine;
 
 public class DoorAnimation : MonoBehaviour
 {
-    private Animator animator;
+    [SerializeField] private Animator animator;
 
     void Awake()
     {
-        animator = GetComponent<Animator>();
+        if (animator != null)
+            animator = GetComponent<Animator>();
     }
 
     public void OpenDoor()
     {
+        print("Open door");
         animator.SetTrigger("isOpen");
     }
 
