@@ -122,7 +122,7 @@ public class Health : MonoBehaviour
                 currentHealth + regenRate,
                 maxHealth
             );
-
+            
             GainHealth();
         }
     }

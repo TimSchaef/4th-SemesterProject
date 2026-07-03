@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Data;
 using UnityEngine;
 
 
@@ -132,6 +133,7 @@ public class EnemySpawner : MonoBehaviour
 
     public void StartObjectiveWave(SO_ObjectiveWave wave)
     {
+        Debug.Log("StartObjectiveWave");
         if (objectiveActive)
             return;
 
@@ -140,11 +142,10 @@ public class EnemySpawner : MonoBehaviour
         canSpawn = false;
 
         objectiveRemaining = wave.enemyCount;
-        CloseDoors(wave);
         StartCoroutine(ActivateObjectiveEnemies());
     }
 
-    private IENumerator ActivateObjectiveEnemies()
+    private IEnumerator ActivateObjectiveEnemies()
     {
         for (int i = 0; i < currentObjective.enemyCount; i++)
         {
@@ -169,27 +170,9 @@ public class EnemySpawner : MonoBehaviour
             }
         }
     }
-
-    private void OpenDoors(SO_ObjectiveWave wave)
-    {
-        foreach (doorToClose door in wave)
-        {
-            gameObject.SetActive(true);
-        }
-    }
-    
-    private void CloseDoors(SO_ObjectiveWave wave)
-    {
-        foreach (doorToClose door in wave)
-        {
-            gameObject.SetActive(false);
-        }
-    }
-
     private void FinishObjective()
     {
-        OpenDoors(currentObjective);
-
+        Debug.Log("Objective finished");
         objectiveActive = false;
         currentObjective = null;
 
