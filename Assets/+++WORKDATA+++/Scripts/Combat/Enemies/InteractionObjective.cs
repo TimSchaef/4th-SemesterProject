@@ -7,7 +7,7 @@ public class InteractionObjective : MonoBehaviour
     [SerializeField] private SO_ObjectiveWave objectiveWave;
 
     [Header("Arena")]
-    [SerializeField] private GameObject[] doors;
+    [SerializeField] private DoorAnimation[] doors;
     [SerializeField] private Transform[] objectiveSpawnPoints;
 
     [Header("Cooldown")]
@@ -28,14 +28,14 @@ public class InteractionObjective : MonoBehaviour
 
     public void CloseDoors()
     {
-        foreach (GameObject door in doors)
-            door.SetActive(false);
+        foreach (var door in doors)
+            door.CloseDoor();
     }
 
     public void OpenDoors()
     {
-        foreach (GameObject door in doors)
-            door.SetActive(true);
+        foreach (var door in doors)
+            door.OpenDoor();
     }
 
     public void StartCooldown()
