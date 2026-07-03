@@ -43775,10 +43775,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractionObjective
   objectiveWave: {fileID: 11400000, guid: bfe16311a6a7db44d8f05ea0628c9e8e, type: 2}
-  doors:
-  - {fileID: 1141728499}
-  - {fileID: 1153198729}
-  - {fileID: 1676412447}
+  doors: []
   objectiveSpawnPoints:
   - {fileID: 1475057851}
   cooldownTime: 60

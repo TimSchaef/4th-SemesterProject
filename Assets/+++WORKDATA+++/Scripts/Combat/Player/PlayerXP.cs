@@ -42,7 +42,17 @@ public class PlayerXP : MonoBehaviour
 
             pendingLevelUps++;
         }
+        
+        if (pendingLevelUps > 0)
+        {
+            Time.timeScale = 0;
+            upgradeManager.OpenUpgradeScreen();
+        }
+    }
 
+    public void CheckLevelUp()
+    {
+        
         if (pendingLevelUps > 0)
         {
             Time.timeScale = 0;
