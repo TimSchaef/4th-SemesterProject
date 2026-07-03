@@ -43775,7 +43775,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractionObjective
   objectiveWave: {fileID: 11400000, guid: bfe16311a6a7db44d8f05ea0628c9e8e, type: 2}
-  doors: []
+  doors:
+  - {fileID: 2096050145}
   objectiveSpawnPoints:
   - {fileID: 1475057851}
   cooldownTime: 60
@@ -144976,6 +144977,74 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!1001 &2096050144
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4021343103753201556, guid: 21830331745e1284ab47a6eb07b60d41, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 235.41048
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021343103753201556, guid: 21830331745e1284ab47a6eb07b60d41, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 19.934525
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021343103753201556, guid: 21830331745e1284ab47a6eb07b60d41, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 89.34512
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021343103753201556, guid: 21830331745e1284ab47a6eb07b60d41, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.96702194
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021343103753201556, guid: 21830331745e1284ab47a6eb07b60d41, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00022071434
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021343103753201556, guid: 21830331745e1284ab47a6eb07b60d41, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.2546813
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021343103753201556, guid: 21830331745e1284ab47a6eb07b60d41, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0024623326
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021343103753201556, guid: 21830331745e1284ab47a6eb07b60d41, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -0.047
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021343103753201556, guid: 21830331745e1284ab47a6eb07b60d41, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -29.509
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021343103753201556, guid: 21830331745e1284ab47a6eb07b60d41, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -0.279
+      objectReference: {fileID: 0}
+    - target: {fileID: 4361030986849156398, guid: 21830331745e1284ab47a6eb07b60d41, type: 3}
+      propertyPath: m_Name
+      value: Gate
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 21830331745e1284ab47a6eb07b60d41, type: 3}
+--- !u!114 &2096050145 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 255024354538384379, guid: 21830331745e1284ab47a6eb07b60d41, type: 3}
+  m_PrefabInstance: {fileID: 2096050144}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea2f744ffe690444c817daf5e277fa5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorAnimation
 --- !u!43 &2097986331
 Mesh:
   m_ObjectHideFlags: 0
@@ -157706,7 +157775,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1079850595646350022, guid: 9c4f2345ac9e77b48a47030ebd102d00, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 184.28201
+      value: 208.49
       objectReference: {fileID: 0}
     - target: {fileID: 1079850595646350022, guid: 9c4f2345ac9e77b48a47030ebd102d00, type: 3}
       propertyPath: m_LocalPosition.y
@@ -157714,7 +157783,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1079850595646350022, guid: 9c4f2345ac9e77b48a47030ebd102d00, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 66.282005
+      value: 74.31
       objectReference: {fileID: 0}
     - target: {fileID: 1079850595646350022, guid: 9c4f2345ac9e77b48a47030ebd102d00, type: 3}
       propertyPath: m_LocalRotation.w
@@ -157945,3 +158014,4 @@ SceneRoots:
   - {fileID: 1980739119}
   - {fileID: 5071658329116476046}
   - {fileID: 900931853}
+  - {fileID: 2096050144}
