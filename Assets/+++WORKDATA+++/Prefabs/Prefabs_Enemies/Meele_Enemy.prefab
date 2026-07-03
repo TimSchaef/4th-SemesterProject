@@ -178,7 +178,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c8eb6e89473a0534299002052140cc21, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 3.68
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c8eb6e89473a0534299002052140cc21, type: 3}
       propertyPath: m_LocalPosition.y
@@ -186,7 +186,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c8eb6e89473a0534299002052140cc21, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -5.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c8eb6e89473a0534299002052140cc21, type: 3}
       propertyPath: m_LocalRotation.w
@@ -254,11 +254,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4717523130552174612, guid: c8eb6e89473a0534299002052140cc21, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 89.98021
+      value: 89.9802
       objectReference: {fileID: 0}
     - target: {fileID: -4717523130552174612, guid: c8eb6e89473a0534299002052140cc21, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -0.000013660374
+      value: -0.000013254022
       objectReference: {fileID: 0}
     - target: {fileID: -4085271285189900965, guid: c8eb6e89473a0534299002052140cc21, type: 3}
       propertyPath: m_Materials.Array.size
@@ -286,19 +286,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -3010101949133533394, guid: c8eb6e89473a0534299002052140cc21, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 63.296104
+      value: 63.2961
       objectReference: {fileID: 0}
     - target: {fileID: -2983219358772691859, guid: c8eb6e89473a0534299002052140cc21, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 15.7337055
+      value: 4.7246723
       objectReference: {fileID: 0}
     - target: {fileID: -2983219358772691859, guid: c8eb6e89473a0534299002052140cc21, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -121.29623
+      value: -27.206253
       objectReference: {fileID: 0}
     - target: {fileID: -2983219358772691859, guid: c8eb6e89473a0534299002052140cc21, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -9.360881
+      value: -17.635357
       objectReference: {fileID: 0}
     - target: {fileID: -2572434671962059147, guid: c8eb6e89473a0534299002052140cc21, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -306,7 +306,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2572434671962059147, guid: c8eb6e89473a0534299002052140cc21, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 10.562685
+      value: 10.562686
       objectReference: {fileID: 0}
     - target: {fileID: -2572434671962059147, guid: c8eb6e89473a0534299002052140cc21, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -342,7 +342,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4020088038581227976, guid: c8eb6e89473a0534299002052140cc21, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 39.75904
+      value: 39.759045
       objectReference: {fileID: 0}
     - target: {fileID: 4020088038581227976, guid: c8eb6e89473a0534299002052140cc21, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -366,7 +366,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5313545539479755802, guid: c8eb6e89473a0534299002052140cc21, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 57.79061
+      value: 57.790607
       objectReference: {fileID: 0}
     - target: {fileID: 5313545539479755802, guid: c8eb6e89473a0534299002052140cc21, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -456,7 +456,7 @@ MonoBehaviour:
   regenRate: 0
   regenInterval: 1
   experiencePoints: {fileID: 11400000, guid: 10d51e990aa7fb0408a3c005674d7b8c, type: 2}
-  xpPickupPrefab: {fileID: 0}
+  xpPickupPrefab: {fileID: 1671723067137232519, guid: 192cc27c263a23c4796439fcecd71e2a, type: 3}
   dropPosition: {fileID: 6592368345817157579}
   renderer: {fileID: 7453961994717399817}
   flashDuration: 0.5
