@@ -188,15 +188,15 @@ public class EnemySpawner : MonoBehaviour
         currentObjective.OpenDoors();
         
         PlayerXP.Instance.pendingLevelUps += currentObjectiveData.rewards;
+        PlayerXP.Instance.CheckLevelUp();
 
         activeSpawnPoints = spawnPoints;
+        currentObjective.StartCooldown();
 
         objectiveActive = false;
         currentObjective = null;
         currentObjectiveData = null;
 
         canSpawn = true;
-
-        currentObjective.StartCooldown();
     }
 }

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_ObjectiveWave
   enemies:
   - {fileID: 11400000, guid: ac04bed7a95ef2a40b5f01fc6d94307f, type: 2}
-  enemyCount: 50
+  enemyCount: 1
   rewards: 1
