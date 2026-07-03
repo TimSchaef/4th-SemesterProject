@@ -12,12 +12,12 @@ public class DoorAnimation : MonoBehaviour
     public void OpenDoor()
     {
         print("Open door");
-        animator.SetTrigger("isClosed");
+        animator.SetTrigger("isOpen");
     }
 
     public void CloseDoor()
     {
         print("Close door");
-        animator.SetTrigger("isOpen");
+        animator.SetTrigger("isClosed");
     }
 }
