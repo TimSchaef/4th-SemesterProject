@@ -50,7 +50,6 @@ GameObject:
   - component: {fileID: 7582110246261750334}
   - component: {fileID: 3777760617902221350}
   - component: {fileID: 2131838144186171641}
-  - component: {fileID: 1765729959702461861}
   - component: {fileID: 4218084803327751655}
   - component: {fileID: 3409798089983258710}
   - component: {fileID: 8255602399209944284}
@@ -59,6 +58,7 @@ GameObject:
   - component: {fileID: 1649103947911340867}
   - component: {fileID: 3169288387960482845}
   - component: {fileID: 5413254837012493708}
+  - component: {fileID: 4359987766063478478}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -256,22 +256,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d6cad4d2537814c8e48c46afc00816, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteraction
---- !u!114 &1765729959702461861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3968670527429153301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31b59e39b770096458844177d9822e8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ZiplineController
-  player: {fileID: 1079850595646350022}
-  stateHandler: {fileID: 4218084803327751655}
-  movement: {fileID: 7582110246261750334}
-  speed: 0.5
 --- !u!114 &4218084803327751655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -398,6 +382,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::XPCollector
   collectRadius: 3
+--- !u!114 &4359987766063478478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3968670527429153301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4a306910e7f5634488359c9f6f4dc69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Weapon_UI
+  weaponRef: {fileID: 3409798089983258710}
+  ammoText: {fileID: 0}
+  reloadImage: {fileID: 0}
+  healthImage: {fileID: 0}
 --- !u!1 &5590338419396398776
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,7 +504,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 503
+    m_Bits: 1015
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -659,7 +659,6 @@ GameObject:
   m_Component:
   - component: {fileID: 200235357007313954}
   - component: {fileID: 6987837603988968528}
-  - component: {fileID: 3213404695296455382}
   - component: {fileID: 2894372785871921783}
   m_Layer: 0
   m_Name: Gun Camera
@@ -734,14 +733,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &3213404695296455382
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7822801058317208612}
-  m_Enabled: 1
 --- !u!114 &2894372785871921783
 MonoBehaviour:
   m_ObjectHideFlags: 0
