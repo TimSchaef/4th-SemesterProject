@@ -9,8 +9,6 @@ public class Weapon_UI : MonoBehaviour
     [SerializeField] private Weapon weaponRef;
     
     [SerializeField] private TextMeshProUGUI ammoText;
-    [SerializeField] public Image reloadImage;
-    [SerializeField] public Image healthImage;
 
     void Awake()
     {
@@ -19,12 +17,6 @@ public class Weapon_UI : MonoBehaviour
             instance = this;
         }
     }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        reloadImage.gameObject.SetActive(false);
-    }
-    
     public void UpdateAmmo()
     {
         ammoText.text = weaponRef.ammo.ToString();

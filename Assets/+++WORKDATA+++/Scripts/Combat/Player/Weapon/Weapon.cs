@@ -28,6 +28,10 @@ public class Weapon : MonoBehaviour
     [SerializeField] private Light muzzleLight;
     [SerializeField] private float flashTime = 0.05f;
     [SerializeField] private ParticleSystem muzzleParticle;
+    
+    [Header("Sounds")]
+    [SerializeField] private AudioClip shotSound;
+    [SerializeField] private AudioClip reloadSound;
 
     float nextFireTime;
     bool reloading;
@@ -72,6 +76,7 @@ public class Weapon : MonoBehaviour
     void Shoot()
     {
         gunAnimator.SetTrigger("isShooting");
+        AudioManager.Instance.PlaySfx(shotSound);
         nextFireTime = Time.time + 1f / fireRate;
         ammo--;
         Weapon_UI.instance.UpdateAmmo();
