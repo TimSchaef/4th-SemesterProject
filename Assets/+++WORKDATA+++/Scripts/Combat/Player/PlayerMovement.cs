@@ -44,8 +44,6 @@ public class PlayerMovement : MonoBehaviour
 
         controller.Move(velocity * Time.deltaTime);
     }
-
-    // ---------------- SMOOTH MOVEMENT ----------------
     void HandleMovement()
     {
         Vector2 input = inputs.MoveInput;
@@ -67,15 +65,13 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 smoothed =
             Vector3.Lerp(currentHorizontal, targetHorizontal, control * Time.deltaTime);
-
-        // add knockback influence
+        
         smoothed += new Vector3(knockbackVelocity.x, 0, knockbackVelocity.z);
 
         velocity.x = smoothed.x;
         velocity.z = smoothed.z;
     }
-
-    // ---------------- JUMP ----------------
+    
     void HandleJump()
     {
         if (isGrounded)
@@ -90,8 +86,6 @@ public class PlayerMovement : MonoBehaviour
             lastGroundedTime = -999f;
         }
     }
-
-    // ---------------- GRAVITY ----------------
     void ApplyGravity()
     {
         if (isGrounded && velocity.y < 0)
@@ -99,12 +93,10 @@ public class PlayerMovement : MonoBehaviour
 
         velocity.y += gravity * Time.deltaTime;
     }
-
-    // ---------------- KNOCKBACK ----------------
+    
     void ApplyKnockback()
     {
-        knockbackVelocity =
-            Vector3.Lerp(knockbackVelocity, Vector3.zero, 8f * Time.deltaTime);
+        knockbackVelocity = Vector3.Lerp(knockbackVelocity, Vector3.zero, 8f * Time.deltaTime);
     }
 
     public void AddKnockback(Vector3 force)
@@ -113,7 +105,6 @@ public class PlayerMovement : MonoBehaviour
         knockbackVelocity += force;
     }
 
-    // ---------------- GROUND CHECK ----------------
     void CheckGround()
     {
         Ray ray = new Ray(transform.position, Vector3.down);
