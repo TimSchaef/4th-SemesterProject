@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using DG.Tweening;
 using UnityEngine;
@@ -9,6 +10,7 @@ public class DamagePopup : MonoBehaviour
     [SerializeField] private float scaleDuration = 0.15f;
     [SerializeField] private float moveDuration = 0.7f;
     [SerializeField] private float fadeDuration = 0.7f;
+    [SerializeField] private float fadeDelay = 0.7f;
 
     [Header("Damage Colors")] 
     [SerializeField] private Gradient damageGradient;
@@ -25,8 +27,15 @@ public class DamagePopup : MonoBehaviour
 
         transform.localScale = Vector3.zero;
 
+        StartCoroutine(ShowDamage());
+    }
+
+    private IEnumerator ShowDamage()
+    {
         transform.DOScale(0.01f, scaleDuration);
         transform.DOMoveY(transform.position.y + 1, moveDuration);
+
+        yield return new WaitForSeconds(fadeDelay); 
 
         text.DOFade(0.3f, fadeDuration)
             .OnComplete(() =>

@@ -42,7 +42,6 @@ public class Weapon : MonoBehaviour
     PlayerInputs inputs;
 
     private Dictionary<string, WeaponUpgradeSO> ownedUpgrades;
-    private List<Vector3> tracerPoints = new List<Vector3>();
 
     void Awake()
     {
@@ -238,6 +237,7 @@ public class Weapon : MonoBehaviour
         }
 
         ammo = maxAmmo;
+        Weapon_UI.instance.UpdateAmmo();
         reloading = false;
     }
 
