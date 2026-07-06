@@ -146,6 +146,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'StoneShell '
       objectReference: {fileID: 0}
+    - target: {fileID: 1110950426727465061, guid: bf8d732abd8821f4494143a33a9d500d, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 2953393239041531467, guid: bf8d732abd8821f4494143a33a9d500d, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -153,6 +157,10 @@ PrefabInstance:
     - target: {fileID: 3130315268405972617, guid: bf8d732abd8821f4494143a33a9d500d, type: 3}
       propertyPath: m_Name
       value: Gold Crit
+      objectReference: {fileID: 0}
+    - target: {fileID: 3130315268405972617, guid: bf8d732abd8821f4494143a33a9d500d, type: 3}
+      propertyPath: m_TagString
+      value: Enemy Crit
       objectReference: {fileID: 0}
     - target: {fileID: 7737899687570401619, guid: bf8d732abd8821f4494143a33a9d500d, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'

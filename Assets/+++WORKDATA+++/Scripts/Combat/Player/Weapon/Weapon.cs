@@ -18,7 +18,6 @@ public class Weapon : MonoBehaviour
     [SerializeField] private float fireRate = 5f;
     [SerializeField] private float range = 20f;
     [SerializeField] private float ricochetDelay = 1f;
-    [SerializeField] private float critMultiplier = 1.5f;
 
     [Header("Ammo")]
     public int ammo;
@@ -150,24 +149,24 @@ public class Weapon : MonoBehaviour
 
     void HandleHit(RaycastHit hit, WeaponShot shot)
     {
-        if (!hit.collider.CompareTag("Enemy") || !hit.collider.CompareTag("EnemyCrit"))
+        if (!hit.collider.CompareTag("Enemy") && !hit.collider.CompareTag("Enemy Crit"))
             return;
 
         float finalDamage = shot.damage;
 
-        if (hit.collider.CompareTag("EnemyCrit"))
-        {
-            finalDamage *= critMultiplier; 
-        }
+        if (hit.collider.CompareTag("Enemy Crit"))
+            finalDamage *= 2f;
 
-        if (hit.collider.TryGetComponent<Health>(out var health))
+        Health health = hit.collider.GetComponentInParent<Health>();
+
+        if (health != null)
         {
             health.TakeDamage(finalDamage);
         }
 
         if (shot.bounces > 0)
         {
-            StartCoroutine(RicochetChain(hit.collider.gameObject, hit.point, shot));
+            StartCoroutine(RicochetChain(health.gameObject, hit.point, shot));
         }
     }
 

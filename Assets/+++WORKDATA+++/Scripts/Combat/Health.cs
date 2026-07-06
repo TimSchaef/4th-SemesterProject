@@ -65,7 +65,7 @@ public class Health : MonoBehaviour
             PlayerJuice.Instance.GetDamage();
         }
 
-        if (gameObject.CompareTag("Enemy"))
+        if (gameObject.CompareTag("Enemy") || gameObject.CompareTag("Enemy Crit"))
         {
             hitMaterial.DOKill();
             hitMaterial.color = Color.red;

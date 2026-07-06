@@ -78,7 +78,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -131,7 +131,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -184,7 +184,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -230,10 +230,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5022774296148554607}
-  - component: {fileID: 5335479854004083}
+  - component: {fileID: 2912747085475690196}
   m_Layer: 0
   m_Name: Hitbox Crit
-  m_TagString: Untagged
+  m_TagString: Enemy Crit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -247,13 +247,13 @@ Transform:
   m_GameObject: {fileID: 6040449776202152885}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.06, y: -0.07773, z: -0.09303}
   m_LocalScale: {x: -3.02, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7924506900474577168}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &5335479854004083
+--- !u!65 &2912747085475690196
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -268,12 +268,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.0028620213, y: 0.015990024, z: 0.0038892368}
+  m_Center: {x: -0.027688617, y: 0.07787225, z: 0.085113}
 --- !u!1001 &2469774942360895283
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -322,6 +322,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6992155235240749610, guid: 3282b6331ee63424f9cb566838a0a1b1, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: -6188420928451832544, guid: 3282b6331ee63424f9cb566838a0a1b1, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: -4946956552681072574, guid: 3282b6331ee63424f9cb566838a0a1b1, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: -4819173045027349948, guid: 3282b6331ee63424f9cb566838a0a1b1, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.0135
@@ -358,6 +370,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -2436575567978989663, guid: 3282b6331ee63424f9cb566838a0a1b1, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 377875040809811124, guid: 3282b6331ee63424f9cb566838a0a1b1, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3282b6331ee63424f9cb566838a0a1b1, type: 3}
       propertyPath: m_Name
       value: Tank_Enemy
@@ -374,6 +394,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
       objectReference: {fileID: 2100000, guid: 8e5250c9fab32d943b01331a8c32b20a, type: 2}
+    - target: {fileID: 8917160882590124598, guid: 3282b6331ee63424f9cb566838a0a1b1, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
