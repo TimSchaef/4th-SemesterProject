@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+    public static EnemySpawner Instance;
+    
     [Header("Wave Setup")]
     [SerializeField] private WaveStage[] stages;
 
@@ -16,6 +18,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float startSpawnDelay = 5f;
 
     public bool canSpawn = true;
+    public int objectiveRemaining;
 
     private int aliveEnemyCount;
     private float gameTime;
@@ -25,10 +28,15 @@ public class EnemySpawner : MonoBehaviour
     private bool objectiveActive;
     private InteractionObjective currentObjective;
     private SO_ObjectiveWave currentObjectiveData;
-    private int objectiveRemaining;
 
     private Transform[] activeSpawnPoints;
 
+    void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+    }
+    
     private void Start()
     {
         activeSpawnPoints = spawnPoints;
@@ -129,16 +137,14 @@ public class EnemySpawner : MonoBehaviour
             enemyBase.Initialize(this);
     }
 
-    // =========================
-    // OBJECTIVE SYSTEM
-    // =========================
-
     public void StartObjectiveWave(InteractionObjective objective)
     {
         print("started Wave");
         if (objectiveActive)
             return;
 
+        WaveUI.Instance.ChangeUIState(true);
+        WaveUI.Instance.UpdateEnemyAmount();
         objectiveActive = true;
         currentObjective = objective;
         currentObjectiveData = objective.ObjectiveWave;
@@ -177,6 +183,7 @@ public class EnemySpawner : MonoBehaviour
             return;
 
         objectiveRemaining--;
+        WaveUI.Instance.UpdateEnemyAmount();
 
         if (objectiveRemaining <= 0)
         {
@@ -197,6 +204,7 @@ public class EnemySpawner : MonoBehaviour
         objectiveActive = false;
         currentObjective = null;
         currentObjectiveData = null;
+        WaveUI.Instance.ChangeUIState(false);
 
         canSpawn = true;
     }

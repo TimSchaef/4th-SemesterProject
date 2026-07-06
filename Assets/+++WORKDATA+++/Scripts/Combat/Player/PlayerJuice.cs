@@ -1,4 +1,9 @@
+using System;
+using System.Collections;
+using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class PlayerJuice : MonoBehaviour
 {
@@ -9,6 +14,14 @@ public class PlayerJuice : MonoBehaviour
     [SerializeField] private float recoilX;
     [SerializeField] private float recoilReturnSpeed = 8f;
     [SerializeField] private float recoilKick = 1.2f;
+    [SerializeField] private Volume damageVolume;
+    
+    [Header("Damage Animation")]
+    [SerializeField] private float damageAnimationSpeed = 0.05f;
+
+    private float targetValue;
+
+    private bool _isHit;
 
     void Awake()
     {
@@ -17,16 +30,36 @@ public class PlayerJuice : MonoBehaviour
             Instance = this;
         }
     }
-
     void Update()
     {
+        if (damageVolume.weight <= 0f)
+        {
+            StartCoroutine(DamageAnimation());
+        }
         CameraReturnPivot();
     }
 
+    public void GetDamage()
+    {
+        damageVolume.weight = 1f;
+        StartCoroutine(DamageAnimation());
+    }
+
+    private IEnumerator DamageAnimation()
+    {
+        while (damageVolume.weight > 0)
+        {
+            damageVolume.weight -= 0.05f;
+            yield return new WaitForSeconds(0.2f);
+        }
+
+        damageVolume.weight = 0;
+    }
     public void CameraKick()
     {
         recoilX += recoilKick;
     }
+    
 
     private void CameraReturnPivot()
     {

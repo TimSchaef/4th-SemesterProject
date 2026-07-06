@@ -38,12 +38,6 @@ public class Health : MonoBehaviour
         hitMaterial = renderer.material;
         originalColor = hitMaterial.color;
     }
-    
-    private void Start()
-    {
-        
-    }
-    
     void Update()
     {
         HandleRegen();
@@ -68,6 +62,7 @@ public class Health : MonoBehaviour
         if (gameObject.CompareTag("Player"))
         {
             LoseHealth();
+            PlayerJuice.Instance.GetDamage();
         }
 
         if (gameObject.CompareTag("Enemy"))
@@ -91,13 +86,14 @@ public class Health : MonoBehaviour
         {
             playerHP.DOFillAmount(currentHealth / maxHealth, flashDuration);
             DOTween.Kill("Health");
+            playerHP.color = Color.white;
             playerHP.DOColor(Color.red, flashDuration).SetId("Health").SetLoops(2, LoopType.Yoyo);
         }
     }
 
     private void GainHealth()
     {
-        playerHP.DOFillAmount(currentHealth + regenInterval, flashDuration);
+        playerHP.DOFillAmount(currentHealth / maxHealth, 0.15f);
     }
     public void IncreaseMaxHP(float amount)
     {
@@ -118,11 +114,7 @@ public class Health : MonoBehaviour
         {
             regenTimer = 0f;
 
-            currentHealth = Mathf.Min(
-                currentHealth + regenRate,
-                maxHealth
-            );
-            
+            currentHealth = Mathf.Min(currentHealth + regenRate, maxHealth);
             GainHealth();
         }
     }

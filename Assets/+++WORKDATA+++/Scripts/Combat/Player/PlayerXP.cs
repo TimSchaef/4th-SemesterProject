@@ -1,3 +1,4 @@
+using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,8 +15,10 @@ public class PlayerXP : MonoBehaviour
     
     [Header("Game Settings")]
     [SerializeField] private float xpIncrease = 1.2f;
+    [SerializeField] private float levelUpDelay = 1f;
 
-    [Space] [SerializeField] private Image currentXPImage;
+    [Space] 
+    [SerializeField] private Image currentXPImage;
     [SerializeField] private UpgradeManager upgradeManager;
 
 
@@ -25,6 +28,11 @@ public class PlayerXP : MonoBehaviour
         {
             Instance = this;
         }
+    }
+
+    void Start()
+    {
+        UpgradeManager.Instance.levelText.text = level.ToString();
     }
 
 
@@ -37,17 +45,14 @@ public class PlayerXP : MonoBehaviour
         {
             currentXP -= xpToNextLevel;
             level++;
+            UpgradeManager.Instance.levelText.text = level.ToString();
             
             xpToNextLevel *= xpIncrease;
 
             pendingLevelUps++;
         }
-        
-        if (pendingLevelUps > 0)
-        {
-            Time.timeScale = 0;
-            upgradeManager.OpenUpgradeScreen();
-        }
+
+        StartCoroutine(LevelUpDelay());
     }
 
     public void CheckLevelUp()
@@ -58,5 +63,11 @@ public class PlayerXP : MonoBehaviour
             Time.timeScale = 0;
             upgradeManager.OpenUpgradeScreen();
         }
+    }
+
+    private IEnumerator LevelUpDelay()
+    {
+        yield return new WaitForSeconds(levelUpDelay);
+        CheckLevelUp();
     }
 }

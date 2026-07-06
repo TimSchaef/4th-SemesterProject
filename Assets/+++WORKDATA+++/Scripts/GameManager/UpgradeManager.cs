@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -22,6 +23,7 @@ public class UpgradeManager : MonoBehaviour
     [Header("Upgrade Info")]
     [SerializeField] private TextMeshProUGUI[] upgradeName;
     [SerializeField] private Sprite[] upgradeIcons;
+    [SerializeField] public TextMeshProUGUI levelText;
 
     private WeaponUpgradeSO[] currentChoices = new WeaponUpgradeSO[3];
 
@@ -47,6 +49,7 @@ public class UpgradeManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
 
         upgradePanel.SetActive(true);
+        upgradePanel.transform.DOScale(new Vector3(1f, 1f, 1f), 0.5f).SetUpdate(true); 
 
         GenerateChoices();
     }

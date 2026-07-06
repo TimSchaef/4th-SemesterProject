@@ -12,8 +12,7 @@ public class AudioManager : MonoBehaviour
     {
         if (Instance == null)
             Instance = this;
-        
-        DontDestroyOnLoad(this);
+        // DontDestroyOnLoad(this);
     }
 
     public void PlaySfx(AudioClip clip)

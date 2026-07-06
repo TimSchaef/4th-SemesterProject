@@ -18,6 +18,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private float fireRate = 5f;
     [SerializeField] private float range = 20f;
     [SerializeField] private float ricochetDelay = 1f;
+    [SerializeField] private float critMultiplier = 1.5f;
 
     [Header("Ammo")]
     public int ammo;
@@ -149,12 +150,19 @@ public class Weapon : MonoBehaviour
 
     void HandleHit(RaycastHit hit, WeaponShot shot)
     {
-        if (!hit.collider.CompareTag("Enemy"))
+        if (!hit.collider.CompareTag("Enemy") || !hit.collider.CompareTag("EnemyCrit"))
             return;
+
+        float finalDamage = shot.damage;
+
+        if (hit.collider.CompareTag("EnemyCrit"))
+        {
+            finalDamage *= critMultiplier; 
+        }
 
         if (hit.collider.TryGetComponent<Health>(out var health))
         {
-            health.TakeDamage(shot.damage);
+            health.TakeDamage(finalDamage);
         }
 
         if (shot.bounces > 0)
@@ -220,6 +228,8 @@ public class Weapon : MonoBehaviour
     {
         reloading = true;
         gunAnimator.SetTrigger("isReloading");
+        //TODO: Add reload Sound
+        //AudioManager.Instance.PlaySfx(reloadSound);
 
         float t = 0f;
         while (t < reloadTime)
