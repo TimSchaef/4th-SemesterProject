@@ -13739,6 +13739,18 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 1234567
       objectReference: {fileID: 0}
+    - target: {fileID: 3424245264619112088, guid: 37554e54e17fb314aa4d052df8c8b37b, type: 3}
+      propertyPath: damageColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3424245264619112088, guid: 37554e54e17fb314aa4d052df8c8b37b, type: 3}
+      propertyPath: damageColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3424245264619112088, guid: 37554e54e17fb314aa4d052df8c8b37b, type: 3}
+      propertyPath: damageColor.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7618349066856478502, guid: 37554e54e17fb314aa4d052df8c8b37b, type: 3}
       propertyPath: m_Speed
       value: 0
@@ -19543,6 +19555,18 @@ PrefabInstance:
     - target: {fileID: 3424245264619112088, guid: 37554e54e17fb314aa4d052df8c8b37b, type: 3}
       propertyPath: maxHealth
       value: 1234567
+      objectReference: {fileID: 0}
+    - target: {fileID: 3424245264619112088, guid: 37554e54e17fb314aa4d052df8c8b37b, type: 3}
+      propertyPath: damageColor.b
+      value: 0.8207547
+      objectReference: {fileID: 0}
+    - target: {fileID: 3424245264619112088, guid: 37554e54e17fb314aa4d052df8c8b37b, type: 3}
+      propertyPath: damageColor.g
+      value: 0.6432193
+      objectReference: {fileID: 0}
+    - target: {fileID: 3424245264619112088, guid: 37554e54e17fb314aa4d052df8c8b37b, type: 3}
+      propertyPath: damageColor.r
+      value: 0.06581525
       objectReference: {fileID: 0}
     - target: {fileID: 7618349066856478502, guid: 37554e54e17fb314aa4d052df8c8b37b, type: 3}
       propertyPath: m_Speed
@@ -72929,6 +72953,18 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 1234567
       objectReference: {fileID: 0}
+    - target: {fileID: 3424245264619112088, guid: 37554e54e17fb314aa4d052df8c8b37b, type: 3}
+      propertyPath: damageColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3424245264619112088, guid: 37554e54e17fb314aa4d052df8c8b37b, type: 3}
+      propertyPath: damageColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3424245264619112088, guid: 37554e54e17fb314aa4d052df8c8b37b, type: 3}
+      propertyPath: damageColor.r
+      value: 0.50980395
+      objectReference: {fileID: 0}
     - target: {fileID: 7618349066856478502, guid: 37554e54e17fb314aa4d052df8c8b37b, type: 3}
       propertyPath: m_Speed
       value: 0
@@ -112426,6 +112462,18 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 1234567
       objectReference: {fileID: 0}
+    - target: {fileID: 3424245264619112088, guid: 37554e54e17fb314aa4d052df8c8b37b, type: 3}
+      propertyPath: damageColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3424245264619112088, guid: 37554e54e17fb314aa4d052df8c8b37b, type: 3}
+      propertyPath: damageColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3424245264619112088, guid: 37554e54e17fb314aa4d052df8c8b37b, type: 3}
+      propertyPath: damageColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7618349066856478502, guid: 37554e54e17fb314aa4d052df8c8b37b, type: 3}
       propertyPath: m_Speed
       value: 0
@@ -140150,6 +140198,18 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 1234567
       objectReference: {fileID: 0}
+    - target: {fileID: 3424245264619112088, guid: 37554e54e17fb314aa4d052df8c8b37b, type: 3}
+      propertyPath: damageColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3424245264619112088, guid: 37554e54e17fb314aa4d052df8c8b37b, type: 3}
+      propertyPath: damageColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3424245264619112088, guid: 37554e54e17fb314aa4d052df8c8b37b, type: 3}
+      propertyPath: damageColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7618349066856478502, guid: 37554e54e17fb314aa4d052df8c8b37b, type: 3}
       propertyPath: m_Speed
       value: 0
@@ -158629,6 +158689,10 @@ PrefabInstance:
     - target: {fileID: 3229855661938872047, guid: 9c4f2345ac9e77b48a47030ebd102d00, type: 3}
       propertyPath: m_ExcludeLayers.m_Bits
       value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 3409798089983258710, guid: 9c4f2345ac9e77b48a47030ebd102d00, type: 3}
+      propertyPath: damage
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 3409798089983258710, guid: 9c4f2345ac9e77b48a47030ebd102d00, type: 3}
       propertyPath: shotSound
