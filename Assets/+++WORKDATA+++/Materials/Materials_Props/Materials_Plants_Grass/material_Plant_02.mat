@@ -151,7 +151,7 @@ Material:
     - _WindJitter: 0
     - _WindScale: 0
     - _WindScroll: 0
-    - _Wind_Desity: 1.88
+    - _Wind_Desity: 0.66
     - _Wind_Strength: 0.51
     - _WorkflowMode: 1
     - _XRMotionVectorsPass: 1
@@ -159,8 +159,8 @@ Material:
     - _scale: 9.09
     - _smoothness: 0
     - _speed: 8.64
-    - _wind_speed: -0.25
-    - _wind_strengh: 0.11
+    - _wind_speed: 0.58
+    - _wind_strengh: 0.09
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
