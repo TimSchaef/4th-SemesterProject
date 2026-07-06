@@ -37,7 +37,7 @@ public class DamagePopup : MonoBehaviour
 
         yield return new WaitForSeconds(fadeDelay); 
 
-        text.DOFade(0.3f, fadeDuration)
+        text.DOFade(0f, fadeDuration)
             .OnComplete(() =>
             {
                 DamageManager.Instance.Return(this);
