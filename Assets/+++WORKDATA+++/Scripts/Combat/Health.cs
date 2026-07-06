@@ -21,6 +21,7 @@ public class Health : MonoBehaviour
     
     [Header("Damage Feedback")]
     [SerializeField] private Renderer renderer;
+    [SerializeField] private Color damageColor;
     [SerializeField] private float flashDuration = 0.5f;
     [SerializeField] private Transform popupPosition;
     
@@ -68,7 +69,7 @@ public class Health : MonoBehaviour
         if (gameObject.CompareTag("Enemy") || gameObject.CompareTag("Enemy Crit"))
         {
             hitMaterial.DOKill();
-            hitMaterial.color = Color.red;
+            hitMaterial.color = damageColor;
             
             hitMaterial.DOColor(originalColor, flashDuration);
             DamageManager.Instance.Show(damage, popupPosition.position);
