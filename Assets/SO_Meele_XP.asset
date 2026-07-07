@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d8a4281389471d4d85b9b49c09b5291, type: 3}
-  m_Name: SO_Melee_1
+  m_Name: SO_Meele_XP
   m_EditorClassIdentifier: Assembly-CSharp::SO_ExperiencePoints
-  xpMaterial: {fileID: 2100000, guid: 830b0304cdde6e5488a0bddb0df01a2d, type: 2}
+  xpMaterial: {fileID: 2100000, guid: cf84c362080f51c42a125ad04f1b094e, type: 2}
   xpAmount: 3
   collectRadius: 2
