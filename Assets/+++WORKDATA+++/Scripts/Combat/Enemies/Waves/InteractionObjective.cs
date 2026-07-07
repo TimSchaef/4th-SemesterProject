@@ -21,7 +21,10 @@ public class InteractionObjective : MonoBehaviour
     public void Interact(EnemySpawner spawner)
     {
         if (onCooldown)
+        {
+            Debug.Log(cooldownTime);
             return;
+        }
 
         spawner.StartObjectiveWave(this);
     }
