@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7636154049092197096}
   - component: {fileID: 5377561509225758738}
   - component: {fileID: 6512868012882301197}
+  - component: {fileID: 8866647303008955743}
   m_Layer: 0
   m_Name: Plane (11)
   m_TagString: Untagged
@@ -90,6 +91,26 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8866647303008955743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874131000817874981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: 
 --- !u!1 &965951098192242928
 GameObject:
   m_ObjectHideFlags: 0
@@ -101,6 +122,7 @@ GameObject:
   - component: {fileID: 4038682392497341355}
   - component: {fileID: 5026517350373954694}
   - component: {fileID: 6698948170226631024}
+  - component: {fileID: 1210801741756037632}
   m_Layer: 0
   m_Name: Plane (10)
   m_TagString: Untagged
@@ -180,6 +202,26 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1210801741756037632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965951098192242928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: 
 --- !u!1 &1676904200089412181
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,6 +233,7 @@ GameObject:
   - component: {fileID: 324626247225604397}
   - component: {fileID: 3252490542151669521}
   - component: {fileID: 7396573454590253750}
+  - component: {fileID: 7728830905570864679}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -270,6 +313,26 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7728830905570864679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676904200089412181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: 
 --- !u!1 &2348851899807171541
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,7 +581,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 6955
+  m_VersionIndex: 6970
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -637,6 +700,7 @@ GameObject:
   - component: {fileID: 8657151082173697524}
   - component: {fileID: 3119334841565334836}
   - component: {fileID: 3780576104578368312}
+  - component: {fileID: 1652697880127979894}
   m_Layer: 0
   m_Name: Plane (6)
   m_TagString: Untagged
@@ -716,6 +780,26 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1652697880127979894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2577302118208296083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: 
 --- !u!1 &3267814861734843089
 GameObject:
   m_ObjectHideFlags: 0
@@ -727,6 +811,7 @@ GameObject:
   - component: {fileID: 1610342840952412105}
   - component: {fileID: 5248273846577691280}
   - component: {fileID: 1984362481458307598}
+  - component: {fileID: 5016834777395763440}
   m_Layer: 0
   m_Name: Plane (3)
   m_TagString: Untagged
@@ -806,6 +891,26 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5016834777395763440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3267814861734843089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: 
 --- !u!1 &3318841186559748755
 GameObject:
   m_ObjectHideFlags: 0
@@ -817,6 +922,7 @@ GameObject:
   - component: {fileID: 6703266130062670746}
   - component: {fileID: 8988884030166111120}
   - component: {fileID: 1341548502709865635}
+  - component: {fileID: 7200144012849412888}
   m_Layer: 0
   m_Name: Plane (2)
   m_TagString: Untagged
@@ -896,6 +1002,26 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7200144012849412888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3318841186559748755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: 
 --- !u!1 &3875968507837318633
 GameObject:
   m_ObjectHideFlags: 0
@@ -907,6 +1033,7 @@ GameObject:
   - component: {fileID: 4522735663337787443}
   - component: {fileID: 8553894812550846704}
   - component: {fileID: 6135135724671864624}
+  - component: {fileID: 7005486154278207575}
   m_Layer: 0
   m_Name: Plane (12)
   m_TagString: Untagged
@@ -986,6 +1113,26 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7005486154278207575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3875968507837318633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: 
 --- !u!1 &4442594401414586219
 GameObject:
   m_ObjectHideFlags: 0
@@ -997,6 +1144,7 @@ GameObject:
   - component: {fileID: 5677182408627049485}
   - component: {fileID: 5823036915479074700}
   - component: {fileID: 642838862534377510}
+  - component: {fileID: 3418586491999674215}
   m_Layer: 0
   m_Name: Plane (9)
   m_TagString: Untagged
@@ -1076,6 +1224,57 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3418586491999674215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4442594401414586219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: 
+--- !u!1 &5777793130243010450
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8958947444601878412}
+  m_Layer: 0
+  m_Name: Enemy Spawn Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8958947444601878412
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5777793130243010450}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.817, y: 0.422, z: -0.03}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4324641593150675520}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6289114305800739601
 GameObject:
   m_ObjectHideFlags: 0
@@ -1087,6 +1286,7 @@ GameObject:
   - component: {fileID: 793624445368308359}
   - component: {fileID: 249049517444895323}
   - component: {fileID: 7346606216225058814}
+  - component: {fileID: 3291452927072008269}
   m_Layer: 0
   m_Name: Plane (8)
   m_TagString: Untagged
@@ -1166,6 +1366,26 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3291452927072008269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6289114305800739601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: 
 --- !u!1 &6291100921412404134
 GameObject:
   m_ObjectHideFlags: 0
@@ -1177,6 +1397,7 @@ GameObject:
   - component: {fileID: 42504139287321913}
   - component: {fileID: 4578222799586824005}
   - component: {fileID: 1140050210084789494}
+  - component: {fileID: 1073550293286201797}
   m_Layer: 0
   m_Name: Plane (7)
   m_TagString: Untagged
@@ -1256,6 +1477,26 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1073550293286201797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6291100921412404134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: 
 --- !u!1 &6620045483426956845
 GameObject:
   m_ObjectHideFlags: 0
@@ -1267,6 +1508,7 @@ GameObject:
   - component: {fileID: 7108663807105619312}
   - component: {fileID: 1750614978747917446}
   - component: {fileID: 1198571322777663093}
+  - component: {fileID: 5767199041388074586}
   m_Layer: 0
   m_Name: Plane (4)
   m_TagString: Untagged
@@ -1346,6 +1588,26 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5767199041388074586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6620045483426956845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: 
 --- !u!1 &6765863771061419484
 GameObject:
   m_ObjectHideFlags: 0
@@ -1401,6 +1663,7 @@ GameObject:
   - component: {fileID: 5076146006721064057}
   - component: {fileID: 8692985808510308029}
   - component: {fileID: 5178900173255432546}
+  - component: {fileID: 4723632458103359756}
   m_Layer: 0
   m_Name: Plane (1)
   m_TagString: Untagged
@@ -1480,6 +1743,26 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4723632458103359756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8228509201949034335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: 
 --- !u!1 &9163378625783467905
 GameObject:
   m_ObjectHideFlags: 0
@@ -1491,6 +1774,7 @@ GameObject:
   - component: {fileID: 4464410557365586582}
   - component: {fileID: 3613845224084059095}
   - component: {fileID: 974824319097204113}
+  - component: {fileID: 6650691787211457552}
   m_Layer: 0
   m_Name: Plane (5)
   m_TagString: Untagged
@@ -1570,6 +1854,26 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6650691787211457552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9163378625783467905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: 
 --- !u!1001 &4291525690557037995
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1580,43 +1884,43 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f2805dcfed2700e459bba0863a71408b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.47
+      value: 163.99
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f2805dcfed2700e459bba0863a71408b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 17.84
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f2805dcfed2700e459bba0863a71408b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 29.94
+      value: 12.72
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f2805dcfed2700e459bba0863a71408b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.597371
+      value: -0.6327652
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f2805dcfed2700e459bba0863a71408b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: -0.021016303
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f2805dcfed2700e459bba0863a71408b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.801965
+      value: -0.7738678
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f2805dcfed2700e459bba0863a71408b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0.017184317
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f2805dcfed2700e459bba0863a71408b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 3.049
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f2805dcfed2700e459bba0863a71408b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -106.636
+      value: -258.527
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f2805dcfed2700e459bba0863a71408b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 0.619
       objectReference: {fileID: 0}
     - target: {fileID: -5672074362613619158, guid: f2805dcfed2700e459bba0863a71408b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1655,6 +1959,9 @@ PrefabInstance:
     - {fileID: -1530334365590037568, guid: f2805dcfed2700e459bba0863a71408b, type: 3}
     - {fileID: 3247999281031651497, guid: f2805dcfed2700e459bba0863a71408b, type: 3}
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: f2805dcfed2700e459bba0863a71408b, type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 8958947444601878412}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: f2805dcfed2700e459bba0863a71408b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1829781659295001897}
