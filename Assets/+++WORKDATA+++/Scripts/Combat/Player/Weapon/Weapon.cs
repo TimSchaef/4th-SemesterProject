@@ -34,7 +34,8 @@ public class Weapon : MonoBehaviour
     [SerializeField] private AudioClip reloadSound;
 
     float nextFireTime;
-    bool reloading;
+    private TimeBuffer reloadBuffer;
+    private TimeBuffer nextFireBuffer;
 
     private float baseFirerate;
     private PlayerXP _playerXP;
@@ -52,6 +53,9 @@ public class Weapon : MonoBehaviour
 
     void Start()
     {
+        reloadBuffer.Deactivate();
+        nextFireBuffer.Deactivate();
+        
         baseFirerate = fireRate;
         gunAnimator.SetFloat("FireSpeed", fireRate / baseFirerate);
         ammo = maxAmmo;
@@ -61,23 +65,28 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
-        print(reloading);
-        if (inputs.ShootInput && CanShoot())
+        
+        if (ammo <= 0)
+        {
+            gunAnimator.SetTrigger("isReloading");
+            //Play sound
+            
+            ammo = maxAmmo;
+            reloadBuffer.Activate();
+            Weapon_UI.instance.UpdateAmmo();
+        }
+        if(reloadBuffer.IsInTime(reloadTime))
+            return;
+        
+        if(ammo > 0 && inputs.ShootInput && !nextFireBuffer.IsInTime(nextFireTime))
             Shoot();
-    }
-
-    bool CanShoot()
-    {
-        return !reloading &&
-               Time.time >= nextFireTime &&
-               ammo > 0;
     }
 
     void Shoot()
     {
         gunAnimator.SetTrigger("isShooting");
         AudioManager.Instance.PlaySfx(shotSound);
-        nextFireTime = Time.time + 1f / fireRate;
+        nextFireTime = 1 / fireRate;
         ammo--;
         Weapon_UI.instance.UpdateAmmo();
         PlayerJuice.Instance.CameraKick();
@@ -103,9 +112,7 @@ public class Weapon : MonoBehaviour
         }
 
         FireMultipleShots(baseShot);
-
-        if (ammo <= 0 && !reloading)
-            StartCoroutine(Reload());
+        nextFireBuffer.Activate();
     }
 
     void FireMultipleShots(WeaponShot shot)
@@ -143,7 +150,7 @@ public class Weapon : MonoBehaviour
             endPoint = shot.origin + shot.direction * shot.range;
             normal = -shot.direction;
         }
-
+        
         SpawnImpact(endPoint, normal);
     }
 
@@ -223,25 +230,6 @@ public class Weapon : MonoBehaviour
         Destroy(fx.gameObject, fx.main.duration + fx.main.startLifetime.constantMax);
     }
 
-    IEnumerator Reload()
-    {
-        reloading = true;
-        gunAnimator.SetTrigger("isReloading");
-        //TODO: Add reload Sound
-        //AudioManager.Instance.PlaySfx(reloadSound);
-
-        float t = 0f;
-        while (t < reloadTime)
-        {
-            t += Time.deltaTime;
-            yield return null;
-        }
-
-        ammo = maxAmmo;
-        Weapon_UI.instance.UpdateAmmo();
-        reloading = false;
-    }
-
     public void AddUpgrade(WeaponUpgradeSO upgrade)
     {
         if (ownedUpgrades.ContainsKey(upgrade.upgradeID))
@@ -268,4 +256,29 @@ public class Weapon : MonoBehaviour
         ammo = maxAmmo;
     }
     
+}
+
+public struct TimeBuffer
+{
+    private float startTime;
+    private float coolDownTime;
+
+    public void Activate()
+    {
+        //Check if a cooldown is currently active
+        if(coolDownTime > Time.time)
+            return;
+
+        startTime = Time.time;
+    }
+
+    public void Deactivate() => startTime = -99999;
+
+    public void Cooldown(float coolDown)
+    {
+        Deactivate();
+        coolDownTime = Time.time + coolDown;
+    }
+
+    public bool IsInTime(float timeFrame) => startTime + timeFrame > Time.time;
 }

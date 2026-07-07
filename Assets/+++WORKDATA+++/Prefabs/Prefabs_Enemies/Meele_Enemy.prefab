@@ -426,6 +426,7 @@ MonoBehaviour:
   xpPickupPrefab: {fileID: 1671723067137232519, guid: 192cc27c263a23c4796439fcecd71e2a, type: 3}
   dropPosition: {fileID: 6592368345817157579}
   renderer: {fileID: 7453961994717399817}
+  damageColor: {r: 0, g: 0, b: 0, a: 0}
   flashDuration: 0.5
   popupPosition: {fileID: 2048240533846176128}
 --- !u!95 &2839125016446560799
@@ -485,7 +486,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 6
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

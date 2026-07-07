@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 554842689871777452}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.23, z: 0}
+  m_LocalPosition: {x: 0, y: 3.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 3396100287654461930}
   m_Layer: 0
   m_Name: Arm Hitbox
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -328,7 +328,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6188420928451832544, guid: 3282b6331ee63424f9cb566838a0a1b1, type: 3}
       propertyPath: m_TagString
-      value: Enemy
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: -4946956552681072574, guid: 3282b6331ee63424f9cb566838a0a1b1, type: 3}
       propertyPath: m_TagString
@@ -372,15 +372,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2436575567978989663, guid: 3282b6331ee63424f9cb566838a0a1b1, type: 3}
       propertyPath: m_TagString
-      value: Enemy
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 377875040809811124, guid: 3282b6331ee63424f9cb566838a0a1b1, type: 3}
       propertyPath: m_TagString
-      value: Enemy
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3282b6331ee63424f9cb566838a0a1b1, type: 3}
       propertyPath: m_Name
       value: Tank_Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3282b6331ee63424f9cb566838a0a1b1, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 4376072512400170643, guid: 3282b6331ee63424f9cb566838a0a1b1, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -396,7 +400,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 8e5250c9fab32d943b01331a8c32b20a, type: 2}
     - target: {fileID: 8917160882590124598, guid: 3282b6331ee63424f9cb566838a0a1b1, type: 3}
       propertyPath: m_TagString
-      value: Enemy
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -532,7 +536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4959461f5040470488ab58812c9247d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
-  maxHealth: 10
+  maxHealth: 50
   currentHealth: 0
   playerHP: {fileID: 0}
   regenRate: 0
@@ -541,6 +545,7 @@ MonoBehaviour:
   xpPickupPrefab: {fileID: 1671723067137232519, guid: 192cc27c263a23c4796439fcecd71e2a, type: 3}
   dropPosition: {fileID: 3890869243401965082}
   renderer: {fileID: 5757795502568246925}
+  damageColor: {r: 0, g: 0, b: 0, a: 0}
   flashDuration: 0.5
   popupPosition: {fileID: 5806214478562890264}
 --- !u!114 &4828101903076310808
