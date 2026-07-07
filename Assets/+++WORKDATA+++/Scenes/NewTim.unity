@@ -34010,38 +34010,83 @@ MonoBehaviour:
   - startTime: 120
     budgetPerSecond: 14
     enemies:
-    - {fileID: 11400000, guid: d668ba5896f030b4a9e5b4e9aec3f070, type: 2}
-    - {fileID: 11400000, guid: eef774e3b8272214b92623142d53197f, type: 2}
+    - {fileID: 11400000, guid: fcd1338854f22664ca92d309c046e781, type: 2}
+    - {fileID: 11400000, guid: 861bd0f7cad9dc04cbf67f9d4639dec1, type: 2}
   - startTime: 150
     budgetPerSecond: 14
     enemies:
-    - {fileID: 11400000, guid: d668ba5896f030b4a9e5b4e9aec3f070, type: 2}
-    - {fileID: 11400000, guid: eef774e3b8272214b92623142d53197f, type: 2}
+    - {fileID: 11400000, guid: fcd1338854f22664ca92d309c046e781, type: 2}
+    - {fileID: 11400000, guid: 861bd0f7cad9dc04cbf67f9d4639dec1, type: 2}
   - startTime: 240
     budgetPerSecond: 17
     enemies:
-    - {fileID: 11400000, guid: d668ba5896f030b4a9e5b4e9aec3f070, type: 2}
-    - {fileID: 11400000, guid: eef774e3b8272214b92623142d53197f, type: 2}
+    - {fileID: 11400000, guid: fcd1338854f22664ca92d309c046e781, type: 2}
+    - {fileID: 11400000, guid: 861bd0f7cad9dc04cbf67f9d4639dec1, type: 2}
   - startTime: 300
     budgetPerSecond: 19
     enemies:
-    - {fileID: 11400000, guid: d668ba5896f030b4a9e5b4e9aec3f070, type: 2}
-    - {fileID: 11400000, guid: eef774e3b8272214b92623142d53197f, type: 2}
+    - {fileID: 11400000, guid: dc96ecb2d51a162459ab6957315bcc5e, type: 2}
+    - {fileID: 11400000, guid: 606e58146e7398e48b08c6f15048bc8f, type: 2}
   - startTime: 350
     budgetPerSecond: 20
     enemies:
-    - {fileID: 11400000, guid: d668ba5896f030b4a9e5b4e9aec3f070, type: 2}
-    - {fileID: 11400000, guid: eef774e3b8272214b92623142d53197f, type: 2}
+    - {fileID: 11400000, guid: dc96ecb2d51a162459ab6957315bcc5e, type: 2}
+    - {fileID: 11400000, guid: 606e58146e7398e48b08c6f15048bc8f, type: 2}
   - startTime: 400
     budgetPerSecond: 20
     enemies:
-    - {fileID: 11400000, guid: d668ba5896f030b4a9e5b4e9aec3f070, type: 2}
-    - {fileID: 11400000, guid: eef774e3b8272214b92623142d53197f, type: 2}
+    - {fileID: 11400000, guid: dc96ecb2d51a162459ab6957315bcc5e, type: 2}
+    - {fileID: 11400000, guid: 606e58146e7398e48b08c6f15048bc8f, type: 2}
   - startTime: 450
     budgetPerSecond: 22
     enemies:
-    - {fileID: 11400000, guid: d668ba5896f030b4a9e5b4e9aec3f070, type: 2}
-    - {fileID: 11400000, guid: eef774e3b8272214b92623142d53197f, type: 2}
+    - {fileID: 11400000, guid: 997638f2044eb6441b5e942f4dd9acac, type: 2}
+    - {fileID: 11400000, guid: d619b628168660447b721e0c346f1594, type: 2}
+  - startTime: 500
+    budgetPerSecond: 24
+    enemies:
+    - {fileID: 11400000, guid: 997638f2044eb6441b5e942f4dd9acac, type: 2}
+    - {fileID: 11400000, guid: d619b628168660447b721e0c346f1594, type: 2}
+  - startTime: 550
+    budgetPerSecond: 26
+    enemies:
+    - {fileID: 11400000, guid: 997638f2044eb6441b5e942f4dd9acac, type: 2}
+    - {fileID: 11400000, guid: d619b628168660447b721e0c346f1594, type: 2}
+  - startTime: 600
+    budgetPerSecond: 28
+    enemies:
+    - {fileID: 11400000, guid: 997638f2044eb6441b5e942f4dd9acac, type: 2}
+    - {fileID: 11400000, guid: d619b628168660447b721e0c346f1594, type: 2}
+  - startTime: 600
+    budgetPerSecond: 28
+    enemies:
+    - {fileID: 11400000, guid: 997638f2044eb6441b5e942f4dd9acac, type: 2}
+    - {fileID: 11400000, guid: d619b628168660447b721e0c346f1594, type: 2}
+  - startTime: 650
+    budgetPerSecond: 28
+    enemies:
+    - {fileID: 11400000, guid: 9d4c4e4dda6a19e4ba773d00f8720657, type: 2}
+    - {fileID: 11400000, guid: ace6d1bbe2ec23f459b5bdf368913c6a, type: 2}
+  - startTime: 700
+    budgetPerSecond: 30
+    enemies:
+    - {fileID: 11400000, guid: 9d4c4e4dda6a19e4ba773d00f8720657, type: 2}
+    - {fileID: 11400000, guid: ace6d1bbe2ec23f459b5bdf368913c6a, type: 2}
+  - startTime: 750
+    budgetPerSecond: 30
+    enemies:
+    - {fileID: 11400000, guid: 9d4c4e4dda6a19e4ba773d00f8720657, type: 2}
+    - {fileID: 11400000, guid: ace6d1bbe2ec23f459b5bdf368913c6a, type: 2}
+  - startTime: 800
+    budgetPerSecond: 32
+    enemies:
+    - {fileID: 11400000, guid: 9d4c4e4dda6a19e4ba773d00f8720657, type: 2}
+    - {fileID: 11400000, guid: ace6d1bbe2ec23f459b5bdf368913c6a, type: 2}
+  - startTime: 850
+    budgetPerSecond: 34
+    enemies:
+    - {fileID: 11400000, guid: 9d4c4e4dda6a19e4ba773d00f8720657, type: 2}
+    - {fileID: 11400000, guid: ace6d1bbe2ec23f459b5bdf368913c6a, type: 2}
   spawnPoints:
   - {fileID: 268019210}
   - {fileID: 224981699}
@@ -34055,7 +34100,7 @@ MonoBehaviour:
   - {fileID: 1478646637}
   - {fileID: 2003060648}
   - {fileID: 579749668}
-  maxEnemies: 100
+  maxEnemies: 150
   startSpawnDelay: 2
   canSpawn: 1
   objectiveRemaining: 0
@@ -34075,6 +34120,18 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d668ba5896f030b4a9e5b4e9aec3f070, type: 2}
   - {fileID: 11400000, guid: c3c5bc5c761ded143b64f7f6c019c48f, type: 2}
   - {fileID: 11400000, guid: eef774e3b8272214b92623142d53197f, type: 2}
+  - {fileID: 11400000, guid: fcd1338854f22664ca92d309c046e781, type: 2}
+  - {fileID: 11400000, guid: ee734b14393732c49933a0c4886be14e, type: 2}
+  - {fileID: 11400000, guid: 861bd0f7cad9dc04cbf67f9d4639dec1, type: 2}
+  - {fileID: 11400000, guid: dc96ecb2d51a162459ab6957315bcc5e, type: 2}
+  - {fileID: 11400000, guid: 8c493602aa70f2948ade266762d35949, type: 2}
+  - {fileID: 11400000, guid: 606e58146e7398e48b08c6f15048bc8f, type: 2}
+  - {fileID: 11400000, guid: 997638f2044eb6441b5e942f4dd9acac, type: 2}
+  - {fileID: 11400000, guid: 2958f9627ce5ce14fa7a60de9282d468, type: 2}
+  - {fileID: 11400000, guid: d619b628168660447b721e0c346f1594, type: 2}
+  - {fileID: 11400000, guid: 9d4c4e4dda6a19e4ba773d00f8720657, type: 2}
+  - {fileID: 11400000, guid: 322945caa8c3a094ea5a70ebee793286, type: 2}
+  - {fileID: 11400000, guid: ace6d1bbe2ec23f459b5bdf368913c6a, type: 2}
 --- !u!4 &916150972 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3174771268577216301, guid: d18ab99f6747469478691f69422a62e2, type: 3}

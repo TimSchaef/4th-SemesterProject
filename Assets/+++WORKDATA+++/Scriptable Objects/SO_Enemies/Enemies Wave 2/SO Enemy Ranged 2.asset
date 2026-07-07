@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a003ec216a0fe442a46d0d2c690f88d, type: 3}
-  m_Name: SO Enemy Ranged
+  m_Name: SO Enemy Ranged 2
   m_EditorClassIdentifier: Assembly-CSharp::SO_EnemyData
-  enemyPrefab: {fileID: 2770971926219840904, guid: 47c5a962bdb2bfa4fb025ed189a13067, type: 3}
+  enemyPrefab: {fileID: 2770971926219840904, guid: c6b5bac2a88753c41bd9f3d1639509c2, type: 3}
   spawnCost: 10
   poolSize: 100

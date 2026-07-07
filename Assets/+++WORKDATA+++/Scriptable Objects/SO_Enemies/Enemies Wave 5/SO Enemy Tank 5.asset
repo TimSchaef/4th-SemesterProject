@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a003ec216a0fe442a46d0d2c690f88d, type: 3}
-  m_Name: SO Enemy Tank
+  m_Name: SO Enemy Tank 5
   m_EditorClassIdentifier: Assembly-CSharp::SO_EnemyData
-  enemyPrefab: {fileID: 3352664838917177954, guid: fcce7a1b6f539fd42a4439812f4b4f66, type: 3}
+  enemyPrefab: {fileID: 3352664838917177954, guid: b70078520095a0345865bc6386fa556c, type: 3}
   spawnCost: 15
   poolSize: 100

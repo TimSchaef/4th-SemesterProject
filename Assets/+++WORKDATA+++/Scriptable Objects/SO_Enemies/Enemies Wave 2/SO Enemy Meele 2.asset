@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a003ec216a0fe442a46d0d2c690f88d, type: 3}
-  m_Name: SO Enemy Meele
+  m_Name: SO Enemy Meele 2
   m_EditorClassIdentifier: Assembly-CSharp::SO_EnemyData
-  enemyPrefab: {fileID: 3242187428438389507, guid: 37554e54e17fb314aa4d052df8c8b37b, type: 3}
+  enemyPrefab: {fileID: 3242187428438389507, guid: 104c89f7bbe1f6e479ab99dfa69102ee, type: 3}
   spawnCost: 5
   poolSize: 100
