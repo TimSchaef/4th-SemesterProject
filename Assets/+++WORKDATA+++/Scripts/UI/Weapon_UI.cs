@@ -14,6 +14,8 @@ public class Weapon_UI : MonoBehaviour
 
     [SerializeField] public TextMeshProUGUI objectiveEnemyText;
     [SerializeField] private Image objectiveImage;
+    [SerializeField] public GameObject bossBarParent;
+    [SerializeField] public Image objectiveBossBar;
 
     void Awake()
     {
@@ -33,5 +35,4 @@ public class Weapon_UI : MonoBehaviour
         objectiveImage.DOFade(value, 0.5f);
         objectiveEnemyText.DOFade(value, 0.5f);
     }
-
 }

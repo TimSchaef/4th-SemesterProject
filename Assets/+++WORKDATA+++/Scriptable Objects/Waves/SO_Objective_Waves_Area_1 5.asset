@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SO_Objective_Waves_Area_1 5
   m_EditorClassIdentifier: Assembly-CSharp::SO_ObjectiveWave
   enemies:
-  - {fileID: 11400000, guid: d668ba5896f030b4a9e5b4e9aec3f070, type: 2}
-  enemyCount: 25
+  - {fileID: 11400000, guid: eef774e3b8272214b92623142d53197f, type: 2}
+  enemyCount: 150
   rewards: 3

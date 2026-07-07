@@ -1,4 +1,5 @@
 using System.Collections;
+using DG.Tweening;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
@@ -147,7 +148,8 @@ public class EnemySpawner : MonoBehaviour
         print("started Wave");
         if (objectiveActive)
             return;
-
+        
+        Weapon_UI.instance.objectiveBossBar.gameObject.SetActive(true);
         Weapon_UI.instance.StartWaveUI(1);
         objectiveActive = true;
         currentObjective = objective;
@@ -167,6 +169,7 @@ public class EnemySpawner : MonoBehaviour
         objective.CloseDoors();
 
         objectiveRemaining = currentObjectiveData.enemyCount;
+        Weapon_UI.instance.objectiveBossBar.DOFillAmount(objectiveRemaining / aliveEnemyCount, 0.2f);
         Weapon_UI.instance.objectiveEnemyText.text = objectiveRemaining.ToString();
 
         StartCoroutine(ActivateObjectiveEnemies());
@@ -197,6 +200,7 @@ public class EnemySpawner : MonoBehaviour
 
         objectiveRemaining--;
         Weapon_UI.instance.objectiveEnemyText.text = objectiveRemaining.ToString();
+        Weapon_UI.instance.objectiveBossBar.DOFillAmount(objectiveRemaining / aliveEnemyCount, 0.2f);
         
 
         if (objectiveRemaining <= 0)
