@@ -61,6 +61,7 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
+        print(reloading);
         if (inputs.ShootInput && CanShoot())
             Shoot();
     }

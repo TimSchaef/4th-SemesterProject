@@ -48291,6 +48291,9 @@ MonoBehaviour:
     budgetPerSecond: 1
     enemies:
     - {fileID: 11400000, guid: d668ba5896f030b4a9e5b4e9aec3f070, type: 2}
+  objectiveWaves:
+  - {fileID: 11400000, guid: 3677ae60da3ab7c43bd1574ecf651b70, type: 2}
+  - {fileID: 11400000, guid: 210db7a90608c6e48a0cffdc7c3905f1, type: 2}
   spawnPoints:
   - {fileID: 1041539642}
   - {fileID: 1475057851}

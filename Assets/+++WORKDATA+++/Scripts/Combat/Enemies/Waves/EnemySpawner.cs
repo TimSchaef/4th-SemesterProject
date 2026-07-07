@@ -7,6 +7,7 @@ public class EnemySpawner : MonoBehaviour
     
     [Header("Wave Setup")]
     [SerializeField] private WaveStage[] stages;
+    [SerializeField] private SO_ObjectiveWave[] objectiveWaves;
 
     [Header("Spawn Points (World)")]
     [SerializeField] private Transform[] spawnPoints;
@@ -16,6 +17,7 @@ public class EnemySpawner : MonoBehaviour
 
     [Header("Timing")]
     [SerializeField] private float startSpawnDelay = 5f;
+    
 
     public bool canSpawn = true;
     public int objectiveRemaining;
@@ -26,6 +28,7 @@ public class EnemySpawner : MonoBehaviour
     private float spawnBudget;
     
     private bool objectiveActive;
+    private int currentWave;
     private InteractionObjective currentObjective;
     private SO_ObjectiveWave currentObjectiveData;
 
@@ -148,7 +151,14 @@ public class EnemySpawner : MonoBehaviour
         Weapon_UI.instance.StartWaveUI(1);
         objectiveActive = true;
         currentObjective = objective;
-        currentObjectiveData = objective.ObjectiveWave;
+        if (currentWave >= objectiveWaves.Length)
+        {
+            Debug.Log("No more objective waves!");
+            return;
+        }
+
+        currentObjectiveData = objectiveWaves[currentWave];
+        currentWave++;
 
         canSpawn = false;
 
@@ -206,9 +216,6 @@ public class EnemySpawner : MonoBehaviour
         currentObjective.StartCooldown();
 
         objectiveActive = false;
-        //TODO:: Set Next Wave as current objective
-        // currentObjective = null;
-        // currentObjectiveData = null;
         Weapon_UI.instance.StartWaveUI(0);
 
         canSpawn = true;
