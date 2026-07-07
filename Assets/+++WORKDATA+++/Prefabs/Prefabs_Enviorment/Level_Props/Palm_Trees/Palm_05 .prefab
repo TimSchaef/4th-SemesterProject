@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6147797186767696681}
   - component: {fileID: 8009654193029798241}
   - component: {fileID: 7650337780587357626}
+  - component: {fileID: 5770326660124235118}
   m_Layer: 0
   m_Name: 'Palm_05 '
   m_TagString: Untagged
@@ -26,13 +27,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5207705148826259071}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.8406734, z: -0, w: 0.5415426}
+  m_LocalRotation: {x: 0, y: 0.8406753, z: 0, w: 0.54153955}
   m_LocalPosition: {x: -14.724155, y: 0, z: -23.62344}
   m_LocalScale: {x: 1.5473222, y: 1.6769427, z: 1.5473222}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 114.423, z: 0}
 --- !u!33 &8009654193029798241
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -90,3 +91,25 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5770326660124235118
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5207705148826259071}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -951953129259435600, guid: 7776e24c8746b85419023f5b706d02b5, type: 3}
