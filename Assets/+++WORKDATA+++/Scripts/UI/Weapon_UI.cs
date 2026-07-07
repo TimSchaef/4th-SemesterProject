@@ -7,8 +7,13 @@ public class Weapon_UI : MonoBehaviour
 {
     public static Weapon_UI  instance;
     [SerializeField] private Weapon weaponRef;
-    
     [SerializeField] private TextMeshProUGUI ammoText;
+
+    [Header("Kill Stats")] 
+    [SerializeField] public TextMeshProUGUI killAmountText;
+
+    [SerializeField] public TextMeshProUGUI objectiveEnemyText;
+    [SerializeField] private Image objectiveImage;
 
     void Awake()
     {
@@ -20,6 +25,13 @@ public class Weapon_UI : MonoBehaviour
     public void UpdateAmmo()
     {
         ammoText.text = weaponRef.ammo.ToString();
+    }
+
+    public void StartWaveUI(float value)
+    {
+        print($"StartWaveUI: {value}");
+        objectiveImage.DOFade(value, 0.5f);
+        objectiveEnemyText.DOFade(value, 0.5f);
     }
 
 }

@@ -20,11 +20,11 @@ public class EnemySpawner : MonoBehaviour
     public bool canSpawn = true;
     public int objectiveRemaining;
 
+    private int totalKills;
     private int aliveEnemyCount;
     private float gameTime;
     private float spawnBudget;
-
-    // OBJECTIVE STATE
+    
     private bool objectiveActive;
     private InteractionObjective currentObjective;
     private SO_ObjectiveWave currentObjectiveData;
@@ -40,6 +40,8 @@ public class EnemySpawner : MonoBehaviour
     private void Start()
     {
         activeSpawnPoints = spawnPoints;
+        Weapon_UI.instance.killAmountText.text = totalKills.ToString(); 
+        Debug.Log(totalKills);
         StartCoroutine(SpawnLoop());
     }
 
@@ -143,8 +145,7 @@ public class EnemySpawner : MonoBehaviour
         if (objectiveActive)
             return;
 
-        WaveUI.Instance.ChangeUIState(true);
-        WaveUI.Instance.UpdateEnemyAmount();
+        Weapon_UI.instance.StartWaveUI(1);
         objectiveActive = true;
         currentObjective = objective;
         currentObjectiveData = objective.ObjectiveWave;
@@ -156,6 +157,7 @@ public class EnemySpawner : MonoBehaviour
         objective.CloseDoors();
 
         objectiveRemaining = currentObjectiveData.enemyCount;
+        Weapon_UI.instance.objectiveEnemyText.text = objectiveRemaining.ToString();
 
         StartCoroutine(ActivateObjectiveEnemies());
     }
@@ -178,12 +180,14 @@ public class EnemySpawner : MonoBehaviour
     public void OnEnemyKilled()
     {
         aliveEnemyCount--;
+        Weapon_UI.instance.killAmountText.text = totalKills.ToString();
 
         if (!objectiveActive)
             return;
 
         objectiveRemaining--;
-        WaveUI.Instance.UpdateEnemyAmount();
+        Weapon_UI.instance.objectiveEnemyText.text = objectiveRemaining.ToString();
+        
 
         if (objectiveRemaining <= 0)
         {
@@ -204,7 +208,7 @@ public class EnemySpawner : MonoBehaviour
         objectiveActive = false;
         currentObjective = null;
         currentObjectiveData = null;
-        WaveUI.Instance.ChangeUIState(false);
+        Weapon_UI.instance.StartWaveUI(0);
 
         canSpawn = true;
     }

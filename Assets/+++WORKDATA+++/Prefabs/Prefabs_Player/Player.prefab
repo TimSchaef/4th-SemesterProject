@@ -58,7 +58,6 @@ GameObject:
   - component: {fileID: 1649103947911340867}
   - component: {fileID: 3169288387960482845}
   - component: {fileID: 5413254837012493708}
-  - component: {fileID: 4359987766063478478}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -207,6 +206,7 @@ MonoBehaviour:
   xpPickupPrefab: {fileID: 0}
   dropPosition: {fileID: 0}
   renderer: {fileID: 8422176417399697436}
+  damageColor: {r: 0, g: 0, b: 0, a: 0}
   flashDuration: 0.5
   popupPosition: {fileID: 0}
 --- !u!114 &7582110246261750334
@@ -229,7 +229,7 @@ MonoBehaviour:
   coyoteTime: 0.2
   groundLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 576
 --- !u!114 &3777760617902221350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,6 +294,8 @@ MonoBehaviour:
   muzzleLight: {fileID: 0}
   flashTime: 0.1
   muzzleParticle: {fileID: 5909923740214885381}
+  shotSound: {fileID: 8300000, guid: 577674d94eec7ac4ea7d7e71baa897b0, type: 3}
+  reloadSound: {fileID: 0}
 --- !u!114 &8255602399209944284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,6 +340,7 @@ MonoBehaviour:
   pendingLevelUps: 0
   xpMultiplier: 1
   xpIncrease: 1.5
+  levelUpDelay: 0.25
   currentXPImage: {fileID: 0}
   upgradeManager: {fileID: 0}
 --- !u!114 &1649103947911340867
@@ -369,6 +372,8 @@ MonoBehaviour:
   recoilX: 0
   recoilReturnSpeed: 8
   recoilKick: 1.2
+  damageVolume: {fileID: 0}
+  damageAnimationSpeed: 0.05
 --- !u!114 &5413254837012493708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -382,22 +387,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::XPCollector
   collectRadius: 3
---- !u!114 &4359987766063478478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3968670527429153301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4a306910e7f5634488359c9f6f4dc69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Weapon_UI
-  weaponRef: {fileID: 3409798089983258710}
-  ammoText: {fileID: 0}
-  reloadImage: {fileID: 0}
-  healthImage: {fileID: 0}
 --- !u!1 &5590338419396398776
 GameObject:
   m_ObjectHideFlags: 0
