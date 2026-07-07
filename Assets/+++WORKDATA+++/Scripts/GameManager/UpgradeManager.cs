@@ -157,6 +157,7 @@ public class UpgradeManager : MonoBehaviour
             return;
 
         playerWeapon.AddUpgrade(currentChoices[index]);
+        Debug.Log($"Picked {currentChoices[index].upgradeName}");
 
         playerXP.pendingLevelUps--;
 
