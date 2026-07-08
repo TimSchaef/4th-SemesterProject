@@ -380,7 +380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3282b6331ee63424f9cb566838a0a1b1, type: 3}
       propertyPath: m_Name
-      value: Tank_Enemy
+      value: Tank_Enemy 4
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3282b6331ee63424f9cb566838a0a1b1, type: 3}
       propertyPath: m_TagString
@@ -542,7 +542,7 @@ MonoBehaviour:
   regenRate: 0
   regenInterval: 1
   experiencePoints: {fileID: 11400000, guid: 10d51e990aa7fb0408a3c005674d7b8c, type: 2}
-  xpPickupPrefab: {fileID: 1671723067137232519, guid: 192cc27c263a23c4796439fcecd71e2a, type: 3}
+  xpPickupPrefab: {fileID: 7758481516241454930, guid: b26db65a115630b458ee011709e9702d, type: 3}
   dropPosition: {fileID: 3890869243401965082}
   renderer: {fileID: 5757795502568246925}
   damageColor: {r: 0, g: 0, b: 0, a: 0}

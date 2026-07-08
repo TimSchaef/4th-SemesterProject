@@ -269,7 +269,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c8eb6e89473a0534299002052140cc21, type: 3}
       propertyPath: m_Name
-      value: Meele_Enemy
+      value: Meele_Enemy 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c8eb6e89473a0534299002052140cc21, type: 3}
       propertyPath: m_TagString
@@ -423,7 +423,7 @@ MonoBehaviour:
   regenRate: 0
   regenInterval: 1
   experiencePoints: {fileID: 11400000, guid: 10d51e990aa7fb0408a3c005674d7b8c, type: 2}
-  xpPickupPrefab: {fileID: 1671723067137232519, guid: 192cc27c263a23c4796439fcecd71e2a, type: 3}
+  xpPickupPrefab: {fileID: 7758481516241454930, guid: b26db65a115630b458ee011709e9702d, type: 3}
   dropPosition: {fileID: 6592368345817157579}
   renderer: {fileID: 7453961994717399817}
   damageColor: {r: 0, g: 0, b: 0, a: 0}
