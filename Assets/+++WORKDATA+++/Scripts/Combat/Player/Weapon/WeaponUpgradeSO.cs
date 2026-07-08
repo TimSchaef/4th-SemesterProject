@@ -5,6 +5,7 @@ public abstract class WeaponUpgradeSO : ScriptableObject
     public string upgradeName;
     public string upgradeDescription;
     public string upgradeID;
+    public Sprite upgradeIcon;
 
     public int tier = 1;
     public WeaponUpgradeSO nextTier;

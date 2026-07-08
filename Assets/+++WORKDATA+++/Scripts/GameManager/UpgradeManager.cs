@@ -23,6 +23,7 @@ public class UpgradeManager : MonoBehaviour
     [Header("Upgrade Info")]
     [SerializeField] private TextMeshProUGUI[] upgradeName;
     [SerializeField] private Sprite[] upgradeIcons;
+    [SerializeField] private TextMeshProUGUI[] upgradeDescription;
     [SerializeField] public TextMeshProUGUI levelText;
 
     private WeaponUpgradeSO[] currentChoices = new WeaponUpgradeSO[3];
@@ -143,10 +144,9 @@ public class UpgradeManager : MonoBehaviour
 
         if (hasChoice)
         {
-            upgradeName[i].text =
-                currentChoices[i].upgradeName +
-                "\nTier " +
-                currentChoices[i].tier;
+            upgradeName[i].text = currentChoices[i].upgradeName + "\nTier " + currentChoices[i].tier;
+            upgradeIcons[i] = currentChoices[i].upgradeIcon;
+            upgradeDescription[i].text = currentChoices[i].upgradeDescription;
         }
     }
 }
