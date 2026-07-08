@@ -155,7 +155,6 @@ public class EnemySpawner : MonoBehaviour
         currentObjective = objective;
         if (currentWave >= objectiveWaves.Length)
         {
-            Debug.Log("No more objective waves!");
             return;
         }
 
@@ -169,8 +168,9 @@ public class EnemySpawner : MonoBehaviour
         objective.CloseDoors();
 
         objectiveRemaining = currentObjectiveData.enemyCount;
-        Weapon_UI.instance.objectiveBossBar.DOFillAmount(objectiveRemaining / aliveEnemyCount, 0.2f);
+        Weapon_UI.instance.objectiveBossBar.DOFillAmount((float)objectiveRemaining / currentObjectiveData.enemyCount , 0.8f);
         Weapon_UI.instance.objectiveEnemyText.text = objectiveRemaining.ToString();
+        Weapon_UI.instance.waveRewardText.text = "Upgrades: " + currentObjectiveData.rewards.ToString();   
 
         StartCoroutine(ActivateObjectiveEnemies());
     }
@@ -179,10 +179,7 @@ public class EnemySpawner : MonoBehaviour
     {
         for (int i = 0; i < currentObjectiveData.enemyCount; i++)
         {
-            SO_EnemyData enemy =
-                currentObjectiveData.enemies[
-                    Random.Range(0, currentObjectiveData.enemies.Length)];
-
+            SO_EnemyData enemy = currentObjectiveData.enemies[Random.Range(0, currentObjectiveData.enemies.Length)];
             SpawnEnemy(enemy);
 
             if (i % 5 == 0)
@@ -192,6 +189,7 @@ public class EnemySpawner : MonoBehaviour
 
     public void OnEnemyKilled()
     {
+        totalKills++;
         aliveEnemyCount--;
         Weapon_UI.instance.killAmountText.text = totalKills.ToString();
 
@@ -200,7 +198,11 @@ public class EnemySpawner : MonoBehaviour
 
         objectiveRemaining--;
         Weapon_UI.instance.objectiveEnemyText.text = objectiveRemaining.ToString();
-        Weapon_UI.instance.objectiveBossBar.DOFillAmount(objectiveRemaining / aliveEnemyCount, 0.2f);
+        
+        float fill = (float)objectiveRemaining / currentObjectiveData.enemyCount;
+
+        Weapon_UI.instance.objectiveBossBar.DOKill();
+        Weapon_UI.instance.objectiveBossBar.DOFillAmount(fill, 0.2f);
         
 
         if (objectiveRemaining <= 0)

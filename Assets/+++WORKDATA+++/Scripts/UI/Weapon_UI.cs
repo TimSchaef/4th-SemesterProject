@@ -13,8 +13,10 @@ public class Weapon_UI : MonoBehaviour
     [SerializeField] public TextMeshProUGUI killAmountText;
 
     [SerializeField] public TextMeshProUGUI objectiveEnemyText;
+    [SerializeField] public TextMeshProUGUI waveStartedText;
+    [SerializeField] public TextMeshProUGUI waveRewardText;
     [SerializeField] private Image objectiveImage;
-    [SerializeField] public GameObject bossBarParent;
+    [SerializeField] public Image bossBarFrame;
     [SerializeField] public Image objectiveBossBar;
 
     void Awake()
@@ -24,6 +26,7 @@ public class Weapon_UI : MonoBehaviour
             instance = this;
         }
     }
+
     public void UpdateAmmo()
     {
         ammoText.text = weaponRef.ammo.ToString();
@@ -34,5 +37,9 @@ public class Weapon_UI : MonoBehaviour
         print($"StartWaveUI: {value}");
         objectiveImage.DOFade(value, 0.5f);
         objectiveEnemyText.DOFade(value, 0.5f);
+        bossBarFrame.DOFade(value, 0.5f);
+        objectiveBossBar.DOFade(value, 0.5f);
+        waveStartedText.DOFade(value, 0.5f);
+        waveRewardText.DOFade(value, 0.5f);
     }
 }
