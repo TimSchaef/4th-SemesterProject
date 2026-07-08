@@ -171,7 +171,7 @@ public class Weapon : MonoBehaviour
         {
             origin = cameraTransform.position, 
             direction = cameraTransform.forward, 
-            damage = damage,
+            damage = Mathf.RoundToInt(damage),
             range = range,
             bounces = 0,
             extraProjectiles = 0,
@@ -396,9 +396,7 @@ public class Weapon : MonoBehaviour
         {
             origin = cameraTransform.position,
             direction = cameraTransform.forward,
-
             damage = damage * Mathf.Lerp(1f, chargeMultiplier, charge),
-
             range = range,
             bounces = 0,
             extraProjectiles = 0,
