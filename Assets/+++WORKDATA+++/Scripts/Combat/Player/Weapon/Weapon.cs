@@ -41,12 +41,21 @@ public class Weapon : MonoBehaviour
     private PlayerXP _playerXP;
     private Health _playerHealth;
     PlayerInputs inputs;
+    private PlayerMovement _playerMovement;
+
+    private bool _hasRecoil;
+    private float _recoilStrength;
+    private float _recoilUpwardForce;
+    private float _nextRecoilTime;
+    private float _recoilCooldown = 1.5f;
+    
 
     private Dictionary<string, WeaponUpgradeSO> ownedUpgrades;
 
     void Awake()
     {
-        _playerXP = FindObjectOfType<PlayerXP>();
+        _playerMovement = GetComponent<PlayerMovement>();
+        _playerXP = GetComponent<PlayerXP>();
         inputs = GetComponent<PlayerInputs>();
         _playerHealth = GetComponent<Health>();
     }
@@ -80,6 +89,12 @@ public class Weapon : MonoBehaviour
         
         if(ammo > 0 && inputs.ShootInput && !nextFireBuffer.IsInTime(nextFireTime))
             Shoot();
+
+        if(ammo > 0 && inputs.ShootTwoInput && !nextFireBuffer.IsInTime(nextFireTime))
+        {
+            FireRecoil();
+            _nextRecoilTime = Time.time + _recoilCooldown;
+        }
     }
 
     void Shoot()
@@ -228,6 +243,29 @@ public class Weapon : MonoBehaviour
         fx.Play();
 
         Destroy(fx.gameObject, fx.main.duration + fx.main.startLifetime.constantMax);
+    }
+
+    public void EnableRecoil(float strength, float upwardForce)
+    {
+        _hasRecoil = true;
+        _recoilStrength = strength;
+        _recoilUpwardForce = upwardForce;
+    }
+
+    private void FireRecoil()
+    {
+        gunAnimator.SetTrigger("isShooting");
+        AudioManager.Instance.PlaySfx(shotSound);
+        nextFireTime = 1 / fireRate;
+        ammo--;
+        Weapon_UI.instance.UpdateAmmo();
+        PlayerJuice.Instance.CameraKick();
+        muzzleParticle.Play();
+        
+        Vector3 force = -cameraTransform.forward * _recoilStrength;
+        force.y = Mathf.Max(force.y, _recoilUpwardForce);
+        
+        _playerMovement.AddRecoil(force);
     }
 
     public void AddUpgrade(WeaponUpgradeSO upgrade)

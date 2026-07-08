@@ -185,14 +185,10 @@ public abstract class EnemyBase : MonoBehaviour
 
         if (playerMovement != null)
         {
-            Vector3 dir =
-                (target.position - transform.position)
-                .normalized;
+            Vector3 dir = (target.position - transform.position).normalized;
 
 
-            playerMovement.AddKnockback(
-                dir * knockbackForce
-            );
+            playerMovement.AddKnockback(dir * knockbackForce);
         }
     }
 

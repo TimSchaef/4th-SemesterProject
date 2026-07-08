@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 velocity;
     private Vector3 knockbackVelocity;
+    
+    private Vector3 recoilVelocity;
 
     private bool isGrounded;
     private float lastGroundedTime;
@@ -36,7 +38,6 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         CheckGround();
-
         HandleMovement();
         HandleJump();
         ApplyGravity();
@@ -44,72 +45,94 @@ public class PlayerMovement : MonoBehaviour
 
         controller.Move(velocity * Time.deltaTime);
     }
+
+
     void HandleMovement()
     {
         Vector2 input = inputs.MoveInput;
 
-        Vector3 move =
-            transform.right * input.x +
-            transform.forward * input.y;
+        Vector3 move = transform.right * input.x + transform.forward * input.y;
 
-        if (isGrounded)
+        if (isGrounded) 
             move = Vector3.ProjectOnPlane(move, groundHit.normal);
 
-        Vector3 targetHorizontal =
-            move * speed;
+
+        Vector3 targetHorizontal = move * speed;
 
         float control = isGrounded ? acceleration : airControl;
+
 
         Vector3 currentHorizontal =
             new Vector3(velocity.x, 0, velocity.z);
 
-        Vector3 smoothed =
-            Vector3.Lerp(currentHorizontal, targetHorizontal, control * Time.deltaTime);
+
+        Vector3 smoothed = Vector3.Lerp(currentHorizontal, targetHorizontal, control * Time.deltaTime);
         
         smoothed += new Vector3(knockbackVelocity.x, 0, knockbackVelocity.z);
-
+        smoothed += new Vector3(recoilVelocity.x, 0, recoilVelocity.z);
+        
         velocity.x = smoothed.x;
         velocity.z = smoothed.z;
     }
-    
+
+
     void HandleJump()
     {
         if (isGrounded)
             lastGroundedTime = Time.time;
 
+
         bool canJump =
             Time.time - lastGroundedTime <= coyoteTime;
 
+
         if (inputs.JumpInput && canJump)
         {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            velocity.y = Mathf.Sqrt(
+                jumpHeight * -2f * gravity
+            );
+
             lastGroundedTime = -999f;
         }
     }
+    
+
     void ApplyGravity()
     {
         if (isGrounded && velocity.y < 0)
             velocity.y = -2f;
 
+
         velocity.y += gravity * Time.deltaTime;
     }
-    
+
+
     void ApplyKnockback()
     {
         knockbackVelocity = Vector3.Lerp(knockbackVelocity, Vector3.zero, 8f * Time.deltaTime);
+        
+        recoilVelocity = Vector3.Lerp(recoilVelocity, Vector3.zero, 15f * Time.deltaTime);
     }
-
+    
     public void AddKnockback(Vector3 force)
     {
         force.y = 0f;
         knockbackVelocity += force;
     }
+    
+    public void AddRecoil(Vector3 force)
+    {
+        recoilVelocity += new Vector3(force.x, 0, force.z);
+        velocity.y = force.y;
+        
+        lastGroundedTime = -999f;
+    }
+
 
     void CheckGround()
     {
         Ray ray = new Ray(transform.position, Vector3.down);
 
-        isGrounded =
-            Physics.SphereCast(ray, 0.5f, out groundHit, 0.6f, groundLayer);
+        isGrounded = Physics.SphereCast(ray, 0.5f, out groundHit, 0.6f, groundLayer);
     }
 }
