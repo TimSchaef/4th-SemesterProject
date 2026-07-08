@@ -2338,6 +2338,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5707123436089168304, guid: aa43c26408de22a41988d4d009ac38a6, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: cd8198212a4769e46a219fc57036c7d9, type: 2}
     - target: {fileID: 7809371356956482914, guid: aa43c26408de22a41988d4d009ac38a6, type: 3}
       propertyPath: m_Name
       value: Outer_Wall_02 (20)
