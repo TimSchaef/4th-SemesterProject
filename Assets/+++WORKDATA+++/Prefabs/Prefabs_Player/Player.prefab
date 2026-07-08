@@ -284,13 +284,13 @@ MonoBehaviour:
   shotPivot: {fileID: 3207467976734362102}
   gunAnimator: {fileID: 4360802595011463674}
   impactPrefab: {fileID: 4784787834428847192, guid: 67fe4ff493f9cd54fb27509991fb7b65, type: 3}
-  damage: 4
+  damage: 5
   fireRate: 1
   range: 20
   ricochetDelay: 0.2
   ammo: 0
   maxAmmo: 5
-  reloadTime: 2
+  reloadTime: 2.2
   muzzleLight: {fileID: 0}
   flashTime: 0.1
   muzzleParticle: {fileID: 5909923740214885381}

@@ -140,7 +140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: bf8d732abd8821f4494143a33a9d500d, type: 3}
       propertyPath: m_Name
-      value: Flying_Enemy
+      value: Flying_Enemy 1
       objectReference: {fileID: 0}
     - target: {fileID: 1110950426727465061, guid: bf8d732abd8821f4494143a33a9d500d, type: 3}
       propertyPath: m_Name
@@ -324,7 +324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4959461f5040470488ab58812c9247d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
-  maxHealth: 10
+  maxHealth: 5
   currentHealth: 0
   playerHP: {fileID: 0}
   regenRate: 0
@@ -333,6 +333,7 @@ MonoBehaviour:
   xpPickupPrefab: {fileID: 1671723067137232519, guid: 192cc27c263a23c4796439fcecd71e2a, type: 3}
   dropPosition: {fileID: 4021542875085155835}
   renderer: {fileID: 164836687492988562}
+  damageColor: {r: 0, g: 0, b: 0, a: 0}
   flashDuration: 0.5
   popupPosition: {fileID: 7968071911656637104}
 --- !u!114 &3046621264572172927
