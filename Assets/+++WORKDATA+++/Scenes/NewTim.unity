@@ -31781,6 +31781,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d20ec443f579b5244897af327b6555ec, type: 3}
+--- !u!114 &966975484 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 611559327337598656, guid: 61cca798fe8eee241aead43dae136068, type: 3}
+  m_PrefabInstance: {fileID: 1095993116259673898}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1 &969667354
 GameObject:
   m_ObjectHideFlags: 0
@@ -47565,7 +47576,7 @@ PrefabInstance:
     - target: {fileID: 1302563391671388042, guid: 9c4f2345ac9e77b48a47030ebd102d00, type: 3}
       propertyPath: currentXPImage
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 966975484}
     - target: {fileID: 1302563391671388042, guid: 9c4f2345ac9e77b48a47030ebd102d00, type: 3}
       propertyPath: upgradeManager
       value: 
@@ -52777,7 +52788,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3174771268577216301, guid: d18ab99f6747469478691f69422a62e2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 215.25
+      value: 216.58
       objectReference: {fileID: 0}
     - target: {fileID: 3174771268577216301, guid: d18ab99f6747469478691f69422a62e2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -52785,7 +52796,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3174771268577216301, guid: d18ab99f6747469478691f69422a62e2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 90.95
+      value: 89.91
       objectReference: {fileID: 0}
     - target: {fileID: 3174771268577216301, guid: d18ab99f6747469478691f69422a62e2, type: 3}
       propertyPath: m_LocalRotation.w
