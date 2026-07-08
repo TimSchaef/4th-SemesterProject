@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Cinemachine;
@@ -43,11 +44,26 @@ public class Weapon : MonoBehaviour
     PlayerInputs inputs;
     private PlayerMovement _playerMovement;
 
+    #region Recoil Variables
     private bool _hasRecoil;
     private float _recoilStrength;
     private float _recoilUpwardForce;
     private float _nextRecoilTime;
     private float _recoilCooldown = 1.5f;
+    
+    #endregion
+    
+    #region Chargeshot Variables
+
+    private bool _hasChargeshot;
+    private bool isCharging;
+
+    private float chargeTimer;
+    private float maxChargeTime = 2f;
+    private float chargeMultiplier = 3f;
+    
+    
+    #endregion
     
 
     private Dictionary<string, WeaponUpgradeSO> ownedUpgrades;
@@ -74,6 +90,11 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
+        if (isCharging)
+        {
+            chargeTimer += Time.deltaTime;
+            chargeTimer = Mathf.Clamp(chargeTimer, 0f, maxChargeTime);
+        }
         
         if (ammo <= 0)
         {
@@ -87,14 +108,30 @@ public class Weapon : MonoBehaviour
         if(reloadBuffer.IsInTime(reloadTime))
             return;
         
-        if(ammo > 0 && inputs.ShootInput && !nextFireBuffer.IsInTime(nextFireTime))
-            Shoot();
+        if (!_hasChargeshot)
+        {
+            if(ammo > 0 && inputs.ShootInput && !nextFireBuffer.IsInTime(nextFireTime))
+                Shoot();
+            
+        }
 
         if(ammo > 0 && inputs.ShootTwoInput && !nextFireBuffer.IsInTime(nextFireTime))
         {
             FireRecoil();
             _nextRecoilTime = Time.time + _recoilCooldown;
         }
+    }
+
+    private void OnEnable()
+    {
+        inputs.ShootStarted += StartCharge;
+        inputs.ShootReleased += ReleaseCharge;
+    }
+
+    private void OnDisable()
+    {
+        inputs.ShootStarted -= StartCharge;
+        inputs.ShootReleased -= ReleaseCharge;
     }
 
     void Shoot()
@@ -252,6 +289,13 @@ public class Weapon : MonoBehaviour
         _recoilUpwardForce = upwardForce;
     }
 
+    public void EnableChargeshot(float maxTime, float multiplier)
+    {
+        _hasChargeshot = true;
+        maxChargeTime = maxTime;
+        chargeMultiplier = multiplier;
+    }
+
     private void FireRecoil()
     {
         gunAnimator.SetTrigger("isShooting");
@@ -266,6 +310,63 @@ public class Weapon : MonoBehaviour
         force.y = Mathf.Max(force.y, _recoilUpwardForce);
         
         _playerMovement.AddRecoil(force);
+    }
+
+    private void StartCharge()
+    {
+        if (!_hasChargeshot) return;
+
+        isCharging = true;
+        chargeTimer = 0f;
+    }
+
+    private void ReleaseCharge()
+    {
+        if (!_hasChargeshot || !isCharging) return;
+        
+        float chargePercent = chargeTimer / maxChargeTime;
+        ShootCharged(chargePercent);
+
+        isCharging = false;
+        chargeTimer = 0f; 
+    }
+    
+    private void ShootCharged(float charge)
+    {
+        gunAnimator.SetTrigger("isShooting");
+        AudioManager.Instance.PlaySfx(shotSound);
+
+        ammo--;
+        Weapon_UI.instance.UpdateAmmo();
+
+        PlayerJuice.Instance.CameraKick();
+        muzzleParticle.Play();
+
+        WeaponShot baseShot = new WeaponShot
+        {
+            origin = cameraTransform.position,
+            direction = cameraTransform.forward,
+
+            damage = damage * Mathf.Lerp(1f, chargeMultiplier, charge),
+
+            range = range,
+            bounces = 0,
+            extraProjectiles = 0,
+            spreadAngles = 5f
+        };
+
+
+        foreach (var upgrade in ownedUpgrades.Values)
+        {
+            if (upgrade == null)
+                continue;
+
+            upgrade.Modify(ref baseShot);
+        }
+
+        FireMultipleShots(baseShot);
+
+        nextFireBuffer.Activate();
     }
 
     public void AddUpgrade(WeaponUpgradeSO upgrade)
