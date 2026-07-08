@@ -1,9 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Mime;
+using DG.Tweening;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class Weapon : MonoBehaviour
 {
@@ -33,6 +36,10 @@ public class Weapon : MonoBehaviour
     [Header("Sounds")]
     [SerializeField] private AudioClip shotSound;
     [SerializeField] private AudioClip reloadSound;
+    
+    [Header("Charge Shot")]
+    [SerializeField] private Image chargeShotImage;
+    [SerializeField] private Image chargeShotFillImage;
 
     float nextFireTime;
     private TimeBuffer reloadBuffer;
@@ -61,6 +68,9 @@ public class Weapon : MonoBehaviour
     private float chargeTimer;
     private float maxChargeTime = 2f;
     private float chargeMultiplier = 3f;
+    private float minCharge = 0.2f;
+
+    private Tween chargeTween;
     
     
     #endregion
@@ -86,6 +96,7 @@ public class Weapon : MonoBehaviour
         ammo = maxAmmo;
         Weapon_UI.instance.UpdateAmmo();
         ownedUpgrades = new Dictionary<string, WeaponUpgradeSO>();
+        chargeShotImage.gameObject.SetActive(false);
     }
 
     void Update()
@@ -94,6 +105,19 @@ public class Weapon : MonoBehaviour
         {
             chargeTimer += Time.deltaTime;
             chargeTimer = Mathf.Clamp(chargeTimer, 0f, maxChargeTime);
+
+            if (chargeTimer >= minCharge)
+            {
+                if (!chargeShotImage.gameObject.activeSelf)
+                {
+                    chargeShotImage.gameObject.SetActive(true);
+                    chargeShotFillImage.fillAmount = 0f;
+                }
+
+                float chargePercent = Mathf.InverseLerp(minCharge, maxChargeTime, chargeTimer);
+
+                chargeShotFillImage.DOFillAmount(chargePercent, 0.1f);
+            }
         }
         
         if (ammo <= 0)
@@ -112,7 +136,6 @@ public class Weapon : MonoBehaviour
         {
             if(ammo > 0 && inputs.ShootInput && !nextFireBuffer.IsInTime(nextFireTime))
                 Shoot();
-            
         }
 
         if(ammo > 0 && inputs.ShootTwoInput && !nextFireBuffer.IsInTime(nextFireTime))
@@ -314,21 +337,48 @@ public class Weapon : MonoBehaviour
 
     private void StartCharge()
     {
-        if (!_hasChargeshot) return;
+        if (!_hasChargeshot)
+            return;
+
+        if (nextFireBuffer.IsInTime(nextFireTime))
+            return;
 
         isCharging = true;
         chargeTimer = 0f;
+
+        chargeShotImage.gameObject.SetActive(true);
+        chargeShotFillImage.fillAmount = 0f;
+
+        chargeTween?.Kill();
+
+        chargeTween = chargeShotFillImage.DOFillAmount(1f, maxChargeTime).SetEase(Ease.Linear);
     }
 
     private void ReleaseCharge()
     {
-        if (!_hasChargeshot || !isCharging) return;
-        
+        if (!_hasChargeshot || !isCharging)
+            return;
+
+        if (ammo <= 0)
+            return;
+
+        chargeTween?.Kill();
+
+        chargeShotImage.gameObject.SetActive(false);
+
         float chargePercent = chargeTimer / maxChargeTime;
-        ShootCharged(chargePercent);
+
+        if (chargePercent < minCharge)
+        {
+            Shoot();
+        }
+        else
+        {
+            ShootCharged(chargePercent);
+        }
 
         isCharging = false;
-        chargeTimer = 0f; 
+        chargeTimer = 0f;
     }
     
     private void ShootCharged(float charge)

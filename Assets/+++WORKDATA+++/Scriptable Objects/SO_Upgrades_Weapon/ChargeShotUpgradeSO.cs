@@ -9,7 +9,7 @@ public class ChargeShotUpgradeSO : WeaponUpgradeSO
 
     public override void Modify(ref WeaponShot shot)
     {
-        shot.damage *= damageMultiplier;
+
     }
     public override void Apply(Weapon weapon, Health playerHealth, PlayerXP xp)
     {
