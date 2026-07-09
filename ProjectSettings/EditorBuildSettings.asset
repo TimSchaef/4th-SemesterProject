@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/+++WORKDATA+++/Scenes/FinalScene2.unity
+    guid: 3753f0952ff2cf14fa04f5b657f5e98c
+  - enabled: 0
     path: Assets/+++WORKDATA+++/Scenes/PlaytestScene.unity
     guid: 4504c1c82f5f71a4ebdfdde12bf3597c
-  - enabled: 1
+  - enabled: 0
     path: Assets/+++WORKDATA+++/Scenes/NewTim.unity
     guid: d7cf701bf2079974b951a641750f378b
   m_configObjects:
