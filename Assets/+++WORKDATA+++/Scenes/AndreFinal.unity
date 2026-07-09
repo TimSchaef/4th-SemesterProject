@@ -19383,7 +19383,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4090315787708440525, guid: d18ab99f6747469478691f69422a62e2, type: 3}
       propertyPath: doors.Array.size
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4090315787708440525, guid: d18ab99f6747469478691f69422a62e2, type: 3}
       propertyPath: 'doors.Array.data[0]'
@@ -19400,7 +19400,7 @@ PrefabInstance:
     - target: {fileID: 4090315787708440525, guid: d18ab99f6747469478691f69422a62e2, type: 3}
       propertyPath: 'doors.Array.data[3]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1980978125}
     - target: {fileID: 4090315787708440525, guid: d18ab99f6747469478691f69422a62e2, type: 3}
       propertyPath: 'doors.Array.data[4]'
       value: 
@@ -52845,7 +52845,7 @@ PrefabInstance:
       objectReference: {fileID: 915002276}
     - target: {fileID: 9138831222774495869, guid: d18ab99f6747469478691f69422a62e2, type: 3}
       propertyPath: doors.Array.size
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9138831222774495869, guid: d18ab99f6747469478691f69422a62e2, type: 3}
       propertyPath: 'doors.Array.data[0]'
@@ -52862,7 +52862,7 @@ PrefabInstance:
     - target: {fileID: 9138831222774495869, guid: d18ab99f6747469478691f69422a62e2, type: 3}
       propertyPath: 'doors.Array.data[3]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1980978125}
     - target: {fileID: 9138831222774495869, guid: d18ab99f6747469478691f69422a62e2, type: 3}
       propertyPath: 'doors.Array.data[4]'
       value: 

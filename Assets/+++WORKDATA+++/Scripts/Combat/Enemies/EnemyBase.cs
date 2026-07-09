@@ -9,7 +9,7 @@ public abstract class EnemyBase : MonoBehaviour
     [Header("Combat")]
     [SerializeField] protected float contactDamage = 5f;
     [SerializeField] protected float attackCooldown = 1f;
-    [SerializeField] protected float attackRange = 2f;
+    [SerializeField] protected float attackRange = 3f;
     [SerializeField] protected float knockbackForce = 4f;
 
     [Header("Movement")]

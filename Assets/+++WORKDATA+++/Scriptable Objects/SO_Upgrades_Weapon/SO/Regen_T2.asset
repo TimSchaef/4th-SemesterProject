@@ -15,6 +15,7 @@ MonoBehaviour:
   upgradeName: Regen
   upgradeDescription: 
   upgradeID: Regen
+  upgradeIcon: {fileID: 21300000, guid: dea4e859c3ac610418cb2c029e3c3a80, type: 3}
   tier: 2
   nextTier: {fileID: 11400000, guid: adbeaefc05d6234469320312451bff7a, type: 2}
   regenIncrease: 2
