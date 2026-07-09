@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7765834367346950258}
   - component: {fileID: 7869035248016787464}
   - component: {fileID: 9140172152476506716}
+  - component: {fileID: 6648376859357181681}
   m_Layer: 0
   m_Name: Canvas_UI
   m_TagString: Untagged
@@ -126,6 +127,22 @@ MonoBehaviour:
   objectiveImage: {fileID: 7857783544805749402}
   bossBarFrame: {fileID: 8634127957219476883}
   objectiveBossBar: {fileID: 1871836250590946859}
+--- !u!114 &6648376859357181681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92102804793849097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa50cb97b99e7b94f8010966f52d04e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIManager
+  endPanel: {fileID: 4197948924893767633}
+  endPanelCanvasGroup: {fileID: 1210299790668606124}
+  playerInputs: {fileID: 0}
+  endPanelDuration: 1
 --- !u!1 &141418624841850591
 GameObject:
   m_ObjectHideFlags: 0
@@ -1896,13 +1913,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5595841293639956096}
+  - component: {fileID: 1210299790668606124}
   m_Layer: 0
   m_Name: Panel_GameOver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5595841293639956096
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1923,6 +1941,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &1210299790668606124
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4197948924893767633}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &4390422632853994189
 GameObject:
   m_ObjectHideFlags: 0
@@ -2322,7 +2352,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 300}
   m_SizeDelta: {x: 327, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &263262713704522134

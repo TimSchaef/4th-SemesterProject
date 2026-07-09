@@ -333,6 +333,7 @@ public class Weapon : MonoBehaviour
         Vector3 force = -cameraTransform.forward * _recoilStrength;
         force.y = Mathf.Max(force.y, _recoilUpwardForce);
         
+        nextFireBuffer.Activate();
         _playerMovement.AddRecoil(force);
     }
 
