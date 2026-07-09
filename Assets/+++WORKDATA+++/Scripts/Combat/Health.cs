@@ -1,8 +1,5 @@
-using System.Net.Mime;
 using DG.Tweening;
-using TMPro;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 
 public class Health : MonoBehaviour
@@ -25,8 +22,9 @@ public class Health : MonoBehaviour
     [SerializeField] private float flashDuration = 0.5f;
     [SerializeField] private Transform popupPosition;
     
-    private Color originalColor;
-    private Material hitMaterial;
+    private Color[] originalColors;
+    private Material[] hitMaterials;
+
     private float regenTimer;
     private EnemyBase enemy;
 
@@ -36,10 +34,17 @@ public class Health : MonoBehaviour
     {
         enemy = GetComponent<EnemyBase>();
         currentHealth = maxHealth;
-        hitMaterial = renderer.material;
-        originalColor = hitMaterial.color;
+
+        hitMaterials = renderer.materials;
+        originalColors = new Color[hitMaterials.Length];
+
+        for (int i = 0; i < hitMaterials.Length; i++)
+        {
+            originalColors[i] = hitMaterials[i].color;
+        }
     }
-    void Update()
+
+    private void Update()
     {
         HandleRegen();
     }
@@ -49,8 +54,11 @@ public class Health : MonoBehaviour
         currentHealth = maxHealth;
         regenTimer = 0;
 
-        hitMaterial.DOKill();
-        hitMaterial.color = originalColor;
+        for (int i = 0; i < hitMaterials.Length; i++)
+        {
+            hitMaterials[i].DOKill();
+            hitMaterials[i].color = originalColors[i];
+        }
     }
 
     public void TakeDamage(float damage)
@@ -68,16 +76,26 @@ public class Health : MonoBehaviour
 
         if (gameObject.CompareTag("Enemy") || gameObject.CompareTag("Enemy Crit"))
         {
-            hitMaterial.DOKill();
-            hitMaterial.color = damageColor;
-            
-            hitMaterial.DOColor(originalColor, flashDuration);
-            DamageManager.Instance.Show(damage, popupPosition.position);
+            FlashDamage();
+            DamageManager.Instance.Show(damage, popupPosition.position, false);
+            //DamageManager.Instance.Show
+            if (currentHealth <= 0)
+            {
+                Die();
+            }
         }
+    }
 
-        if (currentHealth <= 0)
+    private void FlashDamage()
+    {
+        for (int i = 0; i < hitMaterials.Length; i++)
         {
-            Die();
+            hitMaterials[i].DOKill();
+
+            hitMaterials[i].color = damageColor;
+
+            hitMaterials[i]
+                .DOColor(originalColors[i], flashDuration);
         }
     }
 
@@ -86,21 +104,27 @@ public class Health : MonoBehaviour
         if (playerHP != null)
         {
             playerHP.DOFillAmount(currentHealth / maxHealth, flashDuration);
+
             DOTween.Kill("Health");
+
             playerHP.color = Color.white;
+
             playerHP.DOColor(Color.red, flashDuration).SetId("Health").SetLoops(2, LoopType.Yoyo);
         }
     }
 
     private void GainHealth()
     {
-        playerHP.DOFillAmount(currentHealth / maxHealth, 0.15f);
+        if (playerHP != null)
+            playerHP.DOFillAmount(currentHealth / maxHealth, 0.15f);
     }
+
     public void IncreaseMaxHP(float amount)
     {
         maxHealth += amount;
         currentHealth += amount;
     }
+
     private void HandleRegen()
     {
         if (IsDead)
@@ -136,10 +160,12 @@ public class Health : MonoBehaviour
             return;
         
         GameObject xp = Instantiate(xpPickupPrefab, dropPosition.position, Quaternion.identity);
-        xp.GetComponent<XPPickup>().Initialize(experiencePoints);
+
+        xp.GetComponent<XPPickup>()
+            .Initialize(experiencePoints);
     }
     
-    void Die()
+    private void Die()
     {
         if (enemy != null)
         {
@@ -148,7 +174,13 @@ public class Health : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject); //TODO: Ad Death condition
+            Destroy(gameObject); 
         }
     }
+
+    private void LoseGame()
+    {
+        
+    }
 }
+

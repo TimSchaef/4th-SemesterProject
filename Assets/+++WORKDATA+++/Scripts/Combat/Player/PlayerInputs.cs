@@ -1,9 +1,13 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System;
 
 public class PlayerInputs : MonoBehaviour
 {
     private InputSystem_Actions _inputActions;
+
+    public event Action ShootStarted; 
+    public event Action ShootReleased;
 
     private InputAction _moveAction;
     private InputAction _jumpAction;
@@ -100,16 +104,6 @@ public class PlayerInputs : MonoBehaviour
     {
         _inputActions.Disable();
     }
-
-    public void DisableZiplineInput()
-    {
-        
-    }
-
-    public void EnableZiplineInput()
-    {
-        
-    }
     
        private void Interact(InputAction.CallbackContext ctx)
         {
@@ -130,6 +124,12 @@ public class PlayerInputs : MonoBehaviour
     private void Shoot(InputAction.CallbackContext context)
     {
         _shootInput = context.ReadValueAsButton();
+
+        if (context.started)
+            ShootStarted?.Invoke();
+
+        if (context.canceled)
+            ShootReleased?.Invoke();
     }
 
     private void ShootTwo(InputAction.CallbackContext context)

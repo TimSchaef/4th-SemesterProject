@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: MaxHP_T2
   m_EditorClassIdentifier: Assembly-CSharp::MaxHPUpgradeSO
   upgradeName: Max HP
-  upgradeDescription: 
+  upgradeDescription: Increase Max HP
   upgradeID: Max HP
+  upgradeIcon: {fileID: 0}
   tier: 2
   nextTier: {fileID: 11400000, guid: 3900ca81db89c9241ba1de9de2676b9b, type: 2}
   hpBonus: 10

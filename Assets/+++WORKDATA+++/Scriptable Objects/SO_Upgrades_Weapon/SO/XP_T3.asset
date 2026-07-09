@@ -15,6 +15,7 @@ MonoBehaviour:
   upgradeName: MoreXP
   upgradeDescription: 
   upgradeID: MoreXP
+  upgradeIcon: {fileID: 21300000, guid: e95fd4564147b6040a5316549d42eb9f, type: 3}
   tier: 3
   nextTier: {fileID: 0}
   multiplierIncrease: 2

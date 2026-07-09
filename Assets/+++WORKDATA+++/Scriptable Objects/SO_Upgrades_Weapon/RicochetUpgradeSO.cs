@@ -2,7 +2,7 @@ using UnityEngine;
 
 
 [CreateAssetMenu(menuName = "Upgrades/Ricochet")]
-public class RicochetUpgradeSO : WeaponUpgradeSO   // Start is called once before the first execution of Update after the MonoBehaviour is created
+public class RicochetUpgradeSO : WeaponUpgradeSO  
 {
     public int ricochetCount = 1;
 

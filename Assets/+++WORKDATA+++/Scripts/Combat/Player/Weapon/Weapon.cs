@@ -1,8 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Mime;
+using DG.Tweening;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class Weapon : MonoBehaviour
 {
@@ -32,51 +36,133 @@ public class Weapon : MonoBehaviour
     [Header("Sounds")]
     [SerializeField] private AudioClip shotSound;
     [SerializeField] private AudioClip reloadSound;
+    
+    [Header("Charge Shot")]
+    [SerializeField] private Image chargeShotImage;
+    [SerializeField] private Image chargeShotFillImage;
 
     float nextFireTime;
-    bool reloading;
+    private TimeBuffer reloadBuffer;
+    private TimeBuffer nextFireBuffer;
 
     private float baseFirerate;
     private PlayerXP _playerXP;
     private Health _playerHealth;
     PlayerInputs inputs;
+    private PlayerMovement _playerMovement;
+
+    #region Recoil Variables
+    private bool _hasRecoil;
+    private float _recoilStrength;
+    private float _recoilUpwardForce;
+    private float _nextRecoilTime;
+    private float _recoilCooldown = 1.5f;
+    
+    #endregion
+    
+    #region Chargeshot Variables
+
+    private bool _hasChargeshot;
+    private bool isCharging;
+
+    private float chargeTimer;
+    private float maxChargeTime = 2f;
+    private float chargeMultiplier = 3f;
+    private float minCharge = 0.2f;
+    
+    #endregion
+    
 
     private Dictionary<string, WeaponUpgradeSO> ownedUpgrades;
 
     void Awake()
     {
-        _playerXP = FindObjectOfType<PlayerXP>();
+        _playerMovement = GetComponent<PlayerMovement>();
+        _playerXP = GetComponent<PlayerXP>();
         inputs = GetComponent<PlayerInputs>();
         _playerHealth = GetComponent<Health>();
     }
 
     void Start()
     {
+        reloadBuffer.Deactivate();
+        nextFireBuffer.Deactivate();
+        
         baseFirerate = fireRate;
         gunAnimator.SetFloat("FireSpeed", fireRate / baseFirerate);
         ammo = maxAmmo;
         Weapon_UI.instance.UpdateAmmo();
         ownedUpgrades = new Dictionary<string, WeaponUpgradeSO>();
+        chargeShotImage.gameObject.SetActive(false);
     }
 
     void Update()
     {
-        if (inputs.ShootInput && CanShoot())
-            Shoot();
+        if (isCharging)
+        {
+            chargeTimer += Time.deltaTime;
+            chargeTimer = Mathf.Clamp(chargeTimer, 0f, maxChargeTime);
+
+            if (chargeTimer >= minCharge)
+            {
+                if (!chargeShotImage.gameObject.activeSelf)
+                {
+                    chargeShotImage.gameObject.SetActive(true);
+                    chargeShotFillImage.fillAmount = 0f;
+                }
+
+                float fillPercent = Mathf.InverseLerp(
+                    minCharge,
+                    maxChargeTime,
+                    chargeTimer
+                );
+
+                chargeShotFillImage.DOFillAmount(fillPercent, 0.05f);
+            }
+        }
+        
+        if (ammo <= 0)
+        {
+            gunAnimator.SetTrigger("isReloading");
+            //Play sound
+            
+            ammo = maxAmmo;
+            reloadBuffer.Activate();
+            Weapon_UI.instance.UpdateAmmo();
+        }
+        if(reloadBuffer.IsInTime(reloadTime))
+            return;
+        
+        if (!_hasChargeshot)
+        {
+            if(ammo > 0 && inputs.ShootInput && !nextFireBuffer.IsInTime(nextFireTime))
+                Shoot();
+        }
+
+        if(ammo > 0 && inputs.ShootTwoInput && !nextFireBuffer.IsInTime(nextFireTime) && _hasRecoil)
+        {
+            FireRecoil();
+            _nextRecoilTime = Time.time + _recoilCooldown;
+        }
     }
 
-    bool CanShoot()
+    private void OnEnable()
     {
-        return !reloading &&
-               Time.time >= nextFireTime &&
-               ammo > 0;
+        inputs.ShootStarted += StartCharge;
+        inputs.ShootReleased += ReleaseCharge;
+    }
+
+    private void OnDisable()
+    {
+        inputs.ShootStarted -= StartCharge;
+        inputs.ShootReleased -= ReleaseCharge;
     }
 
     void Shoot()
     {
         gunAnimator.SetTrigger("isShooting");
         AudioManager.Instance.PlaySfx(shotSound);
-        nextFireTime = Time.time + 1f / fireRate;
+        nextFireTime = 1 / fireRate;
         ammo--;
         Weapon_UI.instance.UpdateAmmo();
         PlayerJuice.Instance.CameraKick();
@@ -86,7 +172,7 @@ public class Weapon : MonoBehaviour
         {
             origin = cameraTransform.position, 
             direction = cameraTransform.forward, 
-            damage = damage,
+            damage = Mathf.RoundToInt(damage),
             range = range,
             bounces = 0,
             extraProjectiles = 0,
@@ -102,9 +188,7 @@ public class Weapon : MonoBehaviour
         }
 
         FireMultipleShots(baseShot);
-
-        if (ammo <= 0 && !reloading)
-            StartCoroutine(Reload());
+        nextFireBuffer.Activate();
     }
 
     void FireMultipleShots(WeaponShot shot)
@@ -142,7 +226,7 @@ public class Weapon : MonoBehaviour
             endPoint = shot.origin + shot.direction * shot.range;
             normal = -shot.direction;
         }
-
+        
         SpawnImpact(endPoint, normal);
     }
 
@@ -222,23 +306,107 @@ public class Weapon : MonoBehaviour
         Destroy(fx.gameObject, fx.main.duration + fx.main.startLifetime.constantMax);
     }
 
-    IEnumerator Reload()
+    public void EnableRecoil(float strength, float upwardForce)
     {
-        reloading = true;
-        gunAnimator.SetTrigger("isReloading");
-        //TODO: Add reload Sound
-        //AudioManager.Instance.PlaySfx(reloadSound);
+        _hasRecoil = true;
+        _recoilStrength = strength;
+        _recoilUpwardForce = upwardForce;
+    }
 
-        float t = 0f;
-        while (t < reloadTime)
+    public void EnableChargeshot(float maxTime, float multiplier)
+    {
+        _hasChargeshot = true;
+        maxChargeTime = maxTime;
+        chargeMultiplier = multiplier;
+    }
+
+    private void FireRecoil()
+    {
+        gunAnimator.SetTrigger("isShooting");
+        AudioManager.Instance.PlaySfx(shotSound);
+        nextFireTime = 1 / fireRate;
+        ammo--;
+        Weapon_UI.instance.UpdateAmmo();
+        PlayerJuice.Instance.CameraKick();
+        muzzleParticle.Play();
+        
+        Vector3 force = -cameraTransform.forward * _recoilStrength;
+        force.y = Mathf.Max(force.y, _recoilUpwardForce);
+        
+        _playerMovement.AddRecoil(force);
+    }
+
+    private void StartCharge()
+    {
+        if (!_hasChargeshot)
+            return;
+
+        if (nextFireBuffer.IsInTime(nextFireTime))
+            return;
+
+        isCharging = true;
+        chargeTimer = 0f;
+
+        chargeShotImage.gameObject.SetActive(false);
+        chargeShotFillImage.fillAmount = 0f;
+    }
+
+    private void ReleaseCharge()
+    {
+        if (!_hasChargeshot || !isCharging)
+            return;
+
+        if (ammo <= 0)
+            return;
+
+        chargeShotImage.gameObject.SetActive(false);
+        chargeShotFillImage.fillAmount = 0f;
+
+        float chargePercent = chargeTimer / maxChargeTime;
+
+        if (chargePercent < minCharge)
+            Shoot();
+        else
+            ShootCharged(chargePercent);
+
+        isCharging = false;
+        chargeTimer = 0f;
+    }
+    
+    private void ShootCharged(float charge)
+    {
+        gunAnimator.SetTrigger("isShooting");
+        AudioManager.Instance.PlaySfx(shotSound);
+
+        ammo--;
+        Weapon_UI.instance.UpdateAmmo();
+
+        PlayerJuice.Instance.CameraKick();
+        muzzleParticle.Play();
+
+        WeaponShot baseShot = new WeaponShot
         {
-            t += Time.deltaTime;
-            yield return null;
+            origin = cameraTransform.position,
+            direction = cameraTransform.forward,
+            damage = damage * Mathf.Lerp(1f, chargeMultiplier, charge),
+            range = range,
+            bounces = 0,
+            extraProjectiles = 0,
+            spreadAngles = 5f
+        };
+
+
+        foreach (var upgrade in ownedUpgrades.Values)
+        {
+            if (upgrade == null)
+                continue;
+
+            upgrade.Modify(ref baseShot);
         }
 
-        ammo = maxAmmo;
-        Weapon_UI.instance.UpdateAmmo();
-        reloading = false;
+        FireMultipleShots(baseShot);
+
+        nextFireBuffer.Activate();
     }
 
     public void AddUpgrade(WeaponUpgradeSO upgrade)
@@ -267,4 +435,29 @@ public class Weapon : MonoBehaviour
         ammo = maxAmmo;
     }
     
+}
+
+public struct TimeBuffer
+{
+    private float startTime;
+    private float coolDownTime;
+
+    public void Activate()
+    {
+        //Check if a cooldown is currently active
+        if(coolDownTime > Time.time)
+            return;
+
+        startTime = Time.time;
+    }
+
+    public void Deactivate() => startTime = -99999;
+
+    public void Cooldown(float coolDown)
+    {
+        Deactivate();
+        coolDownTime = Time.time + coolDown;
+    }
+
+    public bool IsInTime(float timeFrame) => startTime + timeFrame > Time.time;
 }
