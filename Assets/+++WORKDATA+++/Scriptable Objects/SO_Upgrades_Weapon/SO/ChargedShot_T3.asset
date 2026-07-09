@@ -16,7 +16,7 @@ MonoBehaviour:
   upgradeDescription: Hold to increase Damage
   upgradeID: ChargeShot
   upgradeIcon: {fileID: 21300000, guid: 2f96e5b2ed931f44fa83a161dd45edcb, type: 3}
-  tier: 1
-  nextTier: {fileID: 0}
+  tier: 3
+  nextTier: {fileID: 11400000, guid: 984b09945df84fb4cb4c20b786b997ad, type: 2}
   maxChargeTime: 3
   damageMultiplier: 3

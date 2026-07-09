@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8dc9df9816306c34089979c6cf503e12, type: 3}
-  m_Name: Damage_T3
+  m_Name: Damage_T7
   m_EditorClassIdentifier: Assembly-CSharp::DamageUpgradeSO
   upgradeName: Damage
   upgradeDescription: Damage gets increased
   upgradeID: Damage
   upgradeIcon: {fileID: 21300000, guid: 2c6bfec9583373340b2154abb3883ca8, type: 3}
-  tier: 3
-  nextTier: {fileID: 11400000, guid: 1de537ebba117654eafde91296ddd545, type: 2}
-  damageBonus: 3
+  tier: 7
+  nextTier: {fileID: 11400000, guid: 747334c6409887e4dbc10c36a63bbea9, type: 2}
+  damageBonus: 6
