@@ -29904,7 +29904,7 @@ MonoBehaviour:
     budgetPerSecond: 2
     enemies:
     - {fileID: 11400000, guid: d668ba5896f030b4a9e5b4e9aec3f070, type: 2}
-  - startTime: 30
+  - startTime: 60
     budgetPerSecond: 6
     enemies:
     - {fileID: 11400000, guid: d668ba5896f030b4a9e5b4e9aec3f070, type: 2}
@@ -29922,10 +29922,12 @@ MonoBehaviour:
     enemies:
     - {fileID: 11400000, guid: fcd1338854f22664ca92d309c046e781, type: 2}
   - startTime: 400
-    budgetPerSecond: 0
-    enemies: []
+    budgetPerSecond: 12
+    enemies:
+    - {fileID: 11400000, guid: fcd1338854f22664ca92d309c046e781, type: 2}
+    - {fileID: 11400000, guid: 861bd0f7cad9dc04cbf67f9d4639dec1, type: 2}
   - startTime: 415
-    budgetPerSecond: 14
+    budgetPerSecond: 6
     enemies:
     - {fileID: 11400000, guid: fcd1338854f22664ca92d309c046e781, type: 2}
     - {fileID: 11400000, guid: 861bd0f7cad9dc04cbf67f9d4639dec1, type: 2}
@@ -29995,6 +29997,16 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 9d4c4e4dda6a19e4ba773d00f8720657, type: 2}
     - {fileID: 11400000, guid: ace6d1bbe2ec23f459b5bdf368913c6a, type: 2}
   - startTime: 2000
+    budgetPerSecond: 34
+    enemies:
+    - {fileID: 11400000, guid: 9d4c4e4dda6a19e4ba773d00f8720657, type: 2}
+    - {fileID: 11400000, guid: ace6d1bbe2ec23f459b5bdf368913c6a, type: 2}
+  - startTime: 2200
+    budgetPerSecond: 20
+    enemies:
+    - {fileID: 11400000, guid: 9d4c4e4dda6a19e4ba773d00f8720657, type: 2}
+    - {fileID: 11400000, guid: ace6d1bbe2ec23f459b5bdf368913c6a, type: 2}
+  - startTime: 2300
     budgetPerSecond: 34
     enemies:
     - {fileID: 11400000, guid: 9d4c4e4dda6a19e4ba773d00f8720657, type: 2}
@@ -53457,13 +53469,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1486870088}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3572438, y: 0.28728226, z: 0.69957024, w: 0.54813075}
-  m_LocalPosition: {x: 178.84, y: 28.4, z: 128.65}
+  m_LocalRotation: {x: 0.36125055, y: 0.28413355, z: 0.69750965, w: 0.54976946}
+  m_LocalPosition: {x: 178.82, y: 28.52, z: 128.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1029194058}
-  m_LocalEulerAnglesHint: {x: -0.591, y: 54.569, z: 103.536}
+  m_LocalEulerAnglesHint: {x: 0.048, y: 54.723, z: 103.535}
 --- !u!64 &1486870090
 MeshCollider:
   m_ObjectHideFlags: 0
