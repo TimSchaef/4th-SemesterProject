@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6769707338388995502}
   - component: {fileID: 3627217778403405204}
   - component: {fileID: 5740203323480220244}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cactus_Cluster
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 281723884496866968}
   - component: {fileID: 9146547654378877284}
   - component: {fileID: 5787251288051494910}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Railwood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
