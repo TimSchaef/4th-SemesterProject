@@ -1,3 +1,4 @@
+using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
@@ -72,6 +73,11 @@ public class Health : MonoBehaviour
         {
             LoseHealth();
             PlayerJuice.Instance.GetDamage();
+            
+            if (currentHealth <= 0)
+            {
+                UIManager.Instance.ShowEndPanel();
+            }
         }
 
         if (gameObject.CompareTag("Enemy") || gameObject.CompareTag("Enemy Crit"))
@@ -178,9 +184,10 @@ public class Health : MonoBehaviour
         }
     }
 
-    private void LoseGame()
+    private IEnumerator ShowDeathScreen()
     {
-        
+        yield return new WaitForSeconds(0.5f);
+        UIManager.Instance.ShowEndPanel();
     }
 }
 
