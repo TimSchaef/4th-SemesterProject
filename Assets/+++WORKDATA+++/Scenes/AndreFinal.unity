@@ -35696,6 +35696,24 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PickUpgrade
       objectReference: {fileID: 0}
+    - target: {fileID: 2455445793482764786, guid: 8c6c3bce4e094194bac8d1abe256cb9f, type: 3}
+      propertyPath: m_text
+      value: ---
+      objectReference: {fileID: 0}
+    - target: {fileID: 2996135535533911522, guid: 8c6c3bce4e094194bac8d1abe256cb9f, type: 3}
+      propertyPath: m_text
+      value: '---
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3633400294067710214, guid: 8c6c3bce4e094194bac8d1abe256cb9f, type: 3}
+      propertyPath: m_text
+      value: ---
+      objectReference: {fileID: 0}
+    - target: {fileID: 3723409524180295102, guid: 8c6c3bce4e094194bac8d1abe256cb9f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4444251324440911249, guid: 8c6c3bce4e094194bac8d1abe256cb9f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

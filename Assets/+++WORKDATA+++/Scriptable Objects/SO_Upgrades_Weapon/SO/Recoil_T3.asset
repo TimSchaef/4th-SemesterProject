@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Recoil_T3
   m_EditorClassIdentifier: Assembly-CSharp::RecoilUpgradeSO
   upgradeName: Recoil
-  upgradeDescription: Right Click to knock away
+  upgradeDescription: Right click to bounce yourself back even further
   upgradeID: Recoil
   upgradeIcon: {fileID: 21300000, guid: d3abe32c4955960488dd11f53d1bef9f, type: 3}
   tier: 3
-  nextTier: {fileID: 0}
+  nextTier: {fileID: 11400000, guid: c5677c61f14926d41abb7c8c7053cc61, type: 2}
   recoilStrength: 2
   upwardForce: 20

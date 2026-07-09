@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SplitShot_T2
   m_EditorClassIdentifier: Assembly-CSharp::SplitShotUpgradeSO
   upgradeName: Split Shot
-  upgradeDescription: 
+  upgradeDescription: Shoot +2 more bullets at once
   upgradeID: SplitShot
   upgradeIcon: {fileID: 21300000, guid: 752034121ce22c647bc0589475466552, type: 3}
   tier: 2
