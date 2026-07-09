@@ -18,5 +18,5 @@ MonoBehaviour:
   upgradeIcon: {fileID: 21300000, guid: d3abe32c4955960488dd11f53d1bef9f, type: 3}
   tier: 2
   nextTier: {fileID: 11400000, guid: fe5472e15c036fb4d84b5c3ae57849cf, type: 2}
-  recoilStrength: 20
+  recoilStrength: 2
   upwardForce: 10

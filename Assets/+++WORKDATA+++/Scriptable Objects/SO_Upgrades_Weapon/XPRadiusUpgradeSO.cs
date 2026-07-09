@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Upgrades/Range Upgrade")]
+[CreateAssetMenu(menuName = "Upgrades/XP Radius")]
 public class XPRangeUpgradeSO : WeaponUpgradeSO
 {
     public float rangeBonus = 5f;
