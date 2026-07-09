@@ -401,10 +401,10 @@ MonoBehaviour:
   enemyData: {fileID: 11400000, guid: d668ba5896f030b4a9e5b4e9aec3f070, type: 2}
   contactDamage: 5
   attackCooldown: 1
-  attackRange: 2
+  attackRange: 2.5
   knockbackForce: 4
   stopDistance: 1.8
-  pathUpdateInterval: 0.1
+  pathUpdateInterval: 0.2
 --- !u!114 &3424245264619112088
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -15,7 +15,7 @@ MonoBehaviour:
   upgradeName: Max HP
   upgradeDescription: Increase Max HP
   upgradeID: Max HP
-  upgradeIcon: {fileID: 0}
+  upgradeIcon: {fileID: 21300000, guid: c38830ac416273347af4335afe407d5e, type: 3}
   tier: 1
   nextTier: {fileID: 11400000, guid: 88f67cf3633d99c4d87c9252aaea265b, type: 2}
   hpBonus: 5
