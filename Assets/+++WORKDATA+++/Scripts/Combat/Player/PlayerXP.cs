@@ -20,10 +20,13 @@ public class PlayerXP : MonoBehaviour
     [Space] 
     [SerializeField] private Image currentXPImage;
     [SerializeField] private UpgradeManager upgradeManager;
+    public XPCollector xpCollector;
 
 
     void Awake()
     {
+        xpCollector = GetComponent<XPCollector>();
+        
         if (Instance == null)
         {
             Instance = this;
