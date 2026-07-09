@@ -19,4 +19,4 @@ MonoBehaviour:
   tier: 3
   nextTier: {fileID: 0}
   recoilStrength: 2
-  upwardForce: 15
+  upwardForce: 20

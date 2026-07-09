@@ -3435,17 +3435,8 @@ MonoBehaviour:
   - {fileID: 20525659}
   - {fileID: 1913832643}
   allUpgrades:
-  - {fileID: 11400000, guid: f381a7c75e7883244a0a4ff8eeaefd8f, type: 2}
-  - {fileID: 11400000, guid: 8798ed0c8f3d7ac488227ff2b00019d5, type: 2}
-  - {fileID: 11400000, guid: 0837d93ded48ef647ae18e2d6168de00, type: 2}
-  - {fileID: 11400000, guid: 56aba3321ffb9274b9279602a93d82c2, type: 2}
-  - {fileID: 11400000, guid: b45f8fb08f203af4e8e87346902a3de4, type: 2}
-  - {fileID: 11400000, guid: a7131fed0ae6bf146a11d30c1c1bc84a, type: 2}
-  - {fileID: 11400000, guid: ec1d239518e52d143bff920ead5b8cdc, type: 2}
-  - {fileID: 11400000, guid: dbbfac3c1d972774dbb71fc902de87f1, type: 2}
-  - {fileID: 11400000, guid: d078caddc42b84f4a8b0175babc0ed70, type: 2}
-  - {fileID: 11400000, guid: b2d8fd5ed774da24db5c4ab3c35eef25, type: 2}
   - {fileID: 11400000, guid: ec21d44ae98fce24c853b1ec6aae983d, type: 2}
+  - {fileID: 11400000, guid: f381a7c75e7883244a0a4ff8eeaefd8f, type: 2}
   upgradeName:
   - {fileID: 759176169}
   - {fileID: 443995239}
@@ -35762,6 +35753,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 353394248472044331, guid: 8c6c3bce4e094194bac8d1abe256cb9f, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 353394248472044331, guid: 8c6c3bce4e094194bac8d1abe256cb9f, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bd8d867943d0d374b958d8540db9e2aa, type: 3}
+    - target: {fileID: 353394248472044331, guid: 8c6c3bce4e094194bac8d1abe256cb9f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 164865386}
@@ -35781,6 +35780,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PickUpgrade
       objectReference: {fileID: 0}
+    - target: {fileID: 1654959937045797812, guid: 8c6c3bce4e094194bac8d1abe256cb9f, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654959937045797812, guid: 8c6c3bce4e094194bac8d1abe256cb9f, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bd8d867943d0d374b958d8540db9e2aa, type: 3}
     - target: {fileID: 1654959937045797812, guid: 8c6c3bce4e094194bac8d1abe256cb9f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -35889,6 +35896,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: UpgradeCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8751631622935378005, guid: 8c6c3bce4e094194bac8d1abe256cb9f, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8751631622935378005, guid: 8c6c3bce4e094194bac8d1abe256cb9f, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bd8d867943d0d374b958d8540db9e2aa, type: 3}
     - target: {fileID: 8751631622935378005, guid: 8c6c3bce4e094194bac8d1abe256cb9f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -63586,6 +63601,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50dc2799e20e9944f9652726165f6469, type: 3}
+--- !u!114 &1728299230 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7269388697591316747, guid: 9c4f2345ac9e77b48a47030ebd102d00, type: 3}
+  m_PrefabInstance: {fileID: 1349309855}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9dc79cf525c5094790b5068ecc3d340, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInputs
 --- !u!114 &1731492730 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6236909328092469461, guid: 61cca798fe8eee241aead43dae136068, type: 3}
@@ -76281,6 +76307,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas_UI
       objectReference: {fileID: 0}
+    - target: {fileID: 5665724262566619155, guid: 61cca798fe8eee241aead43dae136068, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6648376859357181681, guid: 61cca798fe8eee241aead43dae136068, type: 3}
+      propertyPath: playerInputs
+      value: 
+      objectReference: {fileID: 1728299230}
     - target: {fileID: 8099154905470801000, guid: 61cca798fe8eee241aead43dae136068, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -76366,7 +76400,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1459828198}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5665724262566619155, guid: 61cca798fe8eee241aead43dae136068, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61cca798fe8eee241aead43dae136068, type: 3}
