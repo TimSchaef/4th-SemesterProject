@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ff3a9817f22ea444b3eccd74b179957, type: 3}
-  m_Name: XP_T3
+  m_Name: XP_T4
   m_EditorClassIdentifier: Assembly-CSharp::XPUpgradeSO
   upgradeName: MoreXP
   upgradeDescription: 
   upgradeID: MoreXP
   upgradeIcon: {fileID: 21300000, guid: e95fd4564147b6040a5316549d42eb9f, type: 3}
-  tier: 3
-  nextTier: {fileID: 11400000, guid: ad262721470d2ae4d992b903df7b74c1, type: 2}
+  tier: 4
+  nextTier: {fileID: 0}
   multiplierIncrease: 2

@@ -18,4 +18,4 @@ MonoBehaviour:
   upgradeIcon: {fileID: 21300000, guid: 406890ba327b6ca4096792d7b7201413, type: 3}
   tier: 1
   nextTier: {fileID: 11400000, guid: 907090180db51324c89738536e6e289a, type: 2}
-  ammoBonus: 5
+  ammoBonus: 3
