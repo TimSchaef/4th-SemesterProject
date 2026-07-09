@@ -14,10 +14,16 @@ public class InteractionObjective : MonoBehaviour
     [SerializeField] private float cooldownTime = 60f;
 
     private bool onCooldown;
+    public Animator animator;
 
     public SO_ObjectiveWave ObjectiveWave => objectiveWave;
     public Transform[] SpawnPoints => objectiveSpawnPoints;
 
+    void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
+    
     public void Interact(EnemySpawner spawner)
     {
         if (onCooldown)
@@ -52,6 +58,7 @@ public class InteractionObjective : MonoBehaviour
 
         yield return new WaitForSeconds(cooldownTime);
 
+        animator.SetTrigger("isInactive");
         onCooldown = false;
     }
 }
