@@ -92573,6 +92573,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UpgradeCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7527827434701288788, guid: 8c6c3bce4e094194bac8d1abe256cb9f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -122021,8 +122025,11 @@ MonoBehaviour:
   weaponRef: {fileID: 22128337757184578}
   ammoText: {fileID: 1761719927}
   killAmountText: {fileID: 478566191}
-  objectiveEnemyText: {fileID: 391112544}
+  waveStartedText: {fileID: 0}
+  waveRewardText: {fileID: 0}
   objectiveImage: {fileID: 385381941}
+  bossBarFrame: {fileID: 0}
+  objectiveBossBar: {fileID: 0}
 --- !u!114 &1682264343
 MonoBehaviour:
   m_ObjectHideFlags: 0

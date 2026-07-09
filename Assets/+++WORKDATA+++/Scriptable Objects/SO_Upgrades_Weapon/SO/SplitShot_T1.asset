@@ -15,6 +15,7 @@ MonoBehaviour:
   upgradeName: Split Shot
   upgradeDescription: 
   upgradeID: SplitShot
+  upgradeIcon: {fileID: 21300000, guid: 752034121ce22c647bc0589475466552, type: 3}
   tier: 1
   nextTier: {fileID: 11400000, guid: fc1b4fef34c035b45bb1921efe9e461d, type: 2}
   extraProjectiles: 1

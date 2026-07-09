@@ -77,12 +77,12 @@ public class Health : MonoBehaviour
         if (gameObject.CompareTag("Enemy") || gameObject.CompareTag("Enemy Crit"))
         {
             FlashDamage();
-            DamageManager.Instance.Show(damage, popupPosition.position);
-        }
-
-        if (currentHealth <= 0)
-        {
-            Die();
+            DamageManager.Instance.Show(damage, popupPosition.position, false);
+            //DamageManager.Instance.Show
+            if (currentHealth <= 0)
+            {
+                Die();
+            }
         }
     }
 
@@ -109,10 +109,7 @@ public class Health : MonoBehaviour
 
             playerHP.color = Color.white;
 
-            playerHP
-                .DOColor(Color.red, flashDuration)
-                .SetId("Health")
-                .SetLoops(2, LoopType.Yoyo);
+            playerHP.DOColor(Color.red, flashDuration).SetId("Health").SetLoops(2, LoopType.Yoyo);
         }
     }
 
@@ -162,10 +159,7 @@ public class Health : MonoBehaviour
         if (experiencePoints == null)
             return;
         
-        GameObject xp = Instantiate(
-            xpPickupPrefab, 
-            dropPosition.position, 
-            Quaternion.identity);
+        GameObject xp = Instantiate(xpPickupPrefab, dropPosition.position, Quaternion.identity);
 
         xp.GetComponent<XPPickup>()
             .Initialize(experiencePoints);
@@ -180,8 +174,13 @@ public class Health : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject); //TODO:: Add Death condition
+            Destroy(gameObject); 
         }
+    }
+
+    private void LoseGame()
+    {
+        
     }
 }
 

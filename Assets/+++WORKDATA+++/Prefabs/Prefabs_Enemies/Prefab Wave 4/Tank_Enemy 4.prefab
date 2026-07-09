@@ -560,7 +560,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 608bbaa0b1bf43d4ca7ecf2797da684b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TestEnemy
-  enemyData: {fileID: 0}
+  enemyData: {fileID: 11400000, guid: d619b628168660447b721e0c346f1594, type: 2}
   contactDamage: 5
   attackCooldown: 1
   attackRange: 2

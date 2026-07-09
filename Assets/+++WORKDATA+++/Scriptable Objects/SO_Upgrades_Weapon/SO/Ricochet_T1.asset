@@ -15,6 +15,7 @@ MonoBehaviour:
   upgradeName: Ricochet
   upgradeDescription: 
   upgradeID: Ricochet
+  upgradeIcon: {fileID: 21300000, guid: e10ddc7aa49eca2448f15ce15e30cb7b, type: 3}
   tier: 1
   nextTier: {fileID: 11400000, guid: f1d4a7bf08972444abd85f26ebca95d7, type: 2}
   ricochetCount: 1

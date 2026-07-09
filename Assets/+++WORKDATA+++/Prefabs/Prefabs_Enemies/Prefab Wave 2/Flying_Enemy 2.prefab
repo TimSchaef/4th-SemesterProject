@@ -348,7 +348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 608bbaa0b1bf43d4ca7ecf2797da684b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TestEnemy
-  enemyData: {fileID: 11400000, guid: c3c5bc5c761ded143b64f7f6c019c48f, type: 2}
+  enemyData: {fileID: 11400000, guid: ee734b14393732c49933a0c4886be14e, type: 2}
   contactDamage: 5
   attackCooldown: 1
   attackRange: 2

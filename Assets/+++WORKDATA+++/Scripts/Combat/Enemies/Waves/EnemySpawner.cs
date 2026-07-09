@@ -169,7 +169,6 @@ public class EnemySpawner : MonoBehaviour
 
         objectiveRemaining = currentObjectiveData.enemyCount;
         Weapon_UI.instance.objectiveBossBar.DOFillAmount((float)objectiveRemaining / currentObjectiveData.enemyCount , 0.8f);
-        Weapon_UI.instance.objectiveEnemyText.text = objectiveRemaining.ToString();
         Weapon_UI.instance.waveRewardText.text = "Upgrades: " + currentObjectiveData.rewards.ToString();   
 
         StartCoroutine(ActivateObjectiveEnemies());
@@ -197,7 +196,6 @@ public class EnemySpawner : MonoBehaviour
             return;
 
         objectiveRemaining--;
-        Weapon_UI.instance.objectiveEnemyText.text = objectiveRemaining.ToString();
         
         float fill = (float)objectiveRemaining / currentObjectiveData.enemyCount;
 
@@ -216,7 +214,7 @@ public class EnemySpawner : MonoBehaviour
         currentObjective.OpenDoors();
         
         PlayerXP.Instance.pendingLevelUps += currentObjectiveData.rewards;
-        PlayerXP.Instance.CheckLevelUp();
+        StartCoroutine(PlayerXP.Instance.LevelUpDelay());
 
         activeSpawnPoints = spawnPoints;
         currentObjective.StartCooldown();

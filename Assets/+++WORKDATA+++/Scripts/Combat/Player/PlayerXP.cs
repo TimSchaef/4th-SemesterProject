@@ -51,7 +51,7 @@ public class PlayerXP : MonoBehaviour
 
             pendingLevelUps++;
         }
-
+    
         StartCoroutine(LevelUpDelay());
     }
 
@@ -65,7 +65,7 @@ public class PlayerXP : MonoBehaviour
         }
     }
 
-    private IEnumerator LevelUpDelay()
+    public IEnumerator LevelUpDelay()
     {
         yield return new WaitForSeconds(levelUpDelay);
         CheckLevelUp();

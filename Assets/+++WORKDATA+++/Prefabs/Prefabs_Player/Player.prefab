@@ -296,6 +296,8 @@ MonoBehaviour:
   muzzleParticle: {fileID: 5909923740214885381}
   shotSound: {fileID: 8300000, guid: 577674d94eec7ac4ea7d7e71baa897b0, type: 3}
   reloadSound: {fileID: 0}
+  chargeShotImage: {fileID: 0}
+  chargeShotFillImage: {fileID: 0}
 --- !u!114 &8255602399209944284
 MonoBehaviour:
   m_ObjectHideFlags: 0

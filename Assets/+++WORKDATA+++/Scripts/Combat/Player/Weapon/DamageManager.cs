@@ -23,12 +23,16 @@ public class DamageManager : MonoBehaviour
         }
     }
 
-    public void Show(float damage, Vector3 position)
+    public void Show(float damage, Vector3 position, bool isCritical)
     {
         DamagePopup popup = pool.Dequeue();
         popup.transform.position = position;
         popup.gameObject.SetActive(true);
-        popup.Show(damage);
+        popup.Show(Mathf.RoundToInt(damage));
+        // if (isCritical)
+        // {
+        //     popup.Show();
+        // }
     }
 
     public void Return(DamagePopup popup)

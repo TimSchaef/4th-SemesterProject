@@ -156,23 +156,14 @@ public abstract class EnemyBase : MonoBehaviour
 
     protected virtual void HandleAttack()
     {
-        float distance =
-            (transform.position - target.position)
-            .sqrMagnitude;
-
-
-        if (distance > sqrAttackRange)
-            return;
-
-
-        if (Time.time < nextAttackTime)
-            return;
-
-
-        nextAttackTime =
-            Time.time + attackCooldown;
-
-
+        float distance = (transform.position - target.position).sqrMagnitude;
+        
+        if (distance > sqrAttackRange) return;
+        
+        if (Time.time < nextAttackTime) return;
+        
+        nextAttackTime = Time.time + attackCooldown;
+        
         Attack();
     }
 
@@ -186,7 +177,6 @@ public abstract class EnemyBase : MonoBehaviour
         if (playerMovement != null)
         {
             Vector3 dir = (target.position - transform.position).normalized;
-
 
             playerMovement.AddKnockback(dir * knockbackForce);
         }

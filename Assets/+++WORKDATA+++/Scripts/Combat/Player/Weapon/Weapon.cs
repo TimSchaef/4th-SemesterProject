@@ -69,9 +69,6 @@ public class Weapon : MonoBehaviour
     private float maxChargeTime = 2f;
     private float chargeMultiplier = 3f;
     private float minCharge = 0.2f;
-
-    private Tween chargeTween;
-    
     
     #endregion
     
@@ -114,9 +111,13 @@ public class Weapon : MonoBehaviour
                     chargeShotFillImage.fillAmount = 0f;
                 }
 
-                float chargePercent = Mathf.InverseLerp(minCharge, maxChargeTime, chargeTimer);
+                float fillPercent = Mathf.InverseLerp(
+                    minCharge,
+                    maxChargeTime,
+                    chargeTimer
+                );
 
-                chargeShotFillImage.DOFillAmount(chargePercent, 0.1f);
+                chargeShotFillImage.DOFillAmount(fillPercent, 0.05f);
             }
         }
         
@@ -138,7 +139,7 @@ public class Weapon : MonoBehaviour
                 Shoot();
         }
 
-        if(ammo > 0 && inputs.ShootTwoInput && !nextFireBuffer.IsInTime(nextFireTime))
+        if(ammo > 0 && inputs.ShootTwoInput && !nextFireBuffer.IsInTime(nextFireTime) && _hasRecoil)
         {
             FireRecoil();
             _nextRecoilTime = Time.time + _recoilCooldown;
@@ -346,12 +347,8 @@ public class Weapon : MonoBehaviour
         isCharging = true;
         chargeTimer = 0f;
 
-        chargeShotImage.gameObject.SetActive(true);
+        chargeShotImage.gameObject.SetActive(false);
         chargeShotFillImage.fillAmount = 0f;
-
-        chargeTween?.Kill();
-
-        chargeTween = chargeShotFillImage.DOFillAmount(1f, maxChargeTime).SetEase(Ease.Linear);
     }
 
     private void ReleaseCharge()
@@ -362,20 +359,15 @@ public class Weapon : MonoBehaviour
         if (ammo <= 0)
             return;
 
-        chargeTween?.Kill();
-
         chargeShotImage.gameObject.SetActive(false);
+        chargeShotFillImage.fillAmount = 0f;
 
         float chargePercent = chargeTimer / maxChargeTime;
 
         if (chargePercent < minCharge)
-        {
             Shoot();
-        }
         else
-        {
             ShootCharged(chargePercent);
-        }
 
         isCharging = false;
         chargeTimer = 0f;

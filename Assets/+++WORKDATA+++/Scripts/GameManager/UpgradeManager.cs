@@ -144,7 +144,7 @@ public class UpgradeManager : MonoBehaviour
 
         if (hasChoice)
         {
-            upgradeName[i].text = currentChoices[i].upgradeName + "\nTier " + currentChoices[i].tier;
+            upgradeName[i].text = currentChoices[i].upgradeName;
             upgradeIcons[i].sprite = currentChoices[i].upgradeIcon;
             upgradeDescription[i].text = currentChoices[i].upgradeDescription;
         }

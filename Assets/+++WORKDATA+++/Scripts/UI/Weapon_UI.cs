@@ -11,8 +11,6 @@ public class Weapon_UI : MonoBehaviour
 
     [Header("Kill Stats")] 
     [SerializeField] public TextMeshProUGUI killAmountText;
-
-    [SerializeField] public TextMeshProUGUI objectiveEnemyText;
     [SerializeField] public TextMeshProUGUI waveStartedText;
     [SerializeField] public TextMeshProUGUI waveRewardText;
     [SerializeField] private Image objectiveImage;
@@ -36,7 +34,6 @@ public class Weapon_UI : MonoBehaviour
     {
         print($"StartWaveUI: {value}");
         objectiveImage.DOFade(value, 0.5f);
-        objectiveEnemyText.DOFade(value, 0.5f);
         bossBarFrame.DOFade(value, 0.5f);
         objectiveBossBar.DOFade(value, 0.5f);
         waveStartedText.DOFade(value, 0.5f);
