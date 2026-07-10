@@ -24,7 +24,7 @@ public class InteractionObjective : MonoBehaviour
 
     void Start()
     {
-        cooldownText.text = "Reward: " + objectiveWave.rewards.ToString();
+        cooldownText.text = "Start Wave";
     }
     
     public void Interact(EnemySpawner spawner)
@@ -73,7 +73,7 @@ public class InteractionObjective : MonoBehaviour
         }
 
         onCooldown = false;
-        cooldownText.text = "Reward:" + objectiveWave.rewards.ToString();
+        cooldownText.text = "Start Wave";
         animator.SetTrigger("isInactive");
     }
 
