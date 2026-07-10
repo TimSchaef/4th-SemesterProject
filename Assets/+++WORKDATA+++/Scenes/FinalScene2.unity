@@ -99942,6 +99942,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 681363674}
     - target: {fileID: 9138831222774495869, guid: d18ab99f6747469478691f69422a62e2, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1578931607}
+    - target: {fileID: 9138831222774495869, guid: d18ab99f6747469478691f69422a62e2, type: 3}
       propertyPath: cooldownText
       value: 
       objectReference: {fileID: 435328001}
@@ -107891,6 +107895,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 281723884496866968, guid: d41070a2df7c5fd418e61637428beeb3, type: 3}
   m_PrefabInstance: {fileID: 42916452}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1578931607 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7775766036456546008, guid: d18ab99f6747469478691f69422a62e2, type: 3}
+  m_PrefabInstance: {fileID: 1479718369}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1578943577 stripped
 Transform:
