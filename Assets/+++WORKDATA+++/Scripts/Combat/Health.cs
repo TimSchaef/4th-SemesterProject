@@ -105,7 +105,10 @@ public class Health : MonoBehaviour
         {
             hitMaterials[i].DOKill();
 
-            hitMaterials[i].color = damageColor;
+            Color flash = damageColor;
+            flash.a = originalAlphas[i];
+
+            hitMaterials[i].color = flash;
 
             hitMaterials[i]
                 .DOColor(originalColors[i], flashDuration);
