@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SO_XP_Wave 3
   m_EditorClassIdentifier: Assembly-CSharp::SO_ExperiencePoints
   xpMaterial: {fileID: 2100000, guid: 356406dd12f743343a1c32a76f8d0734, type: 2}
-  xpAmount: 10
-  collectRadius: 2
+  xpAmount: 14
+  collectRadius: 3
