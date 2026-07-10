@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class InteractionObjective : MonoBehaviour
@@ -12,6 +13,8 @@ public class InteractionObjective : MonoBehaviour
 
     [Header("Cooldown")]
     [SerializeField] private float cooldownTime = 60f;
+    [SerializeField] private Canvas cooldownCanvas;
+    [SerializeField] private TextMeshProUGUI cooldownText;
 
     private bool onCooldown;
     public Animator animator;
@@ -56,9 +59,29 @@ public class InteractionObjective : MonoBehaviour
     {
         onCooldown = true;
 
-        yield return new WaitForSeconds(cooldownTime);
-
         animator.SetTrigger("isInactive");
+
+        while (cooldownTime > 0)
+        {
+            cooldownTime--;
+
+            if (cooldownCanvas.enabled)
+                cooldownText.text = cooldownTime.ToString();
+
+            yield return new WaitForSeconds(1f);
+        }
+
         onCooldown = false;
+    }
+
+    public void ShowCooldownCanvas()
+    {
+        cooldownCanvas.enabled = true;
+        cooldownText.text = cooldownTime.ToString();
+    }
+
+    public void HideCooldownCanvas()
+    {
+        cooldownCanvas.enabled = false;
     }
 }
