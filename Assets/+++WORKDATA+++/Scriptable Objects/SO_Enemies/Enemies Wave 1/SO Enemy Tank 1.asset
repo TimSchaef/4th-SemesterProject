@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_EnemyData
   enemyPrefab: {fileID: 3352664838917177954, guid: fcce7a1b6f539fd42a4439812f4b4f66, type: 3}
   spawnCost: 15
-  poolSize: 600
+  poolSize: 200

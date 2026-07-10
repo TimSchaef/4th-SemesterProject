@@ -1,7 +1,9 @@
 using System.Collections;
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.UIElements;
+using Cursor = UnityEngine.Cursor;
+using Image = UnityEngine.UI.Image;
 
 public class Health : MonoBehaviour
 {
@@ -84,6 +86,8 @@ public class Health : MonoBehaviour
             if (currentHealth <= 0)
             {
                 UIManager.Instance.ShowEndPanel();
+                Cursor.visible =  true;
+                Cursor.lockState =  CursorLockMode.None;
             }
         }
 
