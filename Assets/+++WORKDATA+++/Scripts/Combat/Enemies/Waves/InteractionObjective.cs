@@ -48,7 +48,7 @@ public class InteractionObjective : MonoBehaviour
         foreach (var door in doors)
         {
             door.CloseDoor();
-            animator.SetTrigger("isActive");
+            animator.SetTrigger("isActived");
         }
     }
 
@@ -67,7 +67,7 @@ public class InteractionObjective : MonoBehaviour
     {
         onCooldown = true;
 
-        animator.SetTrigger("isInactive");
+        animator.SetTrigger("isActive");
 
         while (cooldownTime > 0)
         {
@@ -80,6 +80,7 @@ public class InteractionObjective : MonoBehaviour
 
         onCooldown = false;
         cooldownText.text = "Reward:" + objectiveWave.rewards.ToString();
+        animator.SetTrigger("isInactive");
     }
 
     public void ShowCooldownCanvas()
