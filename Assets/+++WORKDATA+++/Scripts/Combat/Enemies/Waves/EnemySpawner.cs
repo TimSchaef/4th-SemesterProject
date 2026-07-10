@@ -154,6 +154,7 @@ public class EnemySpawner : MonoBehaviour
         AudioManager.Instance.PlaySfx(activateSound);
         Weapon_UI.instance.objectiveBossBar.gameObject.SetActive(true);
         Weapon_UI.instance.StartWaveUI(1);
+        objective.animator.SetTrigger("isActived");
         objectiveActive = true;
         currentObjective = objective;
         if (currentWave >= objectiveWaves.Length)
