@@ -50,10 +50,30 @@ public class UIManager : MonoBehaviour
     public void TogglePausePanel()
     {
         bool isOpen = pausePanel.activeSelf;
-        
-        playerInputs.DisableInput();
-        pausePanel.SetActive(!isOpen);
-        pausePanelCanvasGroup.DOFade(1, panelDuration);
+
+        if (isOpen)
+        {
+            pausePanelCanvasGroup.DOFade(0, panelDuration).OnComplete(() =>
+                {
+                    pausePanel.SetActive(false);
+                });
+
+            pausePanelCanvasGroup.interactable = false;
+            pausePanelCanvasGroup.blocksRaycasts = false;
+
+            playerInputs.EnableInput();
+        }
+        else
+        {
+            pausePanel.SetActive(true);
+
+            pausePanelCanvasGroup.DOFade(1, panelDuration);
+
+            pausePanelCanvasGroup.interactable = true;
+            pausePanelCanvasGroup.blocksRaycasts = true;
+
+            playerInputs.DisableInput();
+        }
     }
 
     public void RestartGame()
