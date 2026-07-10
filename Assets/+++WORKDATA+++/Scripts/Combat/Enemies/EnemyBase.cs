@@ -171,7 +171,7 @@ public abstract class EnemyBase : MonoBehaviour
     protected virtual void Attack()
     {
         if (playerHealth != null)
-            playerHealth.TakeDamage(contactDamage);
+            playerHealth.TakeDamage(contactDamage, false);
 
 
         if (playerMovement != null)

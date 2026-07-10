@@ -275,7 +275,7 @@ public class Weapon : MonoBehaviour
             hitEnemies.Add(next.gameObject);
 
             if (next.TryGetComponent<Health>(out var health))
-                health.TakeDamage(shot.damage);
+                health.TakeDamage(shot.damage, false);
 
             currentPos = next.position;
         }
