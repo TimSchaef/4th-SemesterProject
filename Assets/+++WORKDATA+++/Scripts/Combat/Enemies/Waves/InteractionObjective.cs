@@ -48,7 +48,6 @@ public class InteractionObjective : MonoBehaviour
         foreach (var door in doors)
         {
             door.CloseDoor();
-            animator.SetTrigger("isActived");
         }
     }
 
