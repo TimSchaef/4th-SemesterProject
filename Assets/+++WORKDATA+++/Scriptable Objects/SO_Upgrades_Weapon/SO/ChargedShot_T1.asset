@@ -19,4 +19,4 @@ MonoBehaviour:
   tier: 1
   nextTier: {fileID: 11400000, guid: 4595236eb7717ea47b6880245a467cc1, type: 2}
   maxChargeTime: 2
-  damageMultiplier: 2
+  damageMultiplier: 1.5

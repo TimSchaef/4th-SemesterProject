@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5953889559135461620}
   - component: {fileID: 3146248825335067455}
   - component: {fileID: 5251003071341853719}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 'Flat_Stones_06 '
   m_TagString: Untagged
   m_Icon: {fileID: 0}

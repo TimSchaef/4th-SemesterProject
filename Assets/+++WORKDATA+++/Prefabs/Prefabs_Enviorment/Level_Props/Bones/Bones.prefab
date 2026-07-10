@@ -56,9 +56,25 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: a2dadd97f55c22d41b9e79340bc575ca, type: 2}
+    - target: {fileID: -908437397235143487, guid: f09d32bf4e3253244a030434aca175ff, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -55776910625095278, guid: f09d32bf4e3253244a030434aca175ff, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 286479744706085132, guid: f09d32bf4e3253244a030434aca175ff, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f09d32bf4e3253244a030434aca175ff, type: 3}
       propertyPath: m_Name
       value: Bones
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f09d32bf4e3253244a030434aca175ff, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7956136347084476952, guid: f09d32bf4e3253244a030434aca175ff, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'

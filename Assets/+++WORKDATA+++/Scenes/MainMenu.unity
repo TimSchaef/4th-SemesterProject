@@ -6421,7 +6421,7 @@ MonoBehaviour:
   mainMenuPanel: {fileID: 549084664}
   settingsPanel: {fileID: 1677764414}
   creditsPanel: {fileID: 1543689242}
-  gameplaySceneName: NewTim
+  gameplaySceneName: FinalScene2
 --- !u!4 &2112222964
 Transform:
   m_ObjectHideFlags: 0

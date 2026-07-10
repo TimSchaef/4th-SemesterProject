@@ -182,7 +182,7 @@ Material:
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _Sand_Smoothness: 0.4
-    - _Sand_Texture_Tilling: 0.087
+    - _Sand_Texture_Tilling: 0
     - _Sand_Threshold: 0.55
     - _Shadow_Alpha: 0
     - _Shadow_Texture_Scale: 0.1
