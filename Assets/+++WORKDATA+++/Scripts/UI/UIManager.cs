@@ -31,6 +31,7 @@ public class UIManager : MonoBehaviour
     }
     private void Start()
     {
+        Time.timeScale = 1f;
         endPanel.SetActive(false);
     }
 
@@ -55,6 +56,8 @@ public class UIManager : MonoBehaviour
         {
             Time.timeScale = 1f;
             playerInputs.EnableInput();
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
 
             pausePanelCanvasGroup.interactable = false;
             pausePanelCanvasGroup.blocksRaycasts = false;
@@ -75,6 +78,8 @@ public class UIManager : MonoBehaviour
             pausePanelCanvasGroup.blocksRaycasts = true;
 
             playerInputs.DisableInput();
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             Time.timeScale = 0f;
 
             pausePanelCanvasGroup
