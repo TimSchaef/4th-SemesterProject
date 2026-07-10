@@ -11,7 +11,7 @@ public class AudioUI : MonoBehaviour
 
     void Start()
     {
-        AudioManager.Instance.PlayMusic(musicClip);
+        AudioManager.Instance.ChangeMusic(musicClip);
         
         float master = PlayerPrefs.GetFloat("Master", 1f);
         float music = PlayerPrefs.GetFloat("Music", 1f);

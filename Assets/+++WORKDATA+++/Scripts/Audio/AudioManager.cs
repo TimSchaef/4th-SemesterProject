@@ -20,18 +20,21 @@ public class AudioManager : MonoBehaviour
 
     public void SetMasterVolume(float volume)
     {
+        volume = Mathf.Clamp(volume, 0.0001f, 1f);
         mixer.SetFloat("Master", Mathf.Log10(volume) * 20);
         PlayerPrefs.SetFloat("Master", volume);
     }
 
     public void SetMusicVolume(float volume)
     {
+        volume = Mathf.Clamp(volume, 0.0001f, 1f);
         mixer.SetFloat("Music", Mathf.Log10(volume) * 20);
         PlayerPrefs.SetFloat("Music", volume);
     }
 
     public void SetSFXVolume(float volume)
     {
+        volume = Mathf.Clamp(volume, 0.0001f, 1f);
         mixer.SetFloat("SFX", Mathf.Log10(volume) * 20);
         PlayerPrefs.SetFloat("SFX", volume);
     }
@@ -41,9 +44,14 @@ public class AudioManager : MonoBehaviour
         sfxSource.PlayOneShot(clip);
     }
 
-    public void PlayMusic(AudioClip clip)
+    public void ChangeMusic(AudioClip newClip)
     {
-        musicSource.PlayOneShot(clip);
+        if (musicSource.clip == newClip)
+            return;
+
+        musicSource.Stop();
+        musicSource.clip = newClip;
+        musicSource.Play();
     }
 }
 
