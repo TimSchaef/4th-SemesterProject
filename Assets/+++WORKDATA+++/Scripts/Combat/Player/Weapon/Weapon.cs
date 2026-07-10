@@ -10,7 +10,7 @@ using UnityEngine.UI;
 
 public class Weapon : MonoBehaviour
 {
-    [FormerlySerializedAs("playerCamera")]
+
     [Header("References")]
     [SerializeField] private Transform cameraTransform;  
     [SerializeField] private Transform shotPivot;
@@ -22,6 +22,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private float fireRate = 5f;
     [SerializeField] private float range = 20f;
     [SerializeField] private float ricochetDelay = 1f;
+    public bool canShoot = true;
 
     [Header("Ammo")]
     public int ammo;
@@ -44,7 +45,7 @@ public class Weapon : MonoBehaviour
     float nextFireTime;
     private TimeBuffer reloadBuffer;
     private TimeBuffer nextFireBuffer;
-
+    
     private float baseFirerate;
     private PlayerXP _playerXP;
     private Health _playerHealth;
@@ -135,11 +136,11 @@ public class Weapon : MonoBehaviour
         
         if (!_hasChargeshot)
         {
-            if(ammo > 0 && inputs.ShootInput && !nextFireBuffer.IsInTime(nextFireTime))
+            if(ammo > 0 && inputs.ShootInput && !nextFireBuffer.IsInTime(nextFireTime) && canShoot)
                 Shoot();
         }
 
-        if(ammo > 0 && inputs.ShootTwoInput && !nextFireBuffer.IsInTime(nextFireTime) && _hasRecoil)
+        if(ammo > 0 && inputs.ShootTwoInput && !nextFireBuffer.IsInTime(nextFireTime) && _hasRecoil && canShoot)
         {
             FireRecoil();
             _nextRecoilTime = Time.time + _recoilCooldown;

@@ -44,6 +44,7 @@ public class UpgradeManager : MonoBehaviour
         if (screenOpen)
             return;
 
+        playerWeapon.canShoot = false;
         screenOpen = true;
 
         Time.timeScale = 0f;
@@ -56,7 +57,7 @@ public class UpgradeManager : MonoBehaviour
         GenerateChoices();
     }
 
-    void GenerateChoices()
+    private void GenerateChoices()
 {
     List<WeaponUpgradeSO> possibleChoices =
         new List<WeaponUpgradeSO>();
@@ -83,9 +84,7 @@ public class UpgradeManager : MonoBehaviour
     }
     if (possibleChoices.Count == 0)
     {
-        Debug.Log("No upgrades left. Granting damage.");
-
-        playerWeapon.damage  += 1f; // or use a method
+        playerWeapon.damage  *= 1.1f; 
 
         playerXP.pendingLevelUps--;
 
@@ -142,6 +141,7 @@ public class UpgradeManager : MonoBehaviour
         bool hasChoice = currentChoices[i] != null;
 
         upgradeButtons[i].gameObject.SetActive(hasChoice);
+        StartCoroutine(ChangeButtonInteractable(true));
 
         if (hasChoice)
         {
@@ -151,6 +151,15 @@ public class UpgradeManager : MonoBehaviour
         }
     }
 }
+
+    private IEnumerator ChangeButtonInteractable(bool state)
+    {
+        yield return new WaitForSeconds(0.25f);
+        foreach (var button in upgradeButtons)
+        {
+            button.interactable = state;
+        }
+    }
 
     public void PickUpgrade(int index)
     {
@@ -174,6 +183,10 @@ public class UpgradeManager : MonoBehaviour
 
     private void CloseUpgradeScreen()
     {
+        foreach (var button in upgradeButtons)
+        {
+            button.interactable = false;
+        }
         StartCoroutine(CloseUpgradeScreenRoutine());
         
         screenOpen = false;
@@ -188,6 +201,7 @@ public class UpgradeManager : MonoBehaviour
     {
         upgradePanel.transform.DOScale(new Vector3(0.1f, 0.1f, 0.1f), 0.5f).SetUpdate(true); 
         upgradePanel.SetActive(false);
+        playerWeapon.canShoot = true;
         yield return new WaitForSeconds(0.5f);
     }
 }
