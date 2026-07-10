@@ -64,9 +64,8 @@ public class InteractionObjective : MonoBehaviour
         while (cooldownTime > 0)
         {
             cooldownTime--;
-
-            if (cooldownCanvas.enabled)
-                cooldownText.text = cooldownTime.ToString();
+            
+            cooldownText.text = cooldownTime.ToString();
 
             yield return new WaitForSeconds(1f);
         }
@@ -76,12 +75,11 @@ public class InteractionObjective : MonoBehaviour
 
     public void ShowCooldownCanvas()
     {
-        cooldownCanvas.enabled = true;
-        cooldownText.text = cooldownTime.ToString();
+        cooldownCanvas.gameObject.SetActive(true);
     }
 
     public void HideCooldownCanvas()
     {
-        cooldownCanvas.enabled = false;
+        cooldownCanvas.gameObject.SetActive(false);
     }
 }
