@@ -53,26 +53,33 @@ public class UIManager : MonoBehaviour
 
         if (isOpen)
         {
-            pausePanelCanvasGroup.DOFade(0, panelDuration).OnComplete(() =>
-                {
-                    pausePanel.SetActive(false);
-                });
+            Time.timeScale = 1f;
+            playerInputs.EnableInput();
 
             pausePanelCanvasGroup.interactable = false;
             pausePanelCanvasGroup.blocksRaycasts = false;
 
-            playerInputs.EnableInput();
+            pausePanelCanvasGroup
+                .DOFade(0, panelDuration)
+                .SetUpdate(true)
+                .OnComplete(() =>
+                {
+                    pausePanel.SetActive(false);
+                });
         }
         else
         {
             pausePanel.SetActive(true);
 
-            pausePanelCanvasGroup.DOFade(1, panelDuration);
-
             pausePanelCanvasGroup.interactable = true;
             pausePanelCanvasGroup.blocksRaycasts = true;
 
             playerInputs.DisableInput();
+            Time.timeScale = 0f;
+
+            pausePanelCanvasGroup
+                .DOFade(1, panelDuration)
+                .SetUpdate(true);
         }
     }
 

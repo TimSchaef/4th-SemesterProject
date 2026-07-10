@@ -39,6 +39,7 @@ public class Health : MonoBehaviour
 
         hitMaterials = renderer.materials;
         originalColors = new Color[hitMaterials.Length];
+        originalAlphas = new float[hitMaterials.Length];
 
         for (int i = 0; i < hitMaterials.Length; i++)
         {

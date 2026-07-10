@@ -34,8 +34,7 @@ public class EnemyPoolManager : MonoBehaviour
 
             for(int i = 0; i < enemyData.poolSize; i++)
             {
-                GameObject enemy =
-                    Instantiate(enemyData.enemyPrefab);
+                GameObject enemy = Instantiate(enemyData.enemyPrefab);
 
 
                 enemy.SetActive(false);
