@@ -70387,6 +70387,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 353394248472044331, guid: 8c6c3bce4e094194bac8d1abe256cb9f, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 353394248472044331, guid: 8c6c3bce4e094194bac8d1abe256cb9f, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bd8d867943d0d374b958d8540db9e2aa, type: 3}
+    - target: {fileID: 353394248472044331, guid: 8c6c3bce4e094194bac8d1abe256cb9f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 164865386}
@@ -70406,6 +70414,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PickUpgrade
       objectReference: {fileID: 0}
+    - target: {fileID: 1654959937045797812, guid: 8c6c3bce4e094194bac8d1abe256cb9f, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654959937045797812, guid: 8c6c3bce4e094194bac8d1abe256cb9f, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bd8d867943d0d374b958d8540db9e2aa, type: 3}
     - target: {fileID: 1654959937045797812, guid: 8c6c3bce4e094194bac8d1abe256cb9f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -70514,6 +70530,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: UpgradeCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8751631622935378005, guid: 8c6c3bce4e094194bac8d1abe256cb9f, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8751631622935378005, guid: 8c6c3bce4e094194bac8d1abe256cb9f, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bd8d867943d0d374b958d8540db9e2aa, type: 3}
     - target: {fileID: 8751631622935378005, guid: 8c6c3bce4e094194bac8d1abe256cb9f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -140596,6 +140620,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4097361748760452596, guid: 61cca798fe8eee241aead43dae136068, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097361748760452596, guid: 61cca798fe8eee241aead43dae136068, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e3a0770d7cd24b346a55a727926bac5f, type: 3}
+    - target: {fileID: 4097361748760452596, guid: 61cca798fe8eee241aead43dae136068, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -140623,6 +140655,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4404461396594075435, guid: 61cca798fe8eee241aead43dae136068, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4404461396594075435, guid: 61cca798fe8eee241aead43dae136068, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e3a0770d7cd24b346a55a727926bac5f, type: 3}
     - target: {fileID: 4404461396594075435, guid: 61cca798fe8eee241aead43dae136068, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -140760,7 +140800,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1459828198}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5665724262566619155, guid: 61cca798fe8eee241aead43dae136068, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 141418624841850591, guid: 61cca798fe8eee241aead43dae136068, type: 3}
