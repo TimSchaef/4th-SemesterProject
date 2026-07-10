@@ -29,7 +29,7 @@ public class InteractionObjective : MonoBehaviour
 
     void Start()
     {
-        cooldownText.text = "Reward:" + objectiveWave.rewards.ToString();
+        cooldownText.text = "Reward: " + objectiveWave.rewards.ToString();
     }
     
     public void Interact(EnemySpawner spawner)
