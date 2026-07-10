@@ -26,6 +26,11 @@ public class InteractionObjective : MonoBehaviour
     {
         animator = GetComponentInParent<Animator>();
     }
+
+    void Start()
+    {
+        cooldownText.text = "Reward:" + objectiveWave.rewards.ToString();
+    }
     
     public void Interact(EnemySpawner spawner)
     {
@@ -71,6 +76,7 @@ public class InteractionObjective : MonoBehaviour
         }
 
         onCooldown = false;
+        cooldownText.text = "Reward:" + objectiveWave.rewards.ToString();
     }
 
     public void ShowCooldownCanvas()
