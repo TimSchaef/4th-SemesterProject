@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Ricochet_T3
   m_EditorClassIdentifier: Assembly-CSharp::RicochetUpgradeSO
   upgradeName: Ricochet
-  upgradeDescription: 
+  upgradeDescription: Bullets continue to hit 5 more enemies
   upgradeID: Ricochet
   upgradeIcon: {fileID: 21300000, guid: e10ddc7aa49eca2448f15ce15e30cb7b, type: 3}
   tier: 3
-  nextTier: {fileID: 0}
-  ricochetCount: 80
+  nextTier: {fileID: 11400000, guid: e1f279adf72a0c14aac0510708e6a286, type: 2}
+  ricochetCount: 5

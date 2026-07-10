@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: MaxAmmo_T3
   m_EditorClassIdentifier: Assembly-CSharp::MaxAmmoUpgradeSO
   upgradeName: Max Ammo
-  upgradeDescription: More Bullets
+  upgradeDescription: Increase Max Ammo by 8
   upgradeID: Max Ammo
   upgradeIcon: {fileID: 21300000, guid: 406890ba327b6ca4096792d7b7201413, type: 3}
   tier: 3
-  nextTier: {fileID: 0}
+  nextTier: {fileID: 11400000, guid: 9b626e56574ddb449a4061ed76031025, type: 2}
   ammoBonus: 8

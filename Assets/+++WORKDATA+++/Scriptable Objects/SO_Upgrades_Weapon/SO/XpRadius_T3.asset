@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: XpRadius_T3
   m_EditorClassIdentifier: Assembly-CSharp::XPRangeUpgradeSO
   upgradeName: XP Radius
-  upgradeDescription: 
+  upgradeDescription: Pick up XP from 3m further away
   upgradeID: XpRadius
   upgradeIcon: {fileID: 21300000, guid: be06e8f3e0b636e4496e09377a5da252, type: 3}
-  tier: 1
-  nextTier: {fileID: 0}
+  tier: 3
+  nextTier: {fileID: 11400000, guid: c82f454112c76174fbcc14b7c20f5c69, type: 2}
   rangeBonus: 3

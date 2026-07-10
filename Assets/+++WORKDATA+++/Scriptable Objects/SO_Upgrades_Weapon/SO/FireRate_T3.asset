@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: FireRate_T3
   m_EditorClassIdentifier: Assembly-CSharp::FireRateUpgradeSO
   upgradeName: Fire Rate
-  upgradeDescription: Shoot faster
+  upgradeDescription: 'Shoot 1.5 bullets more per second '
   upgradeID: Fire Rate
   upgradeIcon: {fileID: 21300000, guid: b56a6536b1680984ebe1d471ddf3d11a, type: 3}
   tier: 3
-  nextTier: {fileID: 0}
+  nextTier: {fileID: 11400000, guid: b610144e25543914e8f35d6be7f0fad8, type: 2}
   fireRateBonus: 1.5

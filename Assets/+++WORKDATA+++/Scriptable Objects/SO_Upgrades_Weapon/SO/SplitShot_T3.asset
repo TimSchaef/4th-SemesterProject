@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: SplitShot_T3
   m_EditorClassIdentifier: Assembly-CSharp::SplitShotUpgradeSO
   upgradeName: Split Shot
-  upgradeDescription: 
+  upgradeDescription: Shoot +4 more bullets at once
   upgradeID: SplitShot
   upgradeIcon: {fileID: 21300000, guid: 752034121ce22c647bc0589475466552, type: 3}
   tier: 3
-  nextTier: {fileID: 0}
+  nextTier: {fileID: 11400000, guid: 570a235f5fe5f3e4f8430c9806a784b6, type: 2}
   extraProjectiles: 4
   spreadAngles: 5

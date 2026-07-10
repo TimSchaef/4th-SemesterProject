@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: ChargedShot_T5
   m_EditorClassIdentifier: Assembly-CSharp::ChargeShotUpgradeSO
   upgradeName: Charge Shot
-  upgradeDescription: Hold to increase Damage
+  upgradeDescription: Hold shoot for more damage
   upgradeID: ChargeShot
   upgradeIcon: {fileID: 21300000, guid: 2f96e5b2ed931f44fa83a161dd45edcb, type: 3}
   tier: 5
-  nextTier: {fileID: 11400000, guid: 6fa21c9e73b44b8469119369525af708, type: 2}
-  maxChargeTime: 3
+  nextTier: {fileID: 0}
+  maxChargeTime: 4
   damageMultiplier: 4

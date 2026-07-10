@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: XP_T3
   m_EditorClassIdentifier: Assembly-CSharp::XPUpgradeSO
   upgradeName: MoreXP
-  upgradeDescription: 
+  upgradeDescription: get +2 XP multiplier
   upgradeID: MoreXP
   upgradeIcon: {fileID: 21300000, guid: e95fd4564147b6040a5316549d42eb9f, type: 3}
   tier: 3
