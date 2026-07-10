@@ -28,11 +28,7 @@ public class DamageManager : MonoBehaviour
         DamagePopup popup = pool.Dequeue();
         popup.transform.position = position;
         popup.gameObject.SetActive(true);
-        popup.Show(Mathf.RoundToInt(damage));
-        // if (isCritical)
-        // {
-        //     popup.Show();
-        // }
+        popup.Show(Mathf.RoundToInt(damage), isCritical);
     }
 
     public void Return(DamagePopup popup)

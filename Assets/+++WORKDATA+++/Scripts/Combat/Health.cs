@@ -69,7 +69,7 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(float damage, bool isCritical)
     {
         if (IsDead)
             return;
@@ -90,8 +90,7 @@ public class Health : MonoBehaviour
         if (gameObject.CompareTag("Enemy") || gameObject.CompareTag("Enemy Crit"))
         {
             FlashDamage();
-            DamageManager.Instance.Show(damage, popupPosition.position, false);
-            //DamageManager.Instance.Show
+            DamageManager.Instance.Show(damage, popupPosition.position, isCritical);
             if (currentHealth <= 0)
             {
                 Die();

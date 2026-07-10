@@ -237,15 +237,19 @@ public class Weapon : MonoBehaviour
             return;
 
         float finalDamage = shot.damage;
+        bool isCritical = false;
 
         if (hit.collider.CompareTag("Enemy Crit"))
+        {
             finalDamage *= 2f;
+            isCritical = true;
+        }
 
         Health health = hit.collider.GetComponentInParent<Health>();
 
         if (health != null)
         {
-            health.TakeDamage(finalDamage);
+            health.TakeDamage(finalDamage, isCritical);
         }
 
         if (shot.bounces > 0)

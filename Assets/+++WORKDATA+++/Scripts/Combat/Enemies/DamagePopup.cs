@@ -17,11 +17,12 @@ public class DamagePopup : MonoBehaviour
     [SerializeField] private float maxDamageValue = 100f;
         
 
-    public void Show(float damage)
+    public void Show(float damage, bool isCritical)
     {
-        text.text = damage.ToString();
+        text.text = isCritical ? damage + " CRIT!" : damage.ToString();
+
         transform.LookAt(Camera.main.transform);
-        
+    
         text.alpha = 1;
         text.color = GetDamageColor(damage);
 
