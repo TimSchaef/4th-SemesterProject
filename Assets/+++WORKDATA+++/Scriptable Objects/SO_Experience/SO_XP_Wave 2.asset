@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d8a4281389471d4d85b9b49c09b5291, type: 3}
-  m_Name: SO_Tank_XP
+  m_Name: SO_XP_Wave 2
   m_EditorClassIdentifier: Assembly-CSharp::SO_ExperiencePoints
-  xpMaterial: {fileID: 2100000, guid: cf84c362080f51c42a125ad04f1b094e, type: 2}
-  xpAmount: 10
+  xpMaterial: {fileID: 2100000, guid: e2afc6570631f1542b5fa3ebf88762ce, type: 2}
+  xpAmount: 12
   collectRadius: 2

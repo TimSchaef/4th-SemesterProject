@@ -67,7 +67,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cf84c362080f51c42a125ad04f1b094e, type: 2}
+  - {fileID: 2100000, guid: e2afc6570631f1542b5fa3ebf88762ce, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 3183615359999236356}
   - component: {fileID: 6694795010365953871}
   m_Layer: 0
-  m_Name: XP_Drop
+  m_Name: XP_Drop_Wave 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

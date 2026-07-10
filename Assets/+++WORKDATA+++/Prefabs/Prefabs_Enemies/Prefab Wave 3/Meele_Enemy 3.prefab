@@ -423,7 +423,7 @@ MonoBehaviour:
   regenRate: 0
   regenInterval: 1
   experiencePoints: {fileID: 11400000, guid: 10d51e990aa7fb0408a3c005674d7b8c, type: 2}
-  xpPickupPrefab: {fileID: 7758481516241454930, guid: b26db65a115630b458ee011709e9702d, type: 3}
+  xpPickupPrefab: {fileID: 7758481516241454930, guid: 266d073a5c9e04045b2b913213a7a755, type: 3}
   dropPosition: {fileID: 6592368345817157579}
   renderer: {fileID: 7453961994717399817}
   damageColor: {r: 0, g: 0, b: 0, a: 0}
