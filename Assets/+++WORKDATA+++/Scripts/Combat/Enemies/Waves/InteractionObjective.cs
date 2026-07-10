@@ -71,7 +71,7 @@ public class InteractionObjective : MonoBehaviour
         }
 
         onCooldown = false;
-        cooldownText.text = "Reward:" + objectiveWave.rewards.ToString() + " Upgrades";
+        cooldownText.text = "Reward:" + objectiveWave.rewards.ToString();
     }
 
     public void ShowCooldownCanvas()
