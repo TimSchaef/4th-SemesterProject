@@ -93,6 +93,7 @@ public class EnemyPoolManager : MonoBehaviour
             health.ResetHealth();
             enemyBase.ResetEnemy();
             enemyBase.enabled = true;
+            health.enabled = true;
         }
         
         enemy.SetActive(false);
