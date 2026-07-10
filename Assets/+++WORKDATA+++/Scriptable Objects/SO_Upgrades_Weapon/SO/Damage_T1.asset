@@ -18,4 +18,4 @@ MonoBehaviour:
   upgradeIcon: {fileID: 21300000, guid: 2c6bfec9583373340b2154abb3883ca8, type: 3}
   tier: 1
   nextTier: {fileID: 11400000, guid: bfeb2306c03225c4b9783c1dd6d49efe, type: 2}
-  damageBonus: 20
+  damageBonus: 1.5
