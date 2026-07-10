@@ -3,17 +3,23 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
     
     [SerializeField] private GameObject endPanel;
+    [SerializeField] private GameObject pausePanel;
     [SerializeField] private CanvasGroup endPanelCanvasGroup;
+    [SerializeField] private CanvasGroup pausePanelCanvasGroup;
     [SerializeField] private PlayerInputs playerInputs;
 
+    [FormerlySerializedAs("endPanelDuration")]
     [Header("Values")] 
-    [SerializeField] private float endPanelDuration = 1f;
+    [SerializeField] private float panelDuration = 1f;
+
+    private bool isActive;
 
 
     void Awake()
@@ -32,7 +38,14 @@ public class UIManager : MonoBehaviour
     {
         playerInputs.DisableInput();
         endPanel.SetActive(true);
-        endPanelCanvasGroup.DOFade(1, endPanelDuration);
+        endPanelCanvasGroup.DOFade(1, panelDuration);
+    }
+
+    public void OpenPausePanel()
+    {
+        playerInputs.DisableInput();
+        !pausePanel.activeSelf = isActive;
+        pausePanelCanvasGroup.DOFade(1, panelDuration);
     }
 
     public void RestartGame()
