@@ -29681,10 +29681,15 @@ MonoBehaviour:
     - {fileID: 11400000, guid: dc96ecb2d51a162459ab6957315bcc5e, type: 2}
     - {fileID: 11400000, guid: 606e58146e7398e48b08c6f15048bc8f, type: 2}
   - startTime: 800
-    budgetPerSecond: 20
+    budgetPerSecond: 80
     enemies:
     - {fileID: 11400000, guid: dc96ecb2d51a162459ab6957315bcc5e, type: 2}
     - {fileID: 11400000, guid: 606e58146e7398e48b08c6f15048bc8f, type: 2}
+  - startTime: 805
+    budgetPerSecond: 5
+    enemies:
+    - {fileID: 11400000, guid: 9d4c4e4dda6a19e4ba773d00f8720657, type: 2}
+    - {fileID: 11400000, guid: ace6d1bbe2ec23f459b5bdf368913c6a, type: 2}
   - startTime: 900
     budgetPerSecond: 22
     enemies:
@@ -29768,6 +29773,7 @@ MonoBehaviour:
   - {fileID: 579749668}
   maxEnemies: 150
   startSpawnDelay: 2
+  activateSound: {fileID: 8300000, guid: beba2d472be65fc46afa18a2d66a3a77, type: 3}
   canSpawn: 1
   objectiveRemaining: 0
 --- !u!114 &915002277
@@ -47189,10 +47195,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 138001929993705740, guid: 9c4f2345ac9e77b48a47030ebd102d00, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 34b7a1604c2f4e64c85930150dc24466, type: 2}
     - target: {fileID: 1079850595646350022, guid: 9c4f2345ac9e77b48a47030ebd102d00, type: 3}
       propertyPath: m_LocalPosition.x
       value: 223.35
@@ -47241,26 +47243,10 @@ PrefabInstance:
       propertyPath: upgradeManager
       value: 
       objectReference: {fileID: 164865386}
-    - target: {fileID: 1336871036031988709, guid: 9c4f2345ac9e77b48a47030ebd102d00, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 5eb66f696d11ca14d8040b7d9a0f3dc8, type: 2}
-    - target: {fileID: 1479127999783141019, guid: 9c4f2345ac9e77b48a47030ebd102d00, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 5eb66f696d11ca14d8040b7d9a0f3dc8, type: 2}
-    - target: {fileID: 2960637585564280091, guid: 9c4f2345ac9e77b48a47030ebd102d00, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 5eb66f696d11ca14d8040b7d9a0f3dc8, type: 2}
     - target: {fileID: 3169288387960482845, guid: 9c4f2345ac9e77b48a47030ebd102d00, type: 3}
       propertyPath: damageVolume
       value: 
       objectReference: {fileID: 136410452}
-    - target: {fileID: 3320951822642956046, guid: 9c4f2345ac9e77b48a47030ebd102d00, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 5eb66f696d11ca14d8040b7d9a0f3dc8, type: 2}
     - target: {fileID: 3409798089983258710, guid: 9c4f2345ac9e77b48a47030ebd102d00, type: 3}
       propertyPath: chargeShotImage
       value: 
@@ -47273,14 +47259,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 3968670527429153301, guid: 9c4f2345ac9e77b48a47030ebd102d00, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7455902292397369246, guid: 9c4f2345ac9e77b48a47030ebd102d00, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 5eb66f696d11ca14d8040b7d9a0f3dc8, type: 2}
     - target: {fileID: 7689695857280508908, guid: 9c4f2345ac9e77b48a47030ebd102d00, type: 3}
       propertyPath: playerHP
       value: 

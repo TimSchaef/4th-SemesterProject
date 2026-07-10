@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
@@ -173,6 +174,7 @@ public class UpgradeManager : MonoBehaviour
 
     private void CloseUpgradeScreen()
     {
+        StartCoroutine(CloseUpgradeScreenRoutine());
         
         screenOpen = false;
 
@@ -180,6 +182,12 @@ public class UpgradeManager : MonoBehaviour
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    private IEnumerator CloseUpgradeScreenRoutine()
+    {
+        upgradePanel.transform.DOScale(new Vector3(0.1f, 0.1f, 0.1f), 0.5f).SetUpdate(true); 
         upgradePanel.SetActive(false);
+        yield return new WaitForSeconds(0.5f);
     }
 }

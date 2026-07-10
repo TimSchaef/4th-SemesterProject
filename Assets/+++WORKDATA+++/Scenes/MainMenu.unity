@@ -2435,11 +2435,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1777011624}
+  m_Father: {fileID: 1570886890}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 915}
+  m_AnchoredPosition: {x: 0, y: 115}
   m_SizeDelta: {x: 600, y: 100}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &799857467
@@ -4397,11 +4397,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1570886890}
+  m_Father: {fileID: 1777011624}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: -685}
+  m_AnchoredPosition: {x: 0, y: 115}
   m_SizeDelta: {x: 600, y: 100}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1492620870
@@ -4940,9 +4940,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12e26841c5b4f49498bdeb1abca65513, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioUI
-  masterSlider: {fileID: 1777011625}
+  masterSlider: {fileID: 1570886891}
   musicSlider: {fileID: 1541238956}
-  sfxSlider: {fileID: 1570886891}
+  sfxSlider: {fileID: 1777011625}
   musicClip: {fileID: 8300000, guid: 8dc56f3a2f59b18429a49628ac501ec2, type: 3}
 --- !u!1 &1552379496
 GameObject:
@@ -5067,7 +5067,7 @@ GameObject:
   - component: {fileID: 1570886890}
   - component: {fileID: 1570886891}
   m_Layer: 5
-  m_Name: Slider_SFX
+  m_Name: Slider_Master
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5088,7 +5088,7 @@ RectTransform:
   - {fileID: 12182669}
   - {fileID: 2096595972}
   - {fileID: 388586904}
-  - {fileID: 1492620869}
+  - {fileID: 799857466}
   m_Father: {fileID: 1133636501}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -5514,7 +5514,7 @@ GameObject:
   - component: {fileID: 1777011624}
   - component: {fileID: 1777011625}
   m_Layer: 5
-  m_Name: Slider_MasterVolume
+  m_Name: Slider_SFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5535,7 +5535,7 @@ RectTransform:
   - {fileID: 909285352}
   - {fileID: 338842808}
   - {fileID: 1835420699}
-  - {fileID: 799857466}
+  - {fileID: 1492620869}
   m_Father: {fileID: 1133636501}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

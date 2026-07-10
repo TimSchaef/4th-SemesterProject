@@ -1,19 +1,25 @@
 using System.Collections;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
     
     [SerializeField] private GameObject endPanel;
+    [SerializeField] private GameObject pausePanel;
     [SerializeField] private CanvasGroup endPanelCanvasGroup;
+    [SerializeField] private CanvasGroup pausePanelCanvasGroup;
     [SerializeField] private PlayerInputs playerInputs;
 
+    [FormerlySerializedAs("endPanelDuration")]
     [Header("Values")] 
-    [SerializeField] private float endPanelDuration = 1f;
+    [SerializeField] private float panelDuration = 1f;
 
 
     void Awake()
@@ -28,11 +34,26 @@ public class UIManager : MonoBehaviour
         endPanel.SetActive(false);
     }
 
+    void Update()
+    {
+        if (Keyboard.current.escapeKey.wasPressedThisFrame)
+            TogglePausePanel();
+    }
+
     public void ShowEndPanel()
     {
         playerInputs.DisableInput();
         endPanel.SetActive(true);
-        endPanelCanvasGroup.DOFade(1, endPanelDuration);
+        endPanelCanvasGroup.DOFade(1, panelDuration);
+    }
+
+    public void TogglePausePanel()
+    {
+        bool isOpen = pausePanel.activeSelf;
+        
+        playerInputs.DisableInput();
+        pausePanel.SetActive(!isOpen);
+        pausePanelCanvasGroup.DOFade(1, panelDuration);
     }
 
     public void RestartGame()
