@@ -351,7 +351,7 @@ MonoBehaviour:
   enemyData: {fileID: 11400000, guid: 2958f9627ce5ce14fa7a60de9282d468, type: 2}
   contactDamage: 5
   attackCooldown: 1
-  attackRange: 2
+  attackRange: 10
   knockbackForce: 4
   stopDistance: 1.8
   pathUpdateInterval: 0.1

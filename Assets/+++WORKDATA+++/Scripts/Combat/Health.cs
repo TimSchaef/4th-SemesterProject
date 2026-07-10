@@ -24,6 +24,7 @@ public class Health : MonoBehaviour
     [SerializeField] private Transform popupPosition;
     
     private Color[] originalColors;
+    private float[] originalAlphas;
     private Material[] hitMaterials;
 
     private float regenTimer;
@@ -42,6 +43,7 @@ public class Health : MonoBehaviour
         for (int i = 0; i < hitMaterials.Length; i++)
         {
             originalColors[i] = hitMaterials[i].color;
+            originalAlphas[i] = hitMaterials[i].color.a;
         }
     }
 
@@ -58,7 +60,11 @@ public class Health : MonoBehaviour
         for (int i = 0; i < hitMaterials.Length; i++)
         {
             hitMaterials[i].DOKill();
-            hitMaterials[i].color = originalColors[i];
+
+            Color color = originalColors[i];
+            color.a = originalAlphas[i];
+
+            hitMaterials[i].color = color;
         }
     }
 
@@ -170,24 +176,26 @@ public class Health : MonoBehaviour
         xp.GetComponent<XPPickup>()
             .Initialize(experiencePoints);
     }
+
+    private void FadeDeath()
+    {
+        float fadeDuration = 0.5f;
+
+        foreach (Material material in hitMaterials)
+        {
+            material.DOKill();
+            material.DOFade(0, fadeDuration);
+        }
+    }
     
     private void Die()
     {
+        DropXP();
         if (enemy != null)
-        {
-            DropXP();
-            enemy.Die();
-        }
-        else
-        {
-            Destroy(gameObject); 
-        }
-    }
-
-    private IEnumerator ShowDeathScreen()
-    {
-        yield return new WaitForSeconds(0.5f);
-        UIManager.Instance.ShowEndPanel();
+            enemy.enabled = false;
+        
+        enemy.Die();
+        FadeDeath();
     }
 }
 

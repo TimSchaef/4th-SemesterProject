@@ -1,9 +1,11 @@
 using System.Collections;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -19,8 +21,6 @@ public class UIManager : MonoBehaviour
     [Header("Values")] 
     [SerializeField] private float panelDuration = 1f;
 
-    private bool isActive;
-
 
     void Awake()
     {
@@ -34,6 +34,12 @@ public class UIManager : MonoBehaviour
         endPanel.SetActive(false);
     }
 
+    void Update()
+    {
+        if (Keyboard.current.escapeKey.wasPressedThisFrame)
+            TogglePausePanel();
+    }
+
     public void ShowEndPanel()
     {
         playerInputs.DisableInput();
@@ -41,10 +47,12 @@ public class UIManager : MonoBehaviour
         endPanelCanvasGroup.DOFade(1, panelDuration);
     }
 
-    public void OpenPausePanel()
+    public void TogglePausePanel()
     {
+        bool isOpen = pausePanel.activeSelf;
+        
         playerInputs.DisableInput();
-        !pausePanel.activeSelf = isActive;
+        pausePanel.SetActive(!isOpen);
         pausePanelCanvasGroup.DOFade(1, panelDuration);
     }
 

@@ -18,7 +18,9 @@ public class EnemySpawner : MonoBehaviour
 
     [Header("Timing")]
     [SerializeField] private float startSpawnDelay = 5f;
-    
+
+    [Header("Sound")] 
+    [SerializeField] private AudioClip activateSound;
 
     public bool canSpawn = true;
     public int objectiveRemaining;
@@ -149,6 +151,7 @@ public class EnemySpawner : MonoBehaviour
         if (objectiveActive)
             return;
         
+        AudioManager.Instance.PlaySfx(activateSound);
         Weapon_UI.instance.objectiveBossBar.gameObject.SetActive(true);
         Weapon_UI.instance.StartWaveUI(1);
         objectiveActive = true;

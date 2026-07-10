@@ -16,11 +16,13 @@ public class PlayerXP : MonoBehaviour
     [Header("Game Settings")]
     [SerializeField] private float xpIncrease = 1.2f;
     [SerializeField] private float levelUpDelay = 1f;
+    
+    [SerializeField] private AudioClip xpSound;
 
     [Space] 
     [SerializeField] private Image currentXPImage;
     [SerializeField] private UpgradeManager upgradeManager;
-    public XPCollector xpCollector;
+    [HideInInspector] public XPCollector xpCollector;
 
 
     void Awake()
@@ -41,6 +43,7 @@ public class PlayerXP : MonoBehaviour
 
     public void AddXP(int amount)
     {
+        AudioManager.Instance.PlaySfx(xpSound);
         currentXP += (amount * xpMultiplier);
         currentXPImage.DOFillAmount(currentXP / xpToNextLevel, 0.2f);
 
