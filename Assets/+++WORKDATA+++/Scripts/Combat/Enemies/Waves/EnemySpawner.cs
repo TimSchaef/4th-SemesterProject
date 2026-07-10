@@ -169,7 +169,6 @@ public class EnemySpawner : MonoBehaviour
         activeSpawnPoints = objective.SpawnPoints;
 
         objective.CloseDoors();
-        objective.animator.SetTrigger("isActive");
 
         objectiveRemaining = currentObjectiveData.enemyCount;
         Weapon_UI.instance.objectiveBossBar.DOFillAmount((float)objectiveRemaining / currentObjectiveData.enemyCount , 0.8f);

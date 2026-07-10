@@ -46,7 +46,10 @@ public class InteractionObjective : MonoBehaviour
     public void CloseDoors()
     {
         foreach (var door in doors)
+        {
             door.CloseDoor();
+            animator.SetTrigger("isActive");
+        }
     }
 
     public void OpenDoors()
