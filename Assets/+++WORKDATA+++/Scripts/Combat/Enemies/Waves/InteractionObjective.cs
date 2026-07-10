@@ -22,11 +22,6 @@ public class InteractionObjective : MonoBehaviour
     public SO_ObjectiveWave ObjectiveWave => objectiveWave;
     public Transform[] SpawnPoints => objectiveSpawnPoints;
 
-    void Awake()
-    {
-        animator = GetComponentInParent<Animator>();
-    }
-
     void Start()
     {
         cooldownText.text = "Reward: " + objectiveWave.rewards.ToString();
