@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 7869035248016787464}
   - component: {fileID: 9140172152476506716}
   - component: {fileID: 6648376859357181681}
+  - component: {fileID: 1362141829528787465}
   m_Layer: 0
   m_Name: Canvas_UI
   m_TagString: Untagged
@@ -218,6 +219,22 @@ MonoBehaviour:
   endPanelCanvasGroup: {fileID: 1210299790668606124}
   playerInputs: {fileID: 0}
   endPanelDuration: 1
+--- !u!114 &1362141829528787465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92102804793849097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12e26841c5b4f49498bdeb1abca65513, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioUI
+  masterSlider: {fileID: 0}
+  musicSlider: {fileID: 0}
+  sfxSlider: {fileID: 0}
+  musicClip: {fileID: 8300000, guid: 220abd4c80a9f0d4395c88076daafdeb, type: 3}
 --- !u!1 &141418624841850591
 GameObject:
   m_ObjectHideFlags: 0
