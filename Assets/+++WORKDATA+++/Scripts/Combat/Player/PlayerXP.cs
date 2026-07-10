@@ -45,7 +45,7 @@ public class PlayerXP : MonoBehaviour
     {
         AudioManager.Instance.PlaySfx(xpSound);
         currentXP += (amount * xpMultiplier);
-        currentXPImage.DOFillAmount(currentXP / xpToNextLevel, 0.2f);
+        currentXPImage.DOFillAmount(currentXP / xpToNextLevel, 0.2f).SetUpdate(true);
 
         while (currentXP >= xpToNextLevel)
         {
@@ -54,7 +54,7 @@ public class PlayerXP : MonoBehaviour
             UpgradeManager.Instance.levelText.text = level.ToString();
             
             xpToNextLevel *= xpIncrease;
-            currentXPImage.DOFillAmount(currentXP / xpToNextLevel, 0.2f);
+            currentXPImage.DOFillAmount(currentXP / xpToNextLevel, 0.2f).SetUpdate(true);
 
             pendingLevelUps++;
         }
