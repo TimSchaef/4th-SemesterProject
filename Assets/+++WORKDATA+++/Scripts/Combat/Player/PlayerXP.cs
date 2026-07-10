@@ -50,11 +50,11 @@ public class PlayerXP : MonoBehaviour
         while (currentXP >= xpToNextLevel)
         {
             currentXP -= xpToNextLevel;
-            currentXPImage.DOFillAmount(currentXP / xpToNextLevel, 0.2f);
             level++;
             UpgradeManager.Instance.levelText.text = level.ToString();
             
             xpToNextLevel *= xpIncrease;
+            currentXPImage.DOFillAmount(currentXP / xpToNextLevel, 0.2f);
 
             pendingLevelUps++;
         }

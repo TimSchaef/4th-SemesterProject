@@ -16,6 +16,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private CanvasGroup endPanelCanvasGroup;
     [SerializeField] private CanvasGroup pausePanelCanvasGroup;
     [SerializeField] private PlayerInputs playerInputs;
+    [SerializeField] private Image fadeImage;
 
     [FormerlySerializedAs("endPanelDuration")]
     [Header("Values")] 
@@ -90,7 +91,7 @@ public class UIManager : MonoBehaviour
 
     public void RestartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        StartCoroutine(RestartGameCoroutine());
     }
 
     public void BackToMainMenu()
@@ -101,5 +102,12 @@ public class UIManager : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    private IEnumerator RestartGameCoroutine()
+    {
+        fadeImage.DOFade(1f, 1f);
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

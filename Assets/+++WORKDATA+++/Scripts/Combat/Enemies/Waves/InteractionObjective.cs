@@ -21,7 +21,7 @@ public class InteractionObjective : MonoBehaviour
 
     void Awake()
     {
-        animator = GetComponent<Animator>();
+        animator = GetComponentInParent<Animator>();
     }
     
     public void Interact(EnemySpawner spawner)
