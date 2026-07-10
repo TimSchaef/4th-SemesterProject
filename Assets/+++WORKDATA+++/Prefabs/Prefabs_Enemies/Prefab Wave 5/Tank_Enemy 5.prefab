@@ -541,7 +541,7 @@ MonoBehaviour:
   playerHP: {fileID: 0}
   regenRate: 0
   regenInterval: 1
-  experiencePoints: {fileID: 11400000, guid: 10d51e990aa7fb0408a3c005674d7b8c, type: 2}
+  experiencePoints: {fileID: 11400000, guid: a58893123f1101d4d9e6d18de29de2cf, type: 2}
   xpPickupPrefab: {fileID: 7758481516241454930, guid: 101d4f15897e83c449baa7b6eba9fe20, type: 3}
   dropPosition: {fileID: 3890869243401965082}
   renderer: {fileID: 5757795502568246925}
